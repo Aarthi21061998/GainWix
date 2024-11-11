@@ -3,14 +3,14 @@
 import Image from 'next/image';
 import { MutableRefObject } from 'react';
 
-import Video1 from '@icons/SegementVideo.gif';
-import Video from '@icons/Strategy--giff.gif';
-import Video2 from '@icons/Final-Out-for-dev.gif';
+import Video1 from '@icons/SegmentVideo.gif';
+import Video from '@icons/Strategy.gif';
+import Video2 from '@icons/final.gif';
 
 import Header from '@icons/header.gif';
 
 import MetaIcon from '@icons/meta.svg';
-import MainImage from '@icons/homelcon.svg';
+import MainImage from '@icons/homeIcon.svg';
 
 // import LightBackGround from "@icons/light.svg";
 import HomePage from '@icons/HomePage.svg';

@@ -1,13 +1,13 @@
-import Vector1 from '@icons/Vector1.svg';
-import Vector2 from '@icons/Chart.svg';
-import vector3 from '@icons/vector3.svg';
-import Vector4 from '@icons/vector4.svg';
-import Vector5 from '@icons/vector5.svg';
-import Vector6 from '@icons/Vector6.svg';
-import GreenStar from '@icons/GreenStar1.svg';
-import GrayStar from '@icons/GrayStar.svg';
-import GreenTick from '@icons/GreenTick.svg';
-import GrayTick from '@icons/GrayTick.svg';
+import Vector1 from '../assets/Icons/Vector1.svg';
+import Vector2 from '../assets/Icons/Chart.svg';
+import vector3 from '../assets/Icons/vector3.svg';
+import Vector4 from '../assets/Icons/vector4.svg';
+import Vector5 from '../assets/Icons/vector5.svg';
+import Vector6 from '../assets/Icons/Vector6.svg';
+import GreenStar from '../assets/Icons/GreenStar1.svg';
+import GrayStar from '../assets/Icons/GrayStar.svg';
+import GreenTick from '../assets/Icons/GreenTick.svg';
+import GrayTick from '../assets/Icons/GrayTick.svg';
 
 export const PricingCardList = [
   {

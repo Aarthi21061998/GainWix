@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 
-import Light from "../assets/Icons/Light Sphere.svg";
+import Light from "../assets/Icons/Light Spheres.svg";
 import SunLight from "../assets/Icons/Sun light11.svg";
 
 export default function Growth() {

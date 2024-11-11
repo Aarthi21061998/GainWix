@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { MutableRefObject } from "react";
 
-import Video1 from "../assets/../assets/Icons/SegmentVideo.gif";
+import Video1 from "../assets/Icons/SegmentVideo.gif";
 // import Video from 'icons/Strategy.gif';
 import Video from "../assets/Icons/Strategy.gif";
 // import Video2 from 'icons/final.gif';

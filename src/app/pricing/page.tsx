@@ -9,7 +9,7 @@ import PlanCard from "@components/PlanCard";
 import DigitalMarketing from "@components/DigitalMarketing";
 import BrandScroll from "@components/BrandScroll";
 
-import PricingBackground from "../assets/Icons/pricing.svg";
+import PricingBackground from "../../assets/Icons/pricing.svg";
 
 export default function PricingPage() {
   return (

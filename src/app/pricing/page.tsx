@@ -3,13 +3,13 @@ import PricingCard from "@components/PricingCard";
 import Calculator from "@components/Calculator";
 
 import Growth from "@components/Growth";
-import { PricingCardList} from "@constants/home"; 
+import { PricingCardList } from "@constants/home";
 import Image from "next/image";
 import PlanCard from "@components/PlanCard";
 import DigitalMarketing from "@components/DigitalMarketing";
 import BrandScroll from "@components/BrandScroll";
 
-import PricingBackground from "@icons/pricing.svg";
+import PricingBackground from "../assets/Icons/pricing.svg";
 
 export default function PricingPage() {
   return (
@@ -38,7 +38,11 @@ export default function PricingPage() {
                 className="flex flex-col md:w-[10vw] items-center gap-5"
               >
                 <div className=" xs:w-[30vw] xs:h-[13vh] md:w-[10vh] md:h-[10vh] border border-[#908EB5] rounded-full flex justify-center bg-[#060A22] shadow-[0px_4px_16px_0px_#2D30360F]">
-                  <Image src={data?.icon} alt={data?.content} className="md:w-[2vw]" />
+                  <Image
+                    src={data?.icon}
+                    alt={data?.content}
+                    className="md:w-[2vw]"
+                  />
                 </div>
                 <p className=" font-Inter flex items-center justify-center md:text-[1vw] font-medium text-white w-[8vw] text-center xs:text-[3vw]">
                   {data?.content}

@@ -1,13 +1,13 @@
 "use client";
 
-import Brand1 from "../../assets/Icons/brand1.svg";
-import Brand2 from "../../assets/Icons/brand2.svg";
-import Brand3 from "../../assets/Icons/brand3.svg";
-import Brand4 from "../../assets/Icons/brand4.svg";
-import Brand5 from "../../assets/Icons/brand5.svg";
-import Brand6 from "../../assets/Icons/brand6.svg";
-import Brand7 from "../../assets/Icons/brand7.svg";
-import Brand8 from "../../assets/Icons/brand8.svg";
+import Brand1 from "../assets/Icons/brand1.svg";
+import Brand2 from "../assets/Icons/brand2.svg";
+import Brand3 from "../assets/Icons/brand3.svg";
+import Brand4 from "../assets/Icons/brand4.svg";
+import Brand5 from "../assets/Icons/brand5.svg";
+import Brand6 from "../assets/Icons/brand6.svg";
+import Brand7 from "../assets/Icons/brand7.svg";
+import Brand8 from "../assets/Icons/brand8.svg";
 import Image from "next/image";
 
 const BrandList = [

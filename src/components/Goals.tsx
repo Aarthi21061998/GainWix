@@ -3,8 +3,8 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Goal from "@icons/Goal.svg";
-import Goals2 from "@icons/goals2.svg";
+import Goal from "../assets/Icons/Goal.svg";
+import Goals2 from "../assets/Icons/goals2.svg";
 export default function Goals() {
   const goalImageRef = useRef(null);
   const strategyImageRef = useRef(null);

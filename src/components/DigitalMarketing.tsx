@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Image1 from "@icons/image1.svg";
+import Image1 from "../assets/Icons/image1.svg";
 
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";

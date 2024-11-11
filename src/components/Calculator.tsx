@@ -5,7 +5,7 @@ import { Popover } from "antd";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
-import DotIcon from "@icons/dot.svg";
+import DotIcon from "../assets/Icons/dot.svg";
 
 interface ContactItem {
   id: number;

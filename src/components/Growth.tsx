@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap } from "gsap";
 
-import Light from "@icons/Light Spheres.svg";
-import SunLight from "@icons/Sun light11.svg";
+import Light from "../assets/Icons/Light Sphere.svg";
+import SunLight from "../assets/Icons/Sun light11.svg";
 
 export default function Growth() {
   const earthRef = useRef<HTMLImageElement | null>(null);

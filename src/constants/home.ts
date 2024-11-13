@@ -9,6 +9,10 @@ import GrayStar from '../assets/Icons/GrayStar.svg';
 import GreenTick from '../assets/Icons/GreenTick.svg';
 import GrayTick from '../assets/Icons/GrayTick.svg';
 
+import image from "../assets/Icons/cardIcon.svg"
+import image1 from "../assets/Icons/card2.svg"
+import image2 from "../assets/Icons/card3.svg"
+
 export const PricingCardList = [
   {
     id: 1,
@@ -563,6 +567,7 @@ export const PlanList = [
 export const MarketingGoalsList = [
   {
     id: 1,
+    icon: image,
     content: 'Anticipates ',
     content1: 'Market Trends',
     details:
@@ -570,6 +575,7 @@ export const MarketingGoalsList = [
   },
   {
     id: 2,
+    icon:image1,
     content: 'Generate ',
     content1: 'Target Audience',
     details:
@@ -577,6 +583,8 @@ export const MarketingGoalsList = [
   },
   {
     id: 3,
+        icon:image2,
+
     content: 'Specific ',
     content1: 'Channel Targeting',
     details:

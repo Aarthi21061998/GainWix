@@ -139,6 +139,15 @@
     /* Additional styles */
   }
 
+  .header-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .hover-instagram:hover svg path {
+    fill: #2b2e4f;
+  }
   /* ul {
     position: relative;
     display: flex;

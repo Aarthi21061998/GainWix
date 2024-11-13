@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Goal from "../assets/Icons/Goal.svg";
-import Goals2 from "../assets/Icons/goals2.svg";
+import goals3 from "../assets/Icons/goals3.svg";
 export default function Goals() {
   const goalImageRef = useRef(null);
   const strategyImageRef = useRef(null);
@@ -22,8 +22,8 @@ export default function Goals() {
             toggleActions: "play none none reverse",
           },
         })
-        .to(goalImageRef.current, { opacity: 0, duration: 1 })
-        .to(strategyImageRef.current, { opacity: 1, duration: 1 });
+        .to(goalImageRef.current, { opacity: 0, duration: 0 })
+        .to(strategyImageRef.current, { opacity: 3, duration: 1 });
     }
   }, []);
 
@@ -43,14 +43,14 @@ export default function Goals() {
           className="absolute w-full h-full flex justify-center"
           ref={goalImageRef}
         >
-          <Image src={Goal} alt="goal" className="w-[70vw] h-[20vh]" />
+          <Image src={Goal} alt="goal" className="w-[50vw] h-[30vh]" />
         </div>
 
         <div
           className="absolute w-full h-full flex justify-center opacity-0"
           ref={strategyImageRef}
         >
-          <Image src={Goals2} alt="strategy" className="w-[50vw]" />
+          <Image src={goals3} alt="strategy" className="w-[100vw] h-[70vh]" />
         </div>
       </div>
     </div>

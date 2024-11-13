@@ -15,6 +15,8 @@ import Header from "../assets/Icons/header.gif";
 import MetaIcon from "../assets/Icons/meta.svg";
 import MainImage from "../assets/Icons/homeIcon.svg";
 
+import card from "../assets/Icons/cardIcon.svg";
+
 // import LightBackGround from "../assets/Icons/light.svg";
 import HomePage from "../assets/Icons/HomePage.svg";
 import Marketing_first from "../assets/Icons/Strategy Animation.svg";
@@ -31,63 +33,250 @@ import BrandScroll from "@components/BrandScroll";
 import Growth from "@components/Growth";
 import { MarketingGoalsList, MarketingGoalsListType } from "@constants/home";
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default function Home() {
-  const imageRef = useRef(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
 
   const divRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const goalsRef = useRef<HTMLDivElement | null>(null);
-  const imageContainerRef = useRef<HTMLDivElement | null>(null);
+  const travelDivRef = useRef<HTMLDivElement | null>(null);
+  const segmentImageRef = useRef<HTMLImageElement | null>(null);
+  const scaleRef = useRef<HTMLImageElement | null>(null);
+
+  // const imageContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    gsap.to(imageRef.current, {
-      scale: 1.05,
-      rotation: 5,
-      yoyo: true,
-      repeat: -1,
-      duration: 3,
-      ease: "power1.inOut",
-    });
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { scale: 1 },
+        {
+          scale: 0.8,
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "bottom",
+            // end: "",
+            scrub: true,
+          },
+        }
+      );
+    }
   }, []);
 
   useEffect(() => {
-    if (divRef.current && goalsRef.current && imageContainerRef.current) {
-      const goalsPosition =
-        goalsRef.current.getBoundingClientRect().top + window.scrollY;
-
-      const imageContainerPosition =
-        imageContainerRef.current.getBoundingClientRect().top + window.scrollY;
-
-      const leftOffset = imageContainerRef.current.offsetWidth / 2;
-
-      gsap.to(divRef.current, {
-        y: goalsPosition - divRef.current.offsetHeight / 2,
-        duration: 1,
+    gsap.fromTo(
+      divRef.current,
+      {
+        y: 0,
+      },
+      {
+        y: "100vh",
         scrollTrigger: {
           trigger: goalsRef.current,
           start: "top center",
+          end: "top center",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+
+  //   const updatePosition = () => {
+  //     if (
+  //       !travelDivRef.current ||
+  //       !segmentImageRef.current ||
+  //       !scaleRef.current
+  //     )
+  //       return;
+
+  //     const travelRect = travelDivRef.current.getBoundingClientRect();
+  //     const segmentRect = segmentImageRef.current.getBoundingClientRect();
+  //     const scaleRect = scaleRef.current.getBoundingClientRect();
+
+  //     const xDistanceFromSegment = segmentRect.left - travelRect.left + 350;
+  //     const yDistanceFromSegment = segmentRect.top - travelRect.top + 200;
+
+  //     const xDistanceToScale = scaleRect.right - segmentRect.right + 600;
+  //     const yDistanceToScale = scaleRect.top - segmentRect.top + 600;
+
+  //     const tl = gsap.timeline({
+  //       scrollTrigger: {
+  //         trigger: segmentImageRef.current,
+  //         start: "top center",
+  //         end: "bottom center",
+  //         scrub: true,
+  //       },
+  //     });
+
+  //     tl.to(travelDivRef.current, {
+  //       x: xDistanceFromSegment,
+  //       y: yDistanceFromSegment,
+  //       ease: "power2.out",
+  //     });
+
+  //     tl.to(travelDivRef.current, {
+  //       x: xDistanceToScale,
+  //       y: yDistanceToScale,
+  //       ease: "power2.out",
+  //       scrollTrigger: {
+  //         trigger: scaleRef.current,
+  //         start: "top center",
+  //         end: "bottom center",
+  //         scrub: true,
+  //       },
+  //     });
+  //   };
+
+  //   updatePosition();
+  //   window.addEventListener("resize", updatePosition);
+
+  //   gsap.fromTo(
+  //     travelDivRef.current,
+  //     { opacity: 0, y: 100 },
+  //     {
+  //       opacity: 1,
+  //       y: 0,
+  //       scrollTrigger: {
+  //         trigger: travelDivRef.current,
+  //         start: "top 80%",
+  //         end: "top 50%",
+  //         scrub: true,
+  //       },
+  //     }
+  //   );
+
+  //   return () => {
+  //     window.removeEventListener("resize", updatePosition);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const updatePosition = () => {
+      if (
+        !travelDivRef.current ||
+        !segmentImageRef.current ||
+        !scaleRef.current
+      )
+        return;
+
+      const travelRect = travelDivRef.current.getBoundingClientRect();
+      const segmentRect = segmentImageRef.current.getBoundingClientRect();
+      const scaleRect = scaleRef.current.getBoundingClientRect();
+
+      const xDistanceFromSegment = segmentRect.left - travelRect.left + 290;
+      const yDistanceFromSegment = segmentRect.top - travelRect.top + 200;
+
+      const xDistanceToScale = scaleRect.left - segmentRect.left + 470;
+      const yDistanceToScale = scaleRect.top - segmentRect.top + 600;
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: segmentImageRef.current,
+          start: "top center",
           end: "bottom center",
           scrub: true,
-          onLeave: () => {
-            if (divRef.current) {
-              gsap.to(divRef.current, {
-                y: imageContainerPosition - divRef.current.offsetHeight / 2,
-                x: -leftOffset,
-                duration: 1,
-              });
-            }
-          },
-          onEnterBack: () => {
-            if (divRef.current) {
-              gsap.to(divRef.current, {
-                y: goalsPosition - divRef.current.offsetHeight / 2,
-                x: 0,
-                duration: 1,
-              });
-            }
-          },
         },
       });
-    }
+
+      tl.to(travelDivRef.current, {
+        x: xDistanceFromSegment,
+        y: yDistanceFromSegment,
+        ease: "power2.out",
+      });
+
+      tl.to(travelDivRef.current, {
+        x: xDistanceToScale,
+        y: yDistanceToScale,
+
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: scaleRef.current,
+          start: "top center",
+          end: "bottom center",
+          scrub: true,
+        },
+      });
+
+      gsap.to(scaleRef.current, {
+        scale: 1, // The header will shrink to 80% of its original size
+
+        scrollTrigger: {
+          trigger: scaleRef.current,
+          start: "top center",
+          end: "bottom top",
+          scrub: true, // This ensures the scaling is tied to the scroll position
+        },
+      });
+    };
+
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+
+    gsap.fromTo(
+      travelDivRef.current,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: travelDivRef.current,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: true,
+        },
+      }
+    );
+
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(imageRef.current, {
+      scrollTrigger: {
+        trigger: imageRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+      scale: 0.5,
+      ease: "none",
+    });
+
+    gsap.to(divRef.current, {
+      scrollTrigger: {
+        trigger: divRef.current,
+        start: "top center",
+        scrub: true,
+      },
+      width: "20vw",
+      height: "30vh",
+      top: "13.7%",
+      left: "50%",
+      x: "-50%",
+      ease: "none",
+    });
+
+    gsap.to(goalsRef.current, {
+      scrollTrigger: {
+        trigger: goalsRef.current,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+      opacity: 1,
+      ease: "none",
+    });
   }, []);
 
   return (
@@ -137,8 +326,8 @@ export default function Home() {
       <Image
         src={MainImage}
         alt="home"
-        className="absolute top-[20vw]"
         ref={imageRef}
+        className="absolute top-[20vw]"
         style={{
           width: "100%",
           height: "auto",
@@ -151,8 +340,7 @@ export default function Home() {
       >
         <Image src={Header} alt="" />
       </div>{" "}
-      <div className="py-10" ref={goalsRef}>
-        {/* <div className="py-10"> */}
+      <div className="py-10 h-[120vh]" ref={goalsRef} style={{ opacity: 0 }}>
         <Goals />
       </div>
       <div className="relative">
@@ -168,11 +356,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[100%]  flex flex-row  px-10 absolute top-44">
-          <div
-            className="w-[45%] flex justify-center relative "
-            ref={imageContainerRef}
-          >
+        <div className="w-[100%] overflow-visible flex flex-row  px-10 absolute top-44">
+          <div className="w-[45%] flex justify-center relative ">
             <Image
               src={Marketing_first}
               alt="marketing1"
@@ -180,6 +365,12 @@ export default function Home() {
             />
             <div className="absolute  flex justify-center items-center">
               <Image src={Video} alt="" className="w-[30vw] h-[55vh]" />
+            </div>
+            <div
+              className=" absolute top-16  flex justify-center items-center z-40 opacity-0"
+              ref={travelDivRef}
+            >
+              <Image src={Header} alt="" className="w-80 h-80" />
             </div>
           </div>
           <div className="w-[50%] flex flex-col justify-center  text-[white]">
@@ -194,10 +385,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative flex flex-row">
+      <div className="relative flex flex-row ">
         <Image src={Segmentation} alt="" />
 
-        <div className="w-[100%] flex flex-row px-40 absolute top-10">
+        <div className="w-[100%] flex flex-row px-40 absolute top-10 ">
           <div className="w-[45%] flex flex-col justify-center text-[white]">
             <h1 className="text-[2vw] font-Sora font-bold px-20 pb-5">
               Segmentation AI
@@ -208,14 +399,15 @@ export default function Home() {
               rates.
             </p>
           </div>
-          <div className="w-[55%] flex justify-center">
+          <div className="w-[55%] flex justify-center ">
             <Image
               src={SegmentAnimation}
               alt="marketing1"
-              className="   blend-screen"
+              ref={segmentImageRef}
+              className="blend-screen "
             />
           </div>
-          <div className="  rounded-full">
+          <div className="rounded-full">
             <Image
               src={Video1}
               alt=""
@@ -224,13 +416,12 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative flex flex-row">
+      <div className="relative flex flex-row h-[70vh]">
         <Image src={Scale} alt="" />
 
         <div className="w-[100%] flex flex-row px-40 absolute top-10">
           <div className="w-[45%] flex justify-center">
-            {" "}
-            <Image src={Video2} alt="" />
+            <Image src={Video2} alt="" ref={scaleRef} />
           </div>
           <div className="w-[50%] flex flex-col justify-center text-[white]">
             <h1 className="text-[2vw] font-Sora font-bold px-20 pb-5">
@@ -246,7 +437,7 @@ export default function Home() {
       </div>
       {/* Slider Section */}
       <DigitalMarketing />
-      <div className="py-10">
+      <div className="py-10 ">
         <BrandScroll />
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -267,7 +458,14 @@ export default function Home() {
               className="w-[25%] h-[45vh] rounded-lg from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
               key={data?.id}
             >
-              <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] mt-[10vw]">
+              <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw]  align-center mt-16">
+                {/* <Image src={data?.icon} alt="" /> */}
+                <Image
+                  src={data?.icon}
+                  alt=""
+                  className="w-70 h-32 flex justify-center items-center"
+                />
+
                 <p className="font-Sora font-semibold">{data?.content}</p>
                 <span className=" font-Sora font-semibold">
                   {data?.content1}

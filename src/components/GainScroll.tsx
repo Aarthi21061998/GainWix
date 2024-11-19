@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import star from "../assets/Icons/Star 1.svg";
+import star from "../assets/Icons/star.svg";
 
 const List = [
   {

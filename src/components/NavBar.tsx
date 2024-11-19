@@ -45,7 +45,7 @@ import Education from "../assets/Icons/Education.svg";
 import Retail from "../assets/Icons/Retaile.svg";
 import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
-import Marketing from "../assets/Icons/Marketing.svg";
+import Marketing from "../assets/Icons/Marketing1.svg";
 
 export default function NavBar() {
   const navLink = "text-base font-medium";
@@ -284,13 +284,13 @@ export default function NavBar() {
               <Image src={FullLogo} alt="GainWix Full Logo" />{" "}
             </Link>
             <div className="lg:hidden flex">
-              <div onClick={() => setOpen(!open)}>
+              {/* <div onClick={() => setOpen(!open)}>
                 {open ? (
                   <Image src={meta} alt="Close menu" />
                 ) : (
                   <Image src={logo} alt="Open menu" />
                 )}
-              </div>
+              </div> */}
             </div>
             <div
               className={`hidden lg:flex items-center md:gap-10 px-5 md:pl-20 `}

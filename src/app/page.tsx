@@ -24,7 +24,7 @@ import SegmentAnimation from "../assets/Icons/Segment Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
 import Segmentation from "../assets/Icons/Segmentation.svg";
 import Scale from "../assets/Icons/Scale.svg";
-import scale from "../assets/Icons/scal.svg";
+import scale1 from "../assets/Icons/scal.svg";
 import DigitalMarketing from "@components/DigitalMarketing";
 
 import Goals from "@components/Goals";
@@ -561,7 +561,7 @@ export default function Home() {
               <div className="relative">
                 {/* Rotating Elements */}
                 <div ref={rotatingRef} className="relative flex flex-row">
-                  <Image src={scale} alt="" className="" />
+                  <Image src={scale1} alt="" className="" />
 
                   {/* Icons */}
                   {["instagram", "message", "whatsapp", "facebook"].map(

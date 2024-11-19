@@ -47,7 +47,7 @@ import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
 import Marketing from "../assets/Icons/Marketing.svg";
 
-import Ecommerce from "./Ecommerce";
+
 
 export default function NavBar() {
   const navLink = "text-base font-medium";

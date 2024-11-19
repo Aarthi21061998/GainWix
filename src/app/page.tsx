@@ -39,12 +39,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import instagram from "../assets/Icons/insta.svg";
 import message from "../assets/Icons/message.svg";
-import whatsapp from "../assets/Icons/Whatsapp.svg";
+import whatsapp from "../assets/Icons/whatsappIcon.svg";
 import facebook from "../assets/Icons/facebook.svg";
 
 import inst1 from "../assets/Icons/instagram.svg";
 import whats1 from "../assets/Icons/wApp.svg";
-import mess from "../assets/Icons/Mess.svg";
+import mess from "../assets/Icons/messIcon.svg";
 import Fbook from "../assets/Icons/fb.svg";
 
 import Image1 from "../assets/Icons/instaMarketing.svg";
@@ -64,10 +64,7 @@ export default function Home() {
   const rotatingRef = useRef(null);
   const iconsRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const instagramRef = useRef(null);
-  const messageRef = useRef(null);
-  const whatsappRef = useRef(null);
-  const facebookRef = useRef(null);
+ 
 
   const [activeIcon, setActiveIcon] = useState(null);
 

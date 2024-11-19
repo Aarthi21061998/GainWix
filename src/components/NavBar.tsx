@@ -48,6 +48,7 @@ import Travel from "../assets/Icons/Travel 2.svg";
 import Marketing from "../assets/Icons/Marketing.svg";
 
 
+
 export default function NavBar() {
   const navLink = "text-base font-medium";
 

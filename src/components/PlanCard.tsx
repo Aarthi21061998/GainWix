@@ -77,13 +77,7 @@ export default function PlanCard() {
                   p.title === "Starter" ? "" : ""
                 }`}
               >
-                {p.title === "Starter" ? (
-                  <Image src={starter} alt="s" className="w-[11vw]" />
-                ) : p.title === "Growth" ? (
-                  <Image src={growth} alt="s" className="w-[11vw]" />
-                ) : p.title === "Magnum" ? (
-                  <Image src={magnum} alt="s" className="w-[11vw]" />
-                ) : null}
+              
               </div>
               <div className="w-full h-full rounded-[1.2vw] md:px-[1vw] md:py-[1.2vw] xs:py-[5vw] xs:px-[3vw]">
                 <h3

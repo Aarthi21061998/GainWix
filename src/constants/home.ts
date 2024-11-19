@@ -593,3 +593,31 @@ export const MarketingGoalsList = [
 ];
 
 export type MarketingGoalsListType = (typeof MarketingGoalsList)[0];
+
+
+export const cardList = [
+    {
+      id: 1,
+      icon: image,
+      content: "Lorem Ipsum ",
+      content1:
+        "Leverage AI-powered bots to interact with customers in real-time on their favorite channels, providing seamless support and personalized guidance at every stage of their buying journey",
+    },
+    {
+      id: 2,
+      icon: image1,
+      content: "Lorem Ipsum ",
+      content1:
+        "Utilize AI to intelligently segment your audience and create hyper-personalized experiences tailored to their journey and purchase history, driving higher conversion rates.",
+    },
+    {
+      id: 3,
+      icon: image2,
+
+      content: "Lorem Ipsum ",
+      content1:
+        "Streamline sales, support, and marketing efforts from one place and increase maximum efficiency. ",
+    },
+];
+  
+export type CardListType = (typeof cardList)[0];

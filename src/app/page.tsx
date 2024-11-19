@@ -45,6 +45,7 @@ import facebook from "../assets/Icons/facebook.svg";
 import inst1 from "../assets/Icons/instagram.svg";
 import mess from "../assets/Icons/Mess.svg";
 import whats1 from "../assets/Icons/wApp.svg";
+
 import Fbook from "../assets/Icons/fb.svg";
 
 import Image1 from "../assets/Icons/instaMarketing.svg";

@@ -13,6 +13,10 @@ import image from "../assets/Icons/cardIcon.svg"
 import image1 from "../assets/Icons/card2.svg"
 import image2 from "../assets/Icons/card3.svg"
 
+import images1 from "../assets/Icons/1st.svg";
+import images2 from "../assets/Icons/second.svg";
+import images3 from "../assets/Icons/3rd.svg";
+
 export const PricingCardList = [
   {
     id: 1,
@@ -598,21 +602,21 @@ export type MarketingGoalsListType = (typeof MarketingGoalsList)[0];
 export const cardList = [
     {
       id: 1,
-      icon: image,
+      icon: images1,
       content: "Lorem Ipsum ",
       content1:
         "Leverage AI-powered bots to interact with customers in real-time on their favorite channels, providing seamless support and personalized guidance at every stage of their buying journey",
     },
     {
       id: 2,
-      icon: image1,
+      icon: images2,
       content: "Lorem Ipsum ",
       content1:
         "Utilize AI to intelligently segment your audience and create hyper-personalized experiences tailored to their journey and purchase history, driving higher conversion rates.",
     },
     {
       id: 3,
-      icon: image2,
+      icon: images3,
 
       content: "Lorem Ipsum ",
       content1:

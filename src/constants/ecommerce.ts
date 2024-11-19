@@ -1,5 +1,11 @@
 import EcommerceCard1 from "../../assets/Icons/ecard1.svg";
 
+import ECommerceSupportIcon from "../assets/Icons/support.svg"
+import ECommerceNotification from "../assets/Icons/Notification.svg"
+import ECommerceOffer from "../assets/Icons/order.svg"
+import ECommercePayment from "../assets/Icons/payment.svg"
+import ECommerceUpdate from "../assets/Icons/order.svg"
+
 
 
 export const MarketingGoalsList = [
@@ -70,5 +76,34 @@ export const EcommerceList3 = [
     id: 2,
     text: 'Expert Routing',
     content: `Ensure each query reaches the most qualified team member for faster resolution and increased customer satisfaction.`,
+  },
+];
+
+
+export const CommerceCardList = [
+  {
+    id: 1,
+    icon: ECommerceSupportIcon,
+    text: '24/7 chatbot support',
+  },
+  {
+    id: 2,
+    icon: ECommerceNotification,
+    text: 'Send store Notification Via WhatsApp',
+  },
+  {
+    id: 3,
+    icon: ECommerceOffer,
+    text: 'Personalized Offers & Discounts',
+  },
+  {
+    id: 4,
+    icon: ECommercePayment,
+    text: 'Secure payments with integration Partners',
+  },
+  {
+    id: 5,
+    icon: ECommerceUpdate,
+    text: 'Push order updates Instantly',
   },
 ];

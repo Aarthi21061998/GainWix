@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 
-import image from "../assets/Icons/1st.svg";
-import image1 from "../assets/Icons/second.svg";
-import image2 from "../assets/Icons/3rd.svg";
+// import image from "../assets/Icons/1st.svg";
+// import image1 from "../assets/Icons/second.svg";
+// import image2 from "../assets/Icons/3rd.svg";
 import { CardListType, cardList } from "@constants/home";
 
 export default function Card() {

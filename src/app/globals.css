@@ -148,6 +148,22 @@
   .hover-instagram:hover svg path {
     fill: #2b2e4f;
   }
+
+  .gradient-border2 {
+    min-height: 100px;
+    width: 100px;
+    border-left-width: 1.5px;
+    border-style: solid;
+    border-image-source: linear-gradient(
+        270deg,
+        rgba(45, 49, 84, 0.5) 0%,
+        #2d3154 44%,
+        rgba(45, 49, 84, 0.5) 100%
+    );
+    border-image-slice: 1;
+}
+
+
   /* ul {
     position: relative;
     display: flex;

@@ -43,17 +43,14 @@ import whatsapp from "../assets/Icons/Whatsapp.svg";
 import facebook from "../assets/Icons/facebook.svg";
 
 import inst1 from "../assets/Icons/instagram.svg";
-import mess from "../assets/Icons/Mess.svg";
 import whats1 from "../assets/Icons/wApp.svg";
-
+import mess from "../assets/Icons/Mess.svg";
 import Fbook from "../assets/Icons/fb.svg";
 
 import Image1 from "../assets/Icons/instaMarketing.svg";
 import Image2 from "../assets/Icons/message1.svg";
 import Image3 from "../assets/Icons/messanger.svg";
 import Image4 from "../assets/Icons/whatsapp2.svg";
-
-
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);

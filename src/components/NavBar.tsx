@@ -47,7 +47,6 @@ import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
 import Marketing from "../assets/Icons/Marketing.svg";
 
-
 export default function NavBar() {
   const navLink = "text-base font-medium";
 
@@ -296,8 +295,8 @@ export default function NavBar() {
             <div
               className={`hidden lg:flex items-center md:gap-10 px-5 md:pl-20 `}
             >
-              {MenuLists?.map((menu) => (
-                <MenuItem key={menu?.id} data={menu} />
+              {MenuLists?.map((menu: any) => (
+                <MenuItem key={menu?.id} data={menu} type={menu.type} />
               ))}
               <Link href={"/pricing"} className={cn(navLink, "")}>
                 Pricing{" "}

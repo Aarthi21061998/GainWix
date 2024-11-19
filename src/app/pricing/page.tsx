@@ -14,7 +14,7 @@ import PricingBackground from "../../assets/Icons/pricing.svg";
 export default function PricingPage() {
   return (
     <div>
-      <div className="w-full h-auto  ">
+      <div className="w-full h-auto bg-[#060A22] ">
         <div className="relative flex flex-col align-center items-center justify-center">
           <Image src={PricingBackground} alt="" />
           <div className="absolute top-10 flex flex-col align-center items-center justify-center">

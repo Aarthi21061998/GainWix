@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { MutableRefObject } from "react";
+import { MutableRefObject, useState } from "react";
 
 import Video1 from "../assets/Icons/SegmentVideo.gif";
 // import Video from 'icons/Strategy.gif';
@@ -24,7 +24,9 @@ import SegmentAnimation from "../assets/Icons/Segment Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
 import Segmentation from "../assets/Icons/Segmentation.svg";
 import Scale from "../assets/Icons/Scale.svg";
+import scale from "../assets/Icons/scal.svg";
 import DigitalMarketing from "@components/DigitalMarketing";
+
 import Goals from "@components/Goals";
 import { useEffect, useRef } from "react";
 
@@ -35,6 +37,21 @@ import { MarketingGoalsList, MarketingGoalsListType } from "@constants/home";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import instagram from "../assets/Icons/insta.svg";
+import message from "../assets/Icons/message.svg";
+import whatsapp from "../assets/Icons/Whatsapp.svg";
+import facebook from "../assets/Icons/facebook.svg";
+
+import inst1 from "../assets/Icons/instagram.svg";
+import mess from "../assets/Icons/Mess.svg";
+import whats1 from "../assets/Icons/wApp.svg";
+import Fbook from "../assets/Icons/fb.svg";
+
+import Image1 from "../assets/Icons/instaMarketing.svg";
+import Image2 from "../assets/Icons/message1.svg";
+import Image3 from "../assets/Icons/messanger.svg";
+import Image4 from "../assets/Icons/whatsapp2.svg";
+
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
 
@@ -44,7 +61,36 @@ export default function Home() {
   const segmentImageRef = useRef<HTMLImageElement | null>(null);
   const scaleRef = useRef<HTMLImageElement | null>(null);
 
-  // const imageContainerRef = useRef<HTMLDivElement | null>(null);
+  const rotatingRef = useRef(null);
+  const iconsRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const instagramRef = useRef(null);
+  const messageRef = useRef(null);
+  const whatsappRef = useRef(null);
+  const facebookRef = useRef(null);
+
+  const [activeIcon, setActiveIcon] = useState(null);
+
+  const handleMouseEnter = (index: any) => {
+    setActiveIcon(index);
+  };
+
+  const handleMouseLeave = () => {
+    setActiveIcon(null);
+  };
+  const iconPositions = [
+    { top: "-1vw", left: "14vw" },
+    { top: "8vw", left: "6vw" },
+    { top: "15vw", left: "14vw" },
+    { top: "8vw", left: "20vw" },
+  ];
+
+  const icons = [
+    { src: instagram, alt: "Instagram", img: Image1 },
+    { src: message, alt: "Message", img: Image2 },
+    { src: whatsapp, alt: "WhatsApp", img: Image3 },
+    { src: facebook, alt: "Facebook", img: Image4 },
+  ];
 
   useEffect(() => {
     if (imageRef.current) {
@@ -81,78 +127,6 @@ export default function Home() {
       }
     );
   }, []);
-
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const updatePosition = () => {
-  //     if (
-  //       !travelDivRef.current ||
-  //       !segmentImageRef.current ||
-  //       !scaleRef.current
-  //     )
-  //       return;
-
-  //     const travelRect = travelDivRef.current.getBoundingClientRect();
-  //     const segmentRect = segmentImageRef.current.getBoundingClientRect();
-  //     const scaleRect = scaleRef.current.getBoundingClientRect();
-
-  //     const xDistanceFromSegment = segmentRect.left - travelRect.left + 350;
-  //     const yDistanceFromSegment = segmentRect.top - travelRect.top + 200;
-
-  //     const xDistanceToScale = scaleRect.right - segmentRect.right + 600;
-  //     const yDistanceToScale = scaleRect.top - segmentRect.top + 600;
-
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: segmentImageRef.current,
-  //         start: "top center",
-  //         end: "bottom center",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     tl.to(travelDivRef.current, {
-  //       x: xDistanceFromSegment,
-  //       y: yDistanceFromSegment,
-  //       ease: "power2.out",
-  //     });
-
-  //     tl.to(travelDivRef.current, {
-  //       x: xDistanceToScale,
-  //       y: yDistanceToScale,
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: scaleRef.current,
-  //         start: "top center",
-  //         end: "bottom center",
-  //         scrub: true,
-  //       },
-  //     });
-  //   };
-
-  //   updatePosition();
-  //   window.addEventListener("resize", updatePosition);
-
-  //   gsap.fromTo(
-  //     travelDivRef.current,
-  //     { opacity: 0, y: 100 },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: travelDivRef.current,
-  //         start: "top 80%",
-  //         end: "top 50%",
-  //         scrub: true,
-  //       },
-  //     }
-  //   );
-
-  //   return () => {
-  //     window.removeEventListener("resize", updatePosition);
-  //   };
-  // }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -277,6 +251,168 @@ export default function Home() {
       opacity: 1,
       ease: "none",
     });
+  }, []);
+
+  // useEffect(() => {
+  //   const resetIcons = () => {
+  //     iconsRefs.current.forEach((icon) => {
+  //       const imageWrapper = icon.querySelector(".image-wrapper");
+  //       if (imageWrapper) {
+  //         gsap.set(imageWrapper, { rotate: 0 });
+  //       }
+  //     });
+  //     setActiveIcon(null);
+  //   };
+
+  //   const rotationAnimation = gsap.to(rotatingRef.current, {
+  //     rotation: 360,
+  //     scrollTrigger: {
+  //       trigger: rotatingRef.current,
+  //       start: "top center",
+  //       end: "bottom center",
+  //       scrub: true,
+  //       onUpdate: () => {
+  //         // Counter-rotate the images to keep them upright
+  //         iconsRefs.current.forEach((icon) => {
+  //           const currentRotation = gsap.getProperty(
+  //             rotatingRef.current,
+  //             "rotation"
+  //           );
+  //           const imageWrapper = icon.querySelector(".image-wrapper");
+
+  //           if (imageWrapper) {
+  //             gsap.set(imageWrapper, {
+  //               rotate: -currentRotation, // Counter the parent's rotation
+  //             });
+  //           }
+  //         });
+
+  //         // Highlight the rightmost icon by setting it as active
+  //         const rightmostIcon = getRightmostIcon();
+  //         if (rightmostIcon) {
+  //           iconsRefs.current.forEach((icon, index) => {
+  //             if (icon === rightmostIcon) {
+  //               setActiveIcon(index); // Update active icon index
+  //             }
+  //           });
+  //         }
+  //       },
+  //       onLeave: resetIcons,
+  //       onEnterBack: resetIcons,
+  //       onStop: resetIcons, // Reset icons when scrolling stops
+  //     },
+  //   });
+
+  //   const getRightmostIcon = () => {
+  //     let rightmostIcon = null;
+  //     let maxRight = -Infinity;
+
+  //     iconsRefs.current.forEach((icon) => {
+  //       const rect = icon.getBoundingClientRect();
+  //       const iconRight = rect.left + rect.width;
+
+  //       if (iconRight > maxRight) {
+  //         maxRight = iconRight;
+  //         rightmostIcon = icon;
+  //       }
+  //     });
+
+  //     return rightmostIcon;
+  //   };
+
+  //   return () => {
+  //     if (rotationAnimation) rotationAnimation.kill();
+  //     ScrollTrigger.killAll(); // Clean up ScrollTrigger instances
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    let scrollStopTimeout: ReturnType<typeof setTimeout>;
+
+    const resetPositions = () => {
+      iconsRefs.current.forEach((icon, index) => {
+        if (!icon) return; // Skip null entries
+        const imageWrapper = icon.querySelector(".image-wrapper");
+        if (imageWrapper) {
+          const { top, left } = iconPositions[index]; // Get initial positions
+          gsap.set(imageWrapper, {
+            rotate: 0, // Reset the rotation
+            top, // Set the initial top position
+            left, // Set the initial left position
+          });
+        }
+      });
+      setActiveIcon(null);
+    };
+
+    const handleScrollStop = () => {
+      clearTimeout(scrollStopTimeout);
+      scrollStopTimeout = setTimeout(() => {
+        resetPositions();
+      }, 200); // Delay to consider scrolling stopped
+    };
+
+    const rotationAnimation = gsap.to(rotatingRef.current, {
+      rotation: 360,
+      scrollTrigger: {
+        trigger: rotatingRef.current!,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        onUpdate: () => {
+          handleScrollStop(); // Trigger scroll stop logic
+          iconsRefs.current.forEach((icon) => {
+            if (!icon) return;
+            const currentRotation = gsap.getProperty(
+              rotatingRef.current!,
+              "rotation"
+            );
+            const imageWrapper = icon.querySelector(".image-wrapper");
+
+            if (imageWrapper) {
+              gsap.set(imageWrapper, {
+                rotate: -currentRotation, // Counter the parent's rotation
+              });
+            }
+          });
+
+          const rightmostIcon = getRightmostIcon();
+          if (rightmostIcon) {
+            iconsRefs.current.forEach((icon, index: any) => {
+              if (icon === rightmostIcon) {
+                setActiveIcon(index);
+              }
+            });
+          }
+        },
+        onLeave: resetPositions, // Reset when scrolling leaves the section
+        onEnterBack: resetPositions, // Reset when scrolling back into the section
+      },
+    });
+
+    const getRightmostIcon = () => {
+      let rightmostIcon: HTMLDivElement | null = null;
+      let maxRight = -Infinity;
+
+      iconsRefs.current.forEach((icon) => {
+        if (!icon) return;
+        const rect = icon.getBoundingClientRect();
+        const iconRight = rect.left + rect.width;
+
+        if (iconRight > maxRight) {
+          maxRight = iconRight;
+          rightmostIcon = icon;
+        }
+      });
+
+      return rightmostIcon;
+    };
+
+    return () => {
+      if (rotationAnimation) rotationAnimation.kill();
+      ScrollTrigger.killAll();
+      clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
+    };
   }, []);
 
   return (
@@ -416,22 +552,83 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative flex flex-row h-[70vh]">
-        <Image src={Scale} alt="" />
+      <div className="w-full relative flex flex-row">
+        <div className="relative flex flex-row h-[70vh]">
+          <Image src={Scale} alt="" />
 
-        <div className="w-[100%] flex flex-row px-40 absolute top-10">
-          <div className="w-[45%] flex justify-center">
-            <Image src={Video2} alt="" ref={scaleRef} />
-          </div>
-          <div className="w-[50%] flex flex-col justify-center text-[white]">
-            <h1 className="text-[2vw] font-Sora font-bold px-20 pb-5">
-              Scale Through Automation
-            </h1>
-            <p className="text-start font-Sora font-semibold pl-20">
-              Effortlessly scale your marketing efforts with Automation,
-              optimizing performance and expanding your reach without
-              compromising quality or efficiency.
-            </p>
+          <div className="w-[100%] flex flex-row px-40 absolute top-10 gap-10">
+            <div className="w-[45%] flex justify-center blend-screen ">
+              <div className="relative">
+                {/* Rotating Elements */}
+                <div ref={rotatingRef} className="relative flex flex-row">
+                  <Image src={scale} alt="" className="" />
+
+                  {/* Icons */}
+                  {["instagram", "message", "whatsapp", "facebook"].map(
+                    (icon, index) => (
+                      <div
+                        key={index}
+                        ref={(el) => {
+                          iconsRefs.current[index] = el;
+                        }}
+                        className="circle-image absolute"
+                        style={{
+                          top: iconPositions[index].top,
+                          left: iconPositions[index].left,
+                        }}
+                      >
+                        <div className="image-wrapper">
+                          {activeIcon === index ? (
+                            icon === "instagram" ? (
+                              <Image src={inst1} alt="Instagram" />
+                            ) : icon === "message" ? (
+                              <Image src={mess} alt="Message" />
+                            ) : icon === "whatsapp" ? (
+                              <Image src={whats1} alt="WhatsApp" />
+                            ) : icon === "facebook" ? (
+                              <Image src={Fbook} alt="Facebook" />
+                            ) : null
+                          ) : (
+                            <Image src={icons[index].src} alt={icon} />
+                          )}
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+
+                {activeIcon !== null && (
+                  <div
+                    className="absolute left-[28vw] "
+                    style={{
+                      top: iconPositions[activeIcon].top,
+                      left: iconPositions[activeIcon].left + 50, // Add offset to place the content to the right
+                      zIndex: 5, // Ensure the content is above the icon
+                      width: 150,
+                      height: 200,
+                    }}
+                  >
+                    <div className=" absolute ">
+                      <Image
+                        src={icons[activeIcon]?.img}
+                        alt={icons[activeIcon]?.alt || ""}
+                        className="rounded "
+                      />
+                    </div>{" "}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="w-[60%] flex flex-col justify-center text-[white]">
+              <h1 className="text-[2vw] font-Sora font-bold px-20 pb-5">
+                Scale Through Automation
+              </h1>
+              <p className="text-start font-Sora font-semibold pl-20">
+                Effortlessly scale your marketing efforts with Automation,
+                optimizing performance and expanding your reach without
+                compromising quality or efficiency.
+              </p>
+            </div>
           </div>
         </div>
       </div>

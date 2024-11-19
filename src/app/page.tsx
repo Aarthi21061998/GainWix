@@ -53,6 +53,8 @@ import Image2 from "../assets/Icons/message1.svg";
 import Image3 from "../assets/Icons/messanger.svg";
 import Image4 from "../assets/Icons/whatsapp2.svg";
 
+
+
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
 

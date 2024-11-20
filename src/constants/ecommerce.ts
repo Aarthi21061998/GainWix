@@ -13,8 +13,8 @@ import Education4 from "../assets/Icons/EducationImage4.svg";
 import Education5 from "../assets/Icons/EducationImage5.svg";
 import Education6 from "../assets/Icons/EducationImage6.svg";
 
-import EcommerceScroll1 from "../assets/Icons/EcommerceScroll.svg"
-import EcommerceScroll2 from "../assets/Icons/Ecommercescroll1.svg"
+import EcommerceScroll1 from "../assets/Icons/ecommerceScroll.svg"
+import EcommerceScroll2 from "../assets/Icons/eScroll1.svg"
 import EcoomerceScroll3 from "../assets/Icons/EcommerceScroll2.svg"
 
 import RetailScroll from "../assets/Icons/RetailScroll.svg"

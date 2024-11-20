@@ -25,7 +25,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
   return (
     <div className="relative group cursor-pointer h-auto">
       <div className="md:py-2.5 flex items-center gap-2.5 md:px-2.5">
-        <p className=" text-[#908EB5]">{data?.title}</p>
+        <p className=" text-[#908EB5] font-Inter font-semibold text-[0.85vw]">
+          {data?.title}
+        </p>
         <div className="group-hover:rotate-180 transition-all ease-linear duration-200">
           <Image src={Arrow} alt="arrow" />
         </div>
@@ -45,7 +47,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
               }`}
             >
               {item.title && (
-                <div className="text-base font-semibold text-[#BBBEC5] md:mb-1 uppercase">
+                <div className="text-base font-semibold text-[#BBBEC5] md:mb-1  font-Inter uppercase">
                   {item.title}
                 </div>
               )}

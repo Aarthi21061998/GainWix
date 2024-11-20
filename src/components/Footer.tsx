@@ -112,7 +112,7 @@ export default function Footer() {
           {FOOTER_LINKS?.map((l) => {
             return (
               <div key={l?.id} className="flex flex-col gap-5">
-                <h4 className="text-[1.3vw]  text-[#908EB5] font-Inter font-medium   ">
+                <h4 className="text-[0.97vw]  text-[#908EB5] font-Inter font-bold   ">
                   {l?.label}
                 </h4>
                 <ul className="flex flex-col">
@@ -121,7 +121,7 @@ export default function Footer() {
                       <Link
                         href={list?.href}
                         key={list?.id}
-                        className="w-full h-8 text-[1vw] font-semibold text-[#55567A] font-Inter hover:text-[white] "
+                        className="w-full h-8 text-[0.87vw] font-medium text-[#55567A] font-Inter hover:text-[#e2deff] "
                       >
                         {list?.label}
                       </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
           })}
         </div>
       </div>
-      <div className="w-full h-20 flex-center gradient-border font-Inter font-medium">
+      <div className="w-full h-20 flex-center gradient-border font-Inter font-medium text-[#908EB5]">
         &copy; GainWix 2024, All Rights Reserved.{" "}
       </div>
     </div>

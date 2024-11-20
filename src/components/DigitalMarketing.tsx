@@ -50,9 +50,9 @@ export default function DigitalMarketing() {
     <div className="bg-[#060A22]">
       <div className="flex flex-col items-center justify-center">
         <div className="flex justify-center text-[3vw] ">
-          <h1 className="text-[3vw] font-Sora font-medium text-[#FFFFFF] py-16 text-center">
+          <h1 className="text-[2.7vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center">
             <p className="pl-10">Hear What our AI powered digital agencies </p>
-            <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent ">
+            <span className=" from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent ">
               say about Gainwix.ai{" "}
             </span>
           </h1>
@@ -64,7 +64,7 @@ export default function DigitalMarketing() {
           <div className="from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r ">
             <div className="p-10 w-[100%] flex fle-row  justify-center">
               <div className="w-[50%] flex flex-col justify-center ">
-                <p className="text-[0.95vw] font-Inter font-medium flex justify-center items-center">
+                <p className="text-[0.85vw] font-Inter font-medium flex justify-center items-center text-[#908eb5]">
                   Aptonworks (Digital Solutions Provider):&nbsp;One of the most
                   impactful decisions we&apos;ve made is transforming into an
                   AI-powered agency, thanks to Gainwix.ai. Their platform has
@@ -93,7 +93,7 @@ export default function DigitalMarketing() {
           <div className="from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r ">
             <div className="p-10 w-[100%] flex fle-row  justify-center">
               <div className="w-[50%] flex flex-col justify-center ">
-                <p className="text-[0.95vw] font-Inter font-medium flex justify-center items-center">
+                <p className="text-[0.95vw] font-Inter font-medium flex justify-center items-center text-[#908eb5]">
                   Aptonworks (Digital Solutions Provider):&nbsp;One of the most
                   impactful decisions we&apos;ve made is transforming into an
                   AI-powered agency, thanks to Gainwix.ai. Their platform has
@@ -122,7 +122,7 @@ export default function DigitalMarketing() {
           <div className="from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r ">
             <div className="p-10 w-[100%] flex fle-row  justify-center">
               <div className="w-[50%] flex flex-col justify-center ">
-                <p className="text-[0.95vw] font-Inter font-medium flex justify-center items-center">
+                <p className="text-[0.85vw] font-Inter font-medium flex justify-center items-center text-[#908eb5]">
                   Aptonworks (Digital Solutions Provider):&nbsp;One of the most
                   impactful decisions we&apos;ve made is transforming into an
                   AI-powered agency, thanks to Gainwix.ai. Their platform has
@@ -133,7 +133,7 @@ export default function DigitalMarketing() {
                   clients appreciate. Gainwix.ai has been a game-changer for our
                   agency.
                 </p>
-                <span className="text-[3vw] mt-5 font-Inter font-medium">
+                <span className="text-[3vw] mt-5 font-Inter font-medium ">
                   Christo
                 </span>
                 <p className="text-[0.85vw] font-Inter font-normal">

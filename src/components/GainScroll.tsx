@@ -30,7 +30,7 @@ const List = [
     content: "Gain Sales",
   },
 ];
-export default function BrandScroll() {
+export default function GainScroll() {
   return (
     <div className="relative overflow-hidden  mx-40">
       <div className="flex  animate-marquee space-x-8">

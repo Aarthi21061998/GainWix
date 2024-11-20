@@ -15,7 +15,10 @@ const config: Config = {
        fontFamily: {
          Sora: ["sora"],
          Inter:["inter"],
-    },
+      },
+        blur: {
+        sm: "4px", // Small blur effect
+      },
     },
   },
   plugins: [],

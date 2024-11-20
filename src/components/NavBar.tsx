@@ -45,7 +45,7 @@ import Education from "../assets/Icons/Education.svg";
 import Retail from "../assets/Icons/Retaile.svg";
 import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
-import Marketing from "../assets/Icons/Marketing1.svg";
+import Marketing from "../assets/Icons/Marketing.svg";
 
 export default function NavBar() {
   const navLink = "text-base font-medium";
@@ -298,7 +298,13 @@ export default function NavBar() {
               {MenuLists?.map((menu: any) => (
                 <MenuItem key={menu?.id} data={menu} type={menu.type} />
               ))}
-              <Link href={"/pricing"} className={cn(navLink, "")}>
+              <Link
+                href={"/pricing"}
+                className={cn(
+                  navLink,
+                  "text-[#908EB5] font-Inter font-semibold text-[0.85vw]"
+                )}
+              >
                 Pricing{" "}
               </Link>{" "}
             </div>

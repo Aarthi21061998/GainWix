@@ -15,12 +15,12 @@
   .btn {
     width: auto;
     height: 3rem;
-    padding: 3px 1.25rem;
+    padding: 6px 1.25rem;
     border: 1px solid #6940f2;
     border-radius: 65px;
     color: #fff;
     transition: all 0.3s linear;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     font-family: "Inter";
   }
@@ -155,14 +155,37 @@
     border-left-width: 1.5px;
     border-style: solid;
     border-image-source: linear-gradient(
-        270deg,
-        rgba(45, 49, 84, 0.5) 0%,
-        #2d3154 44%,
-        rgba(45, 49, 84, 0.5) 100%
+      270deg,
+      rgba(1, 4, 22, 0) 0%,
+      #2d3154 44%,
+      rgba(1, 4, 22, 0) 100%
     );
     border-image-slice: 1;
-}
+  }
 
+  .scroll-container {
+    display: flex; /* Enable horizontal alignment */
+    overflow-x: auto; /* Allow horizontal scrolling */
+    gap: 16px; /* Space between images */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    padding: 16px;
+  }
+
+  .scroll-item {
+    flex: 0 0 auto; /* Prevent items from shrinking */
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none; /* Optional: hide scrollbar for cleaner UI */
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
   /* ul {
     position: relative;

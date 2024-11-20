@@ -12,7 +12,7 @@ export default function Card() {
     <div className="w-full flex flex-row gap-10 justify-center">
       {cardList?.map((data: CardListType) => (
         <div
-          className="w-[25%] h-[48vh] rounded-[50px] border border-[#2D3154] "
+          className="w-[22%] h-[48vh] rounded-[50px] border border-[#2D3154] "
           key={data?.id}
         >
           <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw]  align-center mt-16">
@@ -23,10 +23,10 @@ export default function Card() {
               className="w-[60vw] h-[20vh] flex justify-center items-center"
             />
 
-            <p className="font-Sora font-semibold from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent mb-5 ">
+            <p className="font-Sora font-semibold text-[1.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent mb-5 ">
               {data?.content}
             </p>
-            <span className=" font-Inter font-medium text-[1vw] text-[#908EB5] text-center px-5">
+            <span className=" font-Inter font-medium text-[0.85vw] text-[#908EB5] text-center px-5">
               {data?.content1}
             </span>
           </div>

@@ -52,16 +52,21 @@ export default function Growth() {
         />
         <div className="absolute top-[16vw] left-[24vw] text-[white] ">
           <div className="py-20 flex flex-col align-center items-center justify-center ">
-            <div className=" font-Sora  align-center items-center justify-center xs:text-[3vw] md:text-[3vw] font-bold text-white">
+            <div className=" font-Sora  align-center items-center justify-center xs:text-[3vw] md:text-[3vw] font-semibold text-white">
               Accelerate Growth in
             </div>
-            <p className=" font-Sora  xs:text-[3vw] md:text-[3vw] font-bold font-raleway from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+            <p className=" font-Sora  xs:text-[3vw] md:text-[3vw] font-semibold  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
               Every Way Possible with GainWix.ai{" "}
             </p>
-            <p className="  font fond-semibold text-center w-[auto] max-w-[50vw] text-[#908EB5] mt-4">
-              Leverage Gainwix.ai as your all-in-one platform to streamline your
-              operations and keep your valuable data unified. Avoid the pitfalls
-              of juggling multiple tools and harness the power of AI-driven
+            <p className="  font-Inter fond-semibold text-center text-[0.95vw] text-[#908EB5] mt-4">
+              <p className="xl:w-[45vw] xl:pl-10 text-center md:w-[55vw]">
+                Leverage Gainwix.ai as your all-in-one platform to streamline
+                your operations and keep
+              </p>
+              <p className="w-[47vw]">
+                your valuable data unified. Avoid the pitfalls of juggling
+                multiple tools and harness the power of AI-driven <br />
+              </p>
               insights to achieve your business objectives efficiently.
             </p>
 

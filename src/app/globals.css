@@ -164,19 +164,19 @@
   }
 
   .scroll-container {
-    display: flex; /* Enable horizontal alignment */
-    overflow-x: auto; /* Allow horizontal scrolling */
-    gap: 16px; /* Space between images */
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-behavior: smooth;
     padding: 16px;
   }
 
   .scroll-item {
-    flex: 0 0 auto; /* Prevent items from shrinking */
+    flex: 0 0 auto;
   }
 
   .scroll-container::-webkit-scrollbar {
-    display: none; /* Optional: hide scrollbar for cleaner UI */
+    display: none;
   }
 
   .no-scrollbar::-webkit-scrollbar {
@@ -191,7 +191,25 @@
     opacity: 0;
     transition: opacity 1s ease;
   }
-  
+  #lottie-container-1,
+  #lottie-container-2,
+  #lottie-container-3 {
+    width: 100%;
+    height: 500px;
+    /* margin-left: 6vw; */
+    /* margin-bottom: 100px; */
+  }
+
+  .segment-animation-container {
+  position: relative;
+}
+
+.scroll-container1 {
+  overflow: hidden;
+  width: 50vw;
+  height: 100%;
+}
+
 
   /* ul {
     position: relative;

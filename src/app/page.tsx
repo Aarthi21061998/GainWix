@@ -20,7 +20,6 @@ import card from "../assets/Icons/cardIcon.svg";
 // import LightBackGround from "../assets/Icons/light.svg";
 import HomePage from "../assets/Icons/HomePage.svg";
 import Marketing_first from "../assets/Icons/Strategy Animation.svg";
-import SegmentAnimation from "../assets/Icons/Segment Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
 import Segmentation from "../assets/Icons/Segmentation.svg";
 import Scale from "../assets/Icons/Scale.svg";
@@ -54,6 +53,8 @@ import Image2 from "../assets/Icons/message1.svg";
 import Image3 from "../assets/Icons/messanger.svg";
 import Image4 from "../assets/Icons/whatsapp2.svg";
 import lottie, { AnimationItem } from "lottie-web";
+
+import SegmentAnimation from "@components/SegmentAnimation";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -260,94 +261,94 @@ export default function Home() {
   //   });
   // }, []);
 
-  // useEffect(() => {
-  //   let scrollStopTimeout: ReturnType<typeof setTimeout>;
+  useEffect(() => {
+    let scrollStopTimeout: ReturnType<typeof setTimeout>;
 
-  //   const resetPositions = () => {
-  //     iconsRefs.current.forEach((icon, index) => {
-  //       if (!icon) return; // Skip null entries
-  //       const imageWrapper = icon.querySelector(".image-wrapper");
-  //       if (imageWrapper) {
-  //         const { top, left } = iconPositions[index]; // Get initial positions
-  //         gsap.set(imageWrapper, {
-  //           rotate: 0,
-  //           top,
-  //           left,
-  //         });
-  //       }
-  //     });
-  //     setActiveIcon(null);
-  //   };
+    const resetPositions = () => {
+      iconsRefs.current.forEach((icon, index) => {
+        if (!icon) return; // Skip null entries
+        const imageWrapper = icon.querySelector(".image-wrapper");
+        if (imageWrapper) {
+          const { top, left } = iconPositions[index]; // Get initial positions
+          gsap.set(imageWrapper, {
+            rotate: 0,
+            top,
+            left,
+          });
+        }
+      });
+      setActiveIcon(null);
+    };
 
-  //   const handleScrollStop = () => {
-  //     clearTimeout(scrollStopTimeout);
-  //     scrollStopTimeout = setTimeout(() => {
-  //       resetPositions();
-  //     }, 200); // Delay to consider scrolling stopped
-  //   };
+    const handleScrollStop = () => {
+      clearTimeout(scrollStopTimeout);
+      scrollStopTimeout = setTimeout(() => {
+        resetPositions();
+      }, 200); // Delay to consider scrolling stopped
+    };
 
-  //   const rotationAnimation = gsap.to(rotatingRef.current, {
-  //     rotation: 360,
-  //     scrollTrigger: {
-  //       trigger: rotatingRef.current!,
-  //       start: "top center",
-  //       end: "bottom center",
-  //       scrub: true,
-  //       onUpdate: () => {
-  //         handleScrollStop(); // Trigger scroll stop logic
-  //         iconsRefs.current.forEach((icon) => {
-  //           if (!icon) return;
-  //           const currentRotation = gsap.getProperty(
-  //             rotatingRef.current!,
-  //             "rotation"
-  //           );
-  //           const imageWrapper = icon.querySelector(".image-wrapper");
+    const rotationAnimation = gsap.to(rotatingRef.current, {
+      rotation: 360,
+      scrollTrigger: {
+        trigger: rotatingRef.current!,
+        start: "top center",
+        end: "bottom center",
+        scrub: true,
+        onUpdate: () => {
+          handleScrollStop(); // Trigger scroll stop logic
+          iconsRefs.current.forEach((icon) => {
+            if (!icon) return;
+            const currentRotation = gsap.getProperty(
+              rotatingRef.current!,
+              "rotation"
+            );
+            const imageWrapper = icon.querySelector(".image-wrapper");
 
-  //           if (imageWrapper) {
-  //             gsap.set(imageWrapper, {
-  //               rotate: -currentRotation, // Counter the parent's rotation
-  //             });
-  //           }
-  //         });
+            if (imageWrapper) {
+              gsap.set(imageWrapper, {
+                rotate: -currentRotation, // Counter the parent's rotation
+              });
+            }
+          });
 
-  //         const rightmostIcon = getRightmostIcon();
-  //         if (rightmostIcon) {
-  //           iconsRefs.current.forEach((icon, index: any) => {
-  //             if (icon === rightmostIcon) {
-  //               setActiveIcon(index);
-  //             }
-  //           });
-  //         }
-  //       },
-  //       onLeave: resetPositions, // Reset when scrolling leaves the section
-  //       onEnterBack: resetPositions, // Reset when scrolling back into the section
-  //     },
-  //   });
+          const rightmostIcon = getRightmostIcon();
+          if (rightmostIcon) {
+            iconsRefs.current.forEach((icon, index: any) => {
+              if (icon === rightmostIcon) {
+                setActiveIcon(index);
+              }
+            });
+          }
+        },
+        onLeave: resetPositions, // Reset when scrolling leaves the section
+        onEnterBack: resetPositions, // Reset when scrolling back into the section
+      },
+    });
 
-  //   const getRightmostIcon = () => {
-  //     let rightmostIcon: HTMLDivElement | null = null;
-  //     let maxRight = -Infinity;
+    const getRightmostIcon = () => {
+      let rightmostIcon: HTMLDivElement | null = null;
+      let maxRight = -Infinity;
 
-  //     iconsRefs.current.forEach((icon) => {
-  //       if (!icon) return;
-  //       const rect = icon.getBoundingClientRect();
-  //       const iconRight = rect.left + rect.width;
+      iconsRefs.current.forEach((icon) => {
+        if (!icon) return;
+        const rect = icon.getBoundingClientRect();
+        const iconRight = rect.left + rect.width;
 
-  //       if (iconRight > maxRight) {
-  //         maxRight = iconRight;
-  //         rightmostIcon = icon;
-  //       }
-  //     });
+        if (iconRight > maxRight) {
+          maxRight = iconRight;
+          rightmostIcon = icon;
+        }
+      });
 
-  //     return rightmostIcon;
-  //   };
+      return rightmostIcon;
+    };
 
-  //   return () => {
-  //     if (rotationAnimation) rotationAnimation.kill();
-  //     ScrollTrigger.killAll();
-  //     clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
-  //   };
-  // }, []);
+    return () => {
+      if (rotationAnimation) rotationAnimation.kill();
+      ScrollTrigger.killAll();
+      clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
+    };
+  }, []);
 
   useEffect(() => {
     let animation: AnimationItem | null = null; // Type for Lottie animation
@@ -403,68 +404,6 @@ export default function Home() {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
     };
   }, []);
-
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   let animation;
-  //   const container = document.querySelector(".lottie-container-first");
-  //   const chessTrigger = document.querySelector(".chess-trigger");
-
-  //   if (!container || !chessTrigger) return;
-
-  //   // Initialize Lottie animation
-  //   animation = lottie.loadAnimation({
-  //     container,
-  //     path: "https://lottie.host/embed/56790166-7ae1-4c94-8f4e-165f6174806e/K7k2nGPOoh.json",
-  //     renderer: "svg",
-  //     autoplay: false,
-  //     loop: false,
-  //   });
-
-  //   // Once Lottie is loaded, set up ScrollTriggers
-  //   animation.addEventListener("DOMLoaded", () => {
-  //     console.log("Lottie animation loaded successfully");
-
-  //     // ScrollTrigger for the Lottie animation
-  //     ScrollTrigger.create({
-  //       trigger: ".lottie-container-first",
-  //       start: "top center",
-  //       end: "bottom center",
-  //       scrub: 1,
-  //       onUpdate: (self) => {
-  //         console.log("Animation progress:", self.progress);
-  //         const frame = Math.floor(animation.totalFrames * self.progress);
-  //         animation.goToAndStop(frame, true);
-  //       },
-  //     });
-
-  //     // ScrollTrigger for the chess trigger
-  //     ScrollTrigger.create({
-  //       trigger: ".chess-trigger",
-  //       start: "top center",
-  //       onEnter: () => {
-  //         console.log("Chess trigger entered");
-  //         gsap.to(chessTrigger, { opacity: 1, duration: 1 });
-  //       },
-  //       onLeaveBack: () => {
-  //         console.log("Chess trigger left");
-  //         gsap.to(chessTrigger, { opacity: 0, duration: 1 });
-  //       },
-  //     });
-  //   });
-
-  //   // Handle Lottie animation load error
-  //   animation.addEventListener("error", (e) => {
-  //     console.error("Error loading Lottie animation:", e);
-  //   });
-
-  //   // Cleanup function to destroy animation and kill ScrollTriggers
-  //   return () => {
-  //     if (animation) animation.destroy(); // Destroy Lottie instance
-  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
-  //   };
-  // }, []);
 
   return (
     <div className="w-full h-full bg-[#060A22]">
@@ -590,47 +529,10 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative">
-        <Image src={Strategy} alt="Background" className="w-full h-auto" />
-
-        <div className="w-[100%] overflow-visible flex flex-row px-10 absolute top-44">
-          <div className="w-[50%] flex flex-col justify-center text-[white]">
-            <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
-              Segmentation AI
-            </h1>
-            <p className="text-start pl-20 font-Inter xl:font-normal text-[1vw] leading-8">
-              Accurately segment your audience using AI to deliver personalized
-              messages that resonate, driving higher engagement and conversion
-              rates.
-            </p>
-          </div>
-          <div className="w-[45%] flex justify-center relative">
-            <Image
-              src={SegmentAnimation}
-              alt="marketing1"
-              className="blend-screen"
-            />
-
-            <div className="scroll-container">
-              <div
-                className="lottie-container-first absolute flex justify-center items-center left-[-1vw] top-[4vw]"
-                style={{
-                  width: "100%",
-                  height: "400vh",
-                }}
-              ></div>
-              <div
-                className="chess-trigger absolute top-[15vw] right-[20vw]"
-                style={{
-                  width: "10%",
-                  height: "20px",
-                }}
-              ></div>
-            </div>
-          </div>
-        </div>
+      <div className="">
+        <SegmentAnimation />
       </div>
-      {/* <div className="w-full relative flex flex-row">
+      <div className="w-full relative flex flex-row">
         <div className="relative flex flex-row h-[70vh]">
           <Image src={Scale} alt="" />
 
@@ -707,7 +609,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
       {/* Slider Section */}
       <DigitalMarketing />
       <div className="py-10 ">
@@ -725,14 +627,13 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="w-full flex flex-row gap-5 justify-center">
+        {/* <div className="w-full flex flex-row gap-5 justify-center">
           {MarketingGoalsList?.map((data: MarketingGoalsListType) => (
             <div
               className="w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
               key={data?.id}
             >
               <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw]  align-center mt-16">
-                {/* <Image src={data?.icon} alt="" /> */}
                 <Image
                   src={data?.icon}
                   alt=""
@@ -752,7 +653,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Growth */}
       </div>

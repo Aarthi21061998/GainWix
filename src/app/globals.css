@@ -20,8 +20,8 @@
     border-radius: 65px;
     color: #fff;
     transition: all 0.3s linear;
-    font-size: 20px;
-    font-weight: 600;
+    /* font-size: 20px;
+    font-weight: 600; */
     font-family: "Inter";
   }
   .getButton {
@@ -186,6 +186,12 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .chess-trigger {
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  
 
   /* ul {
     position: relative;

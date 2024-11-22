@@ -27,6 +27,8 @@ import Scale from "../assets/Icons/Scale.svg";
 import scale1 from "../assets/Icons/scal.svg";
 import DigitalMarketing from "@components/DigitalMarketing";
 
+import chessKing from "../assets/Icons/chessKing.png";
+
 import Goals from "@components/Goals";
 import { useEffect, useRef } from "react";
 
@@ -51,6 +53,7 @@ import Image1 from "../assets/Icons/instaMarketing.svg";
 import Image2 from "../assets/Icons/message1.svg";
 import Image3 from "../assets/Icons/messanger.svg";
 import Image4 from "../assets/Icons/whatsapp2.svg";
+import lottie, { AnimationItem } from "lottie-web";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -63,6 +66,13 @@ export default function Home() {
 
   const rotatingRef = useRef(null);
   const iconsRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const iframeRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  let scrollTimeout = null;
+
+  const lottieContainerRef = useRef(null); // Ref for the Lottie container
 
   const [activeIcon, setActiveIcon] = useState(null);
 
@@ -250,94 +260,211 @@ export default function Home() {
   //   });
   // }, []);
 
+  // useEffect(() => {
+  //   let scrollStopTimeout: ReturnType<typeof setTimeout>;
+
+  //   const resetPositions = () => {
+  //     iconsRefs.current.forEach((icon, index) => {
+  //       if (!icon) return; // Skip null entries
+  //       const imageWrapper = icon.querySelector(".image-wrapper");
+  //       if (imageWrapper) {
+  //         const { top, left } = iconPositions[index]; // Get initial positions
+  //         gsap.set(imageWrapper, {
+  //           rotate: 0,
+  //           top,
+  //           left,
+  //         });
+  //       }
+  //     });
+  //     setActiveIcon(null);
+  //   };
+
+  //   const handleScrollStop = () => {
+  //     clearTimeout(scrollStopTimeout);
+  //     scrollStopTimeout = setTimeout(() => {
+  //       resetPositions();
+  //     }, 200); // Delay to consider scrolling stopped
+  //   };
+
+  //   const rotationAnimation = gsap.to(rotatingRef.current, {
+  //     rotation: 360,
+  //     scrollTrigger: {
+  //       trigger: rotatingRef.current!,
+  //       start: "top center",
+  //       end: "bottom center",
+  //       scrub: true,
+  //       onUpdate: () => {
+  //         handleScrollStop(); // Trigger scroll stop logic
+  //         iconsRefs.current.forEach((icon) => {
+  //           if (!icon) return;
+  //           const currentRotation = gsap.getProperty(
+  //             rotatingRef.current!,
+  //             "rotation"
+  //           );
+  //           const imageWrapper = icon.querySelector(".image-wrapper");
+
+  //           if (imageWrapper) {
+  //             gsap.set(imageWrapper, {
+  //               rotate: -currentRotation, // Counter the parent's rotation
+  //             });
+  //           }
+  //         });
+
+  //         const rightmostIcon = getRightmostIcon();
+  //         if (rightmostIcon) {
+  //           iconsRefs.current.forEach((icon, index: any) => {
+  //             if (icon === rightmostIcon) {
+  //               setActiveIcon(index);
+  //             }
+  //           });
+  //         }
+  //       },
+  //       onLeave: resetPositions, // Reset when scrolling leaves the section
+  //       onEnterBack: resetPositions, // Reset when scrolling back into the section
+  //     },
+  //   });
+
+  //   const getRightmostIcon = () => {
+  //     let rightmostIcon: HTMLDivElement | null = null;
+  //     let maxRight = -Infinity;
+
+  //     iconsRefs.current.forEach((icon) => {
+  //       if (!icon) return;
+  //       const rect = icon.getBoundingClientRect();
+  //       const iconRight = rect.left + rect.width;
+
+  //       if (iconRight > maxRight) {
+  //         maxRight = iconRight;
+  //         rightmostIcon = icon;
+  //       }
+  //     });
+
+  //     return rightmostIcon;
+  //   };
+
+  //   return () => {
+  //     if (rotationAnimation) rotationAnimation.kill();
+  //     ScrollTrigger.killAll();
+  //     clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
+  //   };
+  // }, []);
+
   useEffect(() => {
-    let scrollStopTimeout: ReturnType<typeof setTimeout>;
+    let animation: AnimationItem | null = null; // Type for Lottie animation
+    const container =
+      document.querySelector<HTMLDivElement>(".lottie-container");
+    const chessTrigger =
+      document.querySelector<HTMLDivElement>(".chess-trigger");
 
-    const resetPositions = () => {
-      iconsRefs.current.forEach((icon, index) => {
-        if (!icon) return; // Skip null entries
-        const imageWrapper = icon.querySelector(".image-wrapper");
-        if (imageWrapper) {
-          const { top, left } = iconPositions[index]; // Get initial positions
-          gsap.set(imageWrapper, {
-            rotate: 0,
-            top,
-            left,
-          });
-        }
-      });
-      setActiveIcon(null);
-    };
+    if (!container || !chessTrigger) return;
 
-    const handleScrollStop = () => {
-      clearTimeout(scrollStopTimeout);
-      scrollStopTimeout = setTimeout(() => {
-        resetPositions();
-      }, 200); // Delay to consider scrolling stopped
-    };
-
-    const rotationAnimation = gsap.to(rotatingRef.current, {
-      rotation: 360,
-      scrollTrigger: {
-        trigger: rotatingRef.current!,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        onUpdate: () => {
-          handleScrollStop(); // Trigger scroll stop logic
-          iconsRefs.current.forEach((icon) => {
-            if (!icon) return;
-            const currentRotation = gsap.getProperty(
-              rotatingRef.current!,
-              "rotation"
-            );
-            const imageWrapper = icon.querySelector(".image-wrapper");
-
-            if (imageWrapper) {
-              gsap.set(imageWrapper, {
-                rotate: -currentRotation, // Counter the parent's rotation
-              });
-            }
-          });
-
-          const rightmostIcon = getRightmostIcon();
-          if (rightmostIcon) {
-            iconsRefs.current.forEach((icon, index: any) => {
-              if (icon === rightmostIcon) {
-                setActiveIcon(index);
-              }
-            });
-          }
-        },
-        onLeave: resetPositions, // Reset when scrolling leaves the section
-        onEnterBack: resetPositions, // Reset when scrolling back into the section
-      },
+    animation = lottie.loadAnimation({
+      container,
+      path: "https://lottie.host/2b2164f8-cf9d-4976-8569-54d186861111/3wjCimvblG.json",
+      renderer: "svg",
+      autoplay: false,
+      loop: false,
     });
 
-    const getRightmostIcon = () => {
-      let rightmostIcon: HTMLDivElement | null = null;
-      let maxRight = -Infinity;
-
-      iconsRefs.current.forEach((icon) => {
-        if (!icon) return;
-        const rect = icon.getBoundingClientRect();
-        const iconRight = rect.left + rect.width;
-
-        if (iconRight > maxRight) {
-          maxRight = iconRight;
-          rightmostIcon = icon;
-        }
+    animation.addEventListener("DOMLoaded", () => {
+      // ScrollTrigger for the main animation
+      ScrollTrigger.create({
+        trigger: container, // Target the container
+        start: "top center", // Start animation when the top of the container reaches the center of the viewport
+        end: "bottom center", // End when the bottom of the container reaches the center
+        scrub: 1, // Smooth progress linked to scroll
+        onUpdate: (self) => {
+          const progress = self.progress; // Get ScrollTrigger's progress (0 to 1)
+          if (animation) {
+            const frame = Math.floor(animation.totalFrames * progress); // Map progress to frames
+            animation.goToAndStop(frame, true); // Jump to the appropriate frame
+          }
+        },
       });
 
-      return rightmostIcon;
-    };
+      // ScrollTrigger for showing the chess icon
+      ScrollTrigger.create({
+        trigger: chessTrigger, // Target the chess section div
+        start: "top center", // When this div reaches the center of the viewport
+        onEnter: () => {
+          // Make the chess div visible when it enters the viewport
+          gsap.to(chessTrigger, { opacity: 1, duration: 1 });
+        },
+        onLeaveBack: () => {
+          // Hide the chess div again when scrolling back
+          gsap.to(chessTrigger, { opacity: 0, duration: 1 });
+        },
+      });
+    });
 
+    // Cleanup on component unmount
     return () => {
-      if (rotationAnimation) rotationAnimation.kill();
-      ScrollTrigger.killAll();
-      clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
+      if (animation) animation.destroy(); // Destroy Lottie instance
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
     };
   }, []);
+
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
+
+  //   let animation;
+  //   const container = document.querySelector(".lottie-container-first");
+  //   const chessTrigger = document.querySelector(".chess-trigger");
+
+  //   if (!container || !chessTrigger) return;
+
+  //   // Initialize Lottie animation
+  //   animation = lottie.loadAnimation({
+  //     container,
+  //     path: "https://lottie.host/embed/56790166-7ae1-4c94-8f4e-165f6174806e/K7k2nGPOoh.json",
+  //     renderer: "svg",
+  //     autoplay: false,
+  //     loop: false,
+  //   });
+
+  //   // Once Lottie is loaded, set up ScrollTriggers
+  //   animation.addEventListener("DOMLoaded", () => {
+  //     console.log("Lottie animation loaded successfully");
+
+  //     // ScrollTrigger for the Lottie animation
+  //     ScrollTrigger.create({
+  //       trigger: ".lottie-container-first",
+  //       start: "top center",
+  //       end: "bottom center",
+  //       scrub: 1,
+  //       onUpdate: (self) => {
+  //         console.log("Animation progress:", self.progress);
+  //         const frame = Math.floor(animation.totalFrames * self.progress);
+  //         animation.goToAndStop(frame, true);
+  //       },
+  //     });
+
+  //     // ScrollTrigger for the chess trigger
+  //     ScrollTrigger.create({
+  //       trigger: ".chess-trigger",
+  //       start: "top center",
+  //       onEnter: () => {
+  //         console.log("Chess trigger entered");
+  //         gsap.to(chessTrigger, { opacity: 1, duration: 1 });
+  //       },
+  //       onLeaveBack: () => {
+  //         console.log("Chess trigger left");
+  //         gsap.to(chessTrigger, { opacity: 0, duration: 1 });
+  //       },
+  //     });
+  //   });
+
+  //   // Handle Lottie animation load error
+  //   animation.addEventListener("error", (e) => {
+  //     console.error("Error loading Lottie animation:", e);
+  //   });
+
+  //   // Cleanup function to destroy animation and kill ScrollTriggers
+  //   return () => {
+  //     if (animation) animation.destroy(); // Destroy Lottie instance
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger instances
+  //   };
+  // }, []);
 
   return (
     <div className="w-full h-full bg-[#060A22]">
@@ -364,7 +491,9 @@ export default function Home() {
         </h1>
       </div>
       <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12">
-        <button className="btn btn_primary">Request Demo</button>
+        <button className="btn btn_primary text-[0.95vw] font-bold">
+          Request Demo
+        </button>
         <button>
           <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
             <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
@@ -423,14 +552,25 @@ export default function Home() {
               alt="marketing1"
               className="w-full h-auto blend-screen"
             />
-            {/* <div className="absolute  flex justify-center items-center"> */}
-            {/* <Image src={Video} alt="" className="w-[30vw] h-[55vh]" /> */}
 
-            <iframe
-              src="https://lottie.host/embed/2b2164f8-cf9d-4976-8569-54d186861111/3wjCimvblG.json"
-              className="absolute right-[6vw] top-[1vw]  w-[30vw] h-[55vh]"
-            ></iframe>
-            {/* </div> */}
+            <div className="scroll-container">
+              <div
+                className="lottie-container absolute  flex justify-center items-center left-[-1vw] top-[2vw]"
+                style={{
+                  width: "100%",
+                  height: "400px",
+                }}
+              ></div>
+              <div
+                className="chess-trigger absolute top-[11vw] right-[18vw]"
+                style={{
+                  width: "8vw",
+                  height: "20px",
+                }}
+              >
+                <Image src={chessKing} alt="" />
+              </div>
+            </div>
             <div
               className=" absolute top-16  flex justify-center items-center z-40 opacity-0"
               ref={travelDivRef}
@@ -450,48 +590,56 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative flex flex-row ">
-        <Image src={Segmentation} alt="" />
+      <div className="relative">
+        <Image src={Strategy} alt="Background" className="w-full h-auto" />
 
-        <div className="w-[100%] flex flex-row px-40 absolute top-10 ">
-          <div className="w-[45%] flex flex-col justify-center text-[white]">
+        <div className="w-[100%] overflow-visible flex flex-row px-10 absolute top-44">
+          <div className="w-[50%] flex flex-col justify-center text-[white]">
             <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
               Segmentation AI
             </h1>
-            <p className=" text-start pl-20 font-Inter xl:font-normal  text-[1vw] leading-8">
+            <p className="text-start pl-20 font-Inter xl:font-normal text-[1vw] leading-8">
               Accurately segment your audience using AI to deliver personalized
               messages that resonate, driving higher engagement and conversion
               rates.
             </p>
           </div>
-          <div className="w-[55%] flex justify-center ">
+          <div className="w-[45%] flex justify-center relative">
             <Image
               src={SegmentAnimation}
               alt="marketing1"
-              ref={segmentImageRef}
-              className="blend-screen "
+              className="blend-screen"
             />
-          </div>
-          <div className="rounded-full">
-            <iframe
-              src="https://lottie.host/embed/56790166-7ae1-4c94-8f4e-165f6174806e/K7k2nGPOoh.json"
-              className="absolute right-[17.3vw] top-[3vw]  w-[30vw] h-[55vh]"
-            ></iframe>
+
+            <div className="scroll-container">
+              <div
+                className="lottie-container-first absolute flex justify-center items-center left-[-1vw] top-[4vw]"
+                style={{
+                  width: "100%",
+                  height: "400vh",
+                }}
+              ></div>
+              <div
+                className="chess-trigger absolute top-[15vw] right-[20vw]"
+                style={{
+                  width: "10%",
+                  height: "20px",
+                }}
+              ></div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="w-full relative flex flex-row">
+      {/* <div className="w-full relative flex flex-row">
         <div className="relative flex flex-row h-[70vh]">
           <Image src={Scale} alt="" />
 
           <div className="w-[100%] flex flex-row px-40 absolute top-10 gap-10">
             <div className="w-[45%] flex justify-center blend-screen ">
               <div className="relative">
-                {/* Rotating Elements */}
                 <div ref={rotatingRef} className="relative flex flex-row">
                   <Image src={scale1} alt="" className="" />
 
-                  {/* Icons */}
                   {["instagram", "message", "whatsapp", "facebook"].map(
                     (icon, index) => (
                       <div
@@ -559,7 +707,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* Slider Section */}
       <DigitalMarketing />
       <div className="py-10 ">

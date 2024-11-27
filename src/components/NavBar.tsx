@@ -206,7 +206,7 @@ export default function NavBar() {
       subMenu: [
         {
           id: 1,
-          title: "Platform",
+          title: "Industries",
           width: "md",
           list: [
             {

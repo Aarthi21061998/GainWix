@@ -23,8 +23,8 @@ interface MenuItemProps {
 
 const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
   return (
-    <div className="relative group cursor-pointer h-auto">
-      <div className="md:py-2.5 flex items-center gap-2.5 md:px-2.5">
+    <div className="relative group cursor-pointer h-auto ">
+      <div className="md:py-2.5 flex items-center  md:px-2.5">
         <p className=" text-[#908EB5] font-Inter font-semibold text-[0.85vw]">
           {data?.title}
         </p>
@@ -34,11 +34,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
       </div>
 
       {data?.subMenu.length > 0 && (
-        <div className="md:w-[862px]  lg:absolute  lg:right-[-40vw] md:p-5 bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex ">
+        <div className="md:w-[620px]   lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
           {data.subMenu.map((item) => (
             <div
               key={item.id}
-              className={`w-full md:p-10 xs:p-5 ${
+              className={`w-full md:p-5 xs:p-5 ${
                 data.type === "single"
                   ? "border-r border-r-[#D1D3D8] last:border-r-0 mr-5 last:mr-0 last:ml-5"
                   : data.type === "multiple"

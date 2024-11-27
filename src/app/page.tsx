@@ -54,7 +54,10 @@ import Image3 from "../assets/Icons/messanger.svg";
 import Image4 from "../assets/Icons/whatsapp2.svg";
 import lottie, { AnimationItem } from "lottie-web";
 
+import homeBg from "../assets/Icons/Home Screen bg.svg";
+
 import SegmentAnimation from "@components/SegmentAnimation";
+import ScaleThorugh from "@components/ScaleThorugh";
 
 export default function Home() {
   const imageRef = useRef<HTMLImageElement | null>(null);
@@ -85,10 +88,10 @@ export default function Home() {
     setActiveIcon(null);
   };
   const iconPositions = [
-    { top: "-1vw", left: "14vw" },
-    { top: "8vw", left: "6vw" },
-    { top: "15vw", left: "14vw" },
-    { top: "8vw", left: "20vw" },
+    { top: "1vw", left: "14vw" },
+    { top: "7vw", left: "6vw" },
+    { top: "12vw", left: "12vw" },
+    { top: "7vw", left: "20vw" },
   ];
 
   const icons = [
@@ -261,103 +264,135 @@ export default function Home() {
   //   });
   // }, []);
 
-  useEffect(() => {
-    let scrollStopTimeout: ReturnType<typeof setTimeout>;
+  // useEffect(() => {
+  //   let scrollStopTimeout: ReturnType<typeof setTimeout>;
 
-    const resetPositions = () => {
-      iconsRefs.current.forEach((icon, index) => {
-        if (!icon) return; // Skip null entries
-        const imageWrapper = icon.querySelector(".image-wrapper");
-        if (imageWrapper) {
-          const { top, left } = iconPositions[index]; // Get initial positions
-          gsap.set(imageWrapper, {
-            rotate: 0,
-            top,
-            left,
-          });
-        }
-      });
-      setActiveIcon(null);
-    };
+  //   const resetPositions = () => {
+  //     iconsRefs.current.forEach((icon, index) => {
+  //       if (!icon) return;
+  //       const imageWrapper = icon.querySelector(".image-wrapper");
 
-    const handleScrollStop = () => {
-      clearTimeout(scrollStopTimeout);
-      scrollStopTimeout = setTimeout(() => {
-        resetPositions();
-      }, 200); // Delay to consider scrolling stopped
-    };
+  //       // Reset position only if it's not the active icon
+  //       if (imageWrapper && index !== activeIcon) {
+  //         const { top, left } = iconPositions[index];
+  //         gsap.set(imageWrapper, {
+  //           rotation: 0,
+  //           top,
+  //           left,
+  //         });
+  //       }
+  //     });
 
-    const rotationAnimation = gsap.to(rotatingRef.current, {
-      rotation: 360,
-      scrollTrigger: {
-        trigger: rotatingRef.current!,
-        start: "top center",
-        end: "bottom center",
-        scrub: true,
-        onUpdate: () => {
-          handleScrollStop(); // Trigger scroll stop logic
-          iconsRefs.current.forEach((icon) => {
-            if (!icon) return;
-            const currentRotation = gsap.getProperty(
-              rotatingRef.current!,
-              "rotation"
-            );
-            const imageWrapper = icon.querySelector(".image-wrapper");
+  //     // Only reset the active icon's position if it's not active
+  //     if (activeIcon !== null) {
+  //       const activeIconElement = iconsRefs.current[activeIcon];
+  //       const imageWrapper = activeIconElement?.querySelector(".image-wrapper");
 
-            if (imageWrapper) {
-              gsap.set(imageWrapper, {
-                rotate: -currentRotation, // Counter the parent's rotation
-              });
-            }
-          });
+  //       if (imageWrapper) {
+  //         gsap.set(imageWrapper, {
+  //           rotation: 0,
+  //         });
+  //       }
+  //     }
 
-          const rightmostIcon = getRightmostIcon();
-          if (rightmostIcon) {
-            iconsRefs.current.forEach((icon, index: any) => {
-              if (icon === rightmostIcon) {
-                setActiveIcon(index);
-              }
-            });
-          }
-        },
-        onLeave: resetPositions, // Reset when scrolling leaves the section
-        onEnterBack: resetPositions, // Reset when scrolling back into the section
-      },
-    });
+  //     gsap.set(rotatingRef.current, { rotation: 0 });
+  //     setActiveIcon(null); // Optionally reset active icon after reset
+  //   };
 
-    const getRightmostIcon = () => {
-      let rightmostIcon: HTMLDivElement | null = null;
-      let maxRight = -Infinity;
+  //   const handleScrollStop = () => {
+  //     clearTimeout(scrollStopTimeout);
+  //     scrollStopTimeout = setTimeout(() => {
+  //       resetPositions();
+  //     }, 200);
+  //   };
 
-      iconsRefs.current.forEach((icon) => {
-        if (!icon) return;
-        const rect = icon.getBoundingClientRect();
-        const iconRight = rect.left + rect.width;
+  //   const rotationAnimation = gsap.to(rotatingRef.current, {
+  //     rotation: 360,
+  //     scrollTrigger: {
+  //       trigger: rotatingRef.current!,
+  //       start: "top center",
+  //       end: "bottom center",
+  //       scrub: true,
+  //       onUpdate: () => {
+  //         handleScrollStop();
 
-        if (iconRight > maxRight) {
-          maxRight = iconRight;
-          rightmostIcon = icon;
-        }
-      });
+  //         iconsRefs.current.forEach((icon) => {
+  //           if (!icon) return;
+  //           const currentRotation = gsap.getProperty(
+  //             rotatingRef.current!,
+  //             "rotation"
+  //           );
+  //           const imageWrapper = icon.querySelector(".image-wrapper");
 
-      return rightmostIcon;
-    };
+  //           if (imageWrapper) {
+  //             gsap.set(imageWrapper, {
+  //               rotation: -currentRotation,
+  //             });
+  //           }
+  //         });
 
-    return () => {
-      if (rotationAnimation) rotationAnimation.kill();
-      ScrollTrigger.killAll();
-      clearTimeout(scrollStopTimeout); // Clear the timeout on unmount
-    };
-  }, []);
+  //         const rightmostIcon = getRightmostIcon();
+  //         if (rightmostIcon) {
+  //           iconsRefs.current.forEach((icon, index: any) => {
+  //             if (icon === rightmostIcon) {
+  //               setActiveIcon(index);
+  //             }
+  //           });
+  //         }
+  //       },
+  //       onLeave: resetPositions,
+  //       onEnterBack: resetPositions,
+  //     },
+  //   });
+
+  //   const getRightmostIcon = () => {
+  //     let rightmostIcon: HTMLDivElement | null = null;
+  //     let maxRight = -Infinity;
+
+  //     iconsRefs.current.forEach((icon) => {
+  //       if (!icon) return;
+  //       const rect = icon.getBoundingClientRect();
+  //       const iconRight = rect.left + rect.width;
+
+  //       if (iconRight > maxRight) {
+  //         maxRight = iconRight;
+  //         rightmostIcon = icon;
+  //       }
+  //     });
+
+  //     return rightmostIcon;
+  //   };
+
+  //   return () => {
+  //     if (rotationAnimation) rotationAnimation.kill();
+  //     ScrollTrigger.killAll();
+  //     clearTimeout(scrollStopTimeout);
+  //   };
+  // }, []);
+
+  // const resetToInitialPosition = () => {
+  //   gsap.set(rotatingRef.current, { rotation: 0 });
+  //   iconsRefs.current.forEach((icon, index) => {
+  //     if (!icon) return;
+  //     const imageWrapper = icon.querySelector(".image-wrapper");
+  //     if (imageWrapper) {
+  //       const { top, left } = iconPositions[index];
+  //       gsap.set(imageWrapper, {
+  //         rotation: 0,
+  //         top,
+  //         left,
+  //       });
+  //     }
+  //   });
+  //   setActiveIcon(null);
+  // };
 
   useEffect(() => {
     let animation: AnimationItem | null = null; // Type for Lottie animation
     const container =
       document.querySelector<HTMLDivElement>(".lottie-container");
-    const chessTrigger =
-      document.querySelector<HTMLDivElement>(".chess-trigger");
 
-    if (!container || !chessTrigger) return;
+    if (!container) return;
 
     animation = lottie.loadAnimation({
       container,
@@ -381,19 +416,17 @@ export default function Home() {
             animation.goToAndStop(frame, true); // Jump to the appropriate frame
           }
         },
-      });
-
-      // ScrollTrigger for showing the chess icon
-      ScrollTrigger.create({
-        trigger: chessTrigger, // Target the chess section div
-        start: "top center", // When this div reaches the center of the viewport
-        onEnter: () => {
-          // Make the chess div visible when it enters the viewport
-          gsap.to(chessTrigger, { opacity: 1, duration: 1 });
+        onLeave: () => {
+          // Triggered when leaving the scroll range
+          if (animation) {
+            animation.goToAndStop(animation.totalFrames - 1, true); // Display only the chess icon
+          }
         },
-        onLeaveBack: () => {
-          // Hide the chess div again when scrolling back
-          gsap.to(chessTrigger, { opacity: 0, duration: 1 });
+        onEnterBack: () => {
+          // Re-entering the scroll range
+          if (animation) {
+            animation.goToAndStop(0, true); // Reset to the first frame
+          }
         },
       });
     });
@@ -406,73 +439,77 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full h-full bg-[#060A22]">
-      <div className="w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10  ">
-        <h1 className="text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
-          <p className="text-center ">Transform your digital marketing</p>
-          with awesome data-driven
-          <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
-            {" "}
-            Generative AI
-          </span>
-        </h1>
-      </div>
-      <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora xl:mt-12">
-        <h1 className="text-[1vw] font-medium text-[#D7DEDA] -mt-14 font-Inter ">
-          <p>
-            Say goodbye to fragmented, ineffective marketing. Transforming your
-            agency into a Cutting-edge, AI-powered
-          </p>
-          <p className="pl-14">
-            powerhouse. Experience a seamless, data-driven approach that drives
-            Real results.
-          </p>
-        </h1>
-      </div>
-      <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12">
-        <button className="btn btn_primary text-[0.95vw] font-bold">
-          Request Demo
-        </button>
-        <button>
-          <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
-            <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-            <p className="text-[1.05vw] text-[#FFFFFF] font-Inter">
-              Tech Partner
-            </p>
-          </div>
-        </button>
-      </div>
-      <div
-        className="relative"
-        style={{
-          width: "100%",
-          height: "auto",
-        }}
-      >
-        <Image src={HomePage} alt="" className="" />{" "}
-      </div>
+    <div className="w-full h-full bg-[#060A22] w-100 flex flex-col justify-center">
       <Image
-        src={MainImage}
-        alt="home"
-        ref={imageRef}
-        className="absolute top-[20vw]"
-        style={{
-          width: "100%",
-          height: "auto",
-          objectFit: "cover",
-        }}
+        src={homeBg}
+        alt=""
+        className=" relative w-full "
+        style={{ opacity: "0.25" }}
       />
+      <div className=" w-[100vw]  absolute top-10  ">
+        <div className="w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 ">
+          <h1 className="text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
+            <p className="text-center ">Transform your digital marketing</p>
+            with awesome data-driven
+            <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
+              {" "}
+              Generative AI
+            </span>
+          </h1>
+        </div>
+        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora xl:mt-12">
+          <h1 className="text-[1vw] font-medium text-[#D7DEDA] -mt-14 font-Inter ">
+            <p>
+              Say goodbye to fragmented, ineffective marketing. Transforming
+              your agency into a Cutting-edge, AI-powered
+            </p>
+            <p className="pl-14">
+              powerhouse. Experience a seamless, data-driven approach that
+              drives Real results.
+            </p>
+          </h1>
+        </div>
+        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12">
+          <button className="btn btn_primary text-[0.95vw] font-bold">
+            Request Demo
+          </button>
+          <button>
+            <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
+              <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
+              <p className="text-[1.05vw] text-[#FFFFFF] font-Inter">
+                Tech Partner
+              </p>
+            </div>
+          </button>
+        </div>
+        <div className="">
+          <Image
+            src={MainImage}
+            alt="home"
+            ref={imageRef}
+            className="absolute top-[25vw]"
+            style={{
+              width: "100vw !important",
+              height: "auto",
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      </div>
       <div
         ref={divRef}
         className="overflow-hidden absolute top-[49vw] left-[34vw] w-[32vw] h-[44vh]  z-50"
-      >
-        <Image src={Header} alt="" />
-      </div>{" "}
+      ></div>
       <div className="py-10 h-[120vh]">
         <Goals />
       </div>
       <div className="relative">
-        <Image src={Strategy} alt="Background" className="w-full h-auto" />
+        <Image
+          src={Strategy}
+          alt="Background"
+          className="w-full h-auto "
+          style={{ opacity: "0.75" }}
+        />
         <div className="flex flex-col items-center justify-center">
           <div className="flex justify-center text-[3vw] font-medium font-Sora absolute top-4">
             <h1 className="text-[3vw] font-semibold font-Sora text-[#FFFFFF] pt-16">
@@ -484,31 +521,22 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-[100%] overflow-visible flex flex-row  px-10 absolute top-44">
-          <div className="w-[45%] flex justify-center relative ">
+        <div className="w-[100%] overflow-visible flex flex-row   justify-center absolute top-44 ">
+          <div className=" flex relative  ">
             <Image
               src={Marketing_first}
               alt="marketing1"
-              className="w-full h-auto blend-screen"
+              className="w-[50vw]!important h-auto blend-screen "
             />
 
             <div className="scroll-container">
               <div
-                className="lottie-container absolute  flex justify-center items-center left-[-1vw] top-[2vw]"
+                className="lottie-container absolute  flex justify-center items-center right-[-8vw] top-[6vw]"
                 style={{
-                  width: "100%",
-                  height: "400px",
+                  width: "70vw",
+                  height: "410px",
                 }}
               ></div>
-              <div
-                className="chess-trigger absolute top-[11vw] right-[18vw]"
-                style={{
-                  width: "8vw",
-                  height: "20px",
-                }}
-              >
-                <Image src={chessKing} alt="" />
-              </div>
             </div>
             <div
               className=" absolute top-16  flex justify-center items-center z-40 opacity-0"
@@ -517,11 +545,11 @@ export default function Home() {
               <Image src={Header} alt="" className="w-80 h-80" />
             </div>
           </div>
-          <div className="w-[50%] flex flex-col justify-center  text-[white]">
+          <div className="w-[60%] flex flex-col justify-center  text-[white]">
             <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
               Strategy AI
             </h1>
-            <p className="w-[60%] pl-20 font-Inter font-normal text-[1vw] leading-8">
+            <p className="w-[60%] pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
               Create intelligent, data-driven strategies that respond to
               evolving market trends and customer behavior, ensuring alignment
               with your strategic goals & objectives.
@@ -532,68 +560,50 @@ export default function Home() {
       <div className="">
         <SegmentAnimation />
       </div>
-      <div className="w-full relative flex flex-row">
+
+      {/* <div className="w-full relative flex flex-row">
         <div className="relative flex flex-row h-[70vh]">
           <Image src={Scale} alt="" />
 
           <div className="w-[100%] flex flex-row px-40 absolute top-10 gap-10">
             <div className="w-[45%] flex justify-center blend-screen ">
-              <div className="relative">
-                <div ref={rotatingRef} className="relative flex flex-row">
-                  <Image src={scale1} alt="" className="" />
+              <div
+                ref={rotatingRef}
+                className="relative flex flex-row blend-screen"
+                onMouseEnter={() => resetToInitialPosition()}
+              >
+                <Image src={scale1} alt="" className="" />
 
-                  {["instagram", "message", "whatsapp", "facebook"].map(
-                    (icon, index) => (
-                      <div
-                        key={index}
-                        ref={(el) => {
-                          iconsRefs.current[index] = el;
-                        }}
-                        className="circle-image absolute"
-                        style={{
-                          top: iconPositions[index].top,
-                          left: iconPositions[index].left,
-                        }}
-                      >
-                        <div className="image-wrapper">
-                          {activeIcon === index ? (
-                            icon === "instagram" ? (
-                              <Image src={inst1} alt="Instagram" />
-                            ) : icon === "message" ? (
-                              <Image src={mess} alt="Message" />
-                            ) : icon === "whatsapp" ? (
-                              <Image src={whats1} alt="WhatsApp" />
-                            ) : icon === "facebook" ? (
-                              <Image src={Fbook} alt="Facebook" />
-                            ) : null
-                          ) : (
-                            <Image src={icons[index].src} alt={icon} />
-                          )}
-                        </div>
+                {["instagram", "message", "whatsapp", "facebook"].map(
+                  (icon, index) => (
+                    <div
+                      key={index}
+                      ref={(el) => {
+                        iconsRefs.current[index] = el;
+                      }}
+                      className="circle-image absolute"
+                      style={{
+                        top: iconPositions[index].top,
+                        left: iconPositions[index].left,
+                      }}
+                    >
+                      <div className="image-wrapper">
+                        {activeIcon === index ? (
+                          icon === "instagram" ? (
+                            <Image src={inst1} alt="Instagram" />
+                          ) : icon === "message" ? (
+                            <Image src={mess} alt="Message" />
+                          ) : icon === "whatsapp" ? (
+                            <Image src={whats1} alt="WhatsApp" />
+                          ) : icon === "facebook" ? (
+                            <Image src={Fbook} alt="Facebook" />
+                          ) : null
+                        ) : (
+                          <Image src={icons[index].src} alt={icon} />
+                        )}
                       </div>
-                    )
-                  )}
-                </div>
-
-                {activeIcon !== null && (
-                  <div
-                    className="absolute left-[28vw] "
-                    style={{
-                      top: iconPositions[activeIcon].top,
-                      left: iconPositions[activeIcon].left + 50, // Add offset to place the content to the right
-                      zIndex: 5, // Ensure the content is above the icon
-                      width: 150,
-                      height: 200,
-                    }}
-                  >
-                    <div className=" absolute ">
-                      <Image
-                        src={icons[activeIcon]?.img}
-                        alt={icons[activeIcon]?.alt || ""}
-                        className="rounded "
-                      />
-                    </div>{" "}
-                  </div>
+                    </div>
+                  )
                 )}
               </div>
             </div>
@@ -609,7 +619,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <ScaleThorugh />
       {/* Slider Section */}
       <DigitalMarketing />
       <div className="py-10 ">
@@ -626,8 +638,7 @@ export default function Home() {
             </span>
           </h1>
         </div>
-
-        {/* <div className="w-full flex flex-row gap-5 justify-center">
+        <div className="w-full flex flex-row gap-5 justify-center">
           {MarketingGoalsList?.map((data: MarketingGoalsListType) => (
             <div
               className="w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
@@ -653,9 +664,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div> */}
-
-        {/* Growth */}
+        </div>
       </div>
       <Growth />
     </div>

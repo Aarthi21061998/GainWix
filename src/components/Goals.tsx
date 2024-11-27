@@ -3,8 +3,11 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Goal from "../assets/Icons/Goal.svg";
-import goals3 from "../assets/Icons/goals3.svg";
+import EmptyBg from "../assets/Icons/emptybento.svg";
+import bentoBg from "../assets/Icons/bento bg.svg";
+import bentoBackGround from "../assets/Icons/bentoBackGround.svg";
+
+import light from "../assets/Icons/Lights.svg";
 export default function Goals() {
   const goalImageRef = useRef(null);
   const strategyImageRef = useRef(null);
@@ -38,19 +41,31 @@ export default function Goals() {
         </h1>
       </div>
 
-      <div className="relative w-full h-[50vh] flex justify-center">
+      <div className="relative w-full h-[100vh] flex  ">
         <div
           className="absolute w-full h-full flex justify-center"
           ref={goalImageRef}
         >
-          <Image src={Goal} alt="goal" className="w-[50vw] h-[30vh]" />
+          <Image src={EmptyBg} alt="goal" className="w-[70vw] h-[70vh]" />
         </div>
 
         <div
-          className="absolute w-full h-full flex justify-center opacity-0"
+          className=" w-full h-full flex justify-center opacity-0"
           ref={strategyImageRef}
         >
-          <Image src={goals3} alt="strategy" className="w-[100vw] h-[70vh]" />
+          <Image src={bentoBg} alt="" className=" opacity-0" />
+
+          <div className="absolute ">
+            {/* <Image
+              src={light}
+              alt=""
+              className="w-[14vw] h-[25vh]  blend-screen "
+            /> */}
+            <Image src={bentoBackGround} alt="" className="w-[60vw]" />
+          </div>
+          {/* <div className=" absolute top-[7vh] right-[44.5vw] ">
+            <Image src={center} alt="strategy" className="w-[10vw] h-[72vh]" />
+          </div> */}
         </div>
       </div>
     </div>

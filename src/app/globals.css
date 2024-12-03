@@ -24,6 +24,7 @@
     font-weight: 600; */
     font-family: "Inter";
     font-weight: 600;
+    margin-right: 10px;
   }
   .getButton {
     width: auto;
@@ -94,16 +95,16 @@
 
   .number-slide1 > div {
     /* border: 1px solid red; */
-    width: 60vw !important;
-    height: 50vh;
+    /* width: 60vw !important; */
+    /* height: 50vh; */
     border-radius: 22px;
   }
 
-  .number-slide2 {
+  /* .number-slide2 {
     width: 60vw !important;
     height: 50vh;
     border-radius: 22px;
-  }
+  } */
 
   .number-slide3 {
     background: rgb(182, 255, 64);
@@ -151,19 +152,11 @@
   }
 
   .gradient-border2 {
-    min-height: 100px;
-    width: 100px;
-    border-left-width: 1.5px;
-    border-style: solid;
-    border-image-source: linear-gradient(
-      270deg,
-      rgba(1, 4, 22, 0) 0%,
-      #2d3154 44%,
-      rgba(1, 4, 22, 0) 100%
-    );
-    border-image-slice: 1;
+    border-bottom-width: 1.5px !important;
+    border-style: solid !important;
+    border-image-source: red;
+    border-image-slice: 2 !important;
   }
-
   .scroll-container {
     display: flex;
     overflow-x: auto;
@@ -227,6 +220,23 @@
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background:var(--clr);
   } */
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .text-ellipsis {
+    display: inline-block;
+    max-width: 12ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 
 @font-face {

@@ -19,6 +19,14 @@ const config: Config = {
         blur: {
         sm: "4px", // Small blur effect
       },
+         screens: {
+      xs: "320px",
+      sm: "640px",
+      md: "768px",
+      lg: "992px",
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     },
   },
   plugins: [],

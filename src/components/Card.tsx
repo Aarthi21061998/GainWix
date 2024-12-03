@@ -2,31 +2,27 @@
 
 import Image from "next/image";
 
-// import image from "../assets/Icons/1st.svg";
-// import image1 from "../assets/Icons/second.svg";
-// import image2 from "../assets/Icons/3rd.svg";
 import { CardListType, cardList } from "@constants/home";
 
 export default function Card() {
   return (
-    <div className="w-full flex flex-row gap-10 justify-center">
+    <div className="xl:w-full flex flex-row gap-10 justify-start overflow-x-auto xs:w-[90vw]  xl:min-h-[50vw] xs:m-auto xs:justify-start md:justify-center md:items-center ">
       {cardList?.map((data: CardListType) => (
         <div
-          className="w-[22%] h-[48vh] rounded-[50px] border border-[#2D3154] "
+          className="xs:w-[70vw]  md:w-[26vw] md:h-[30vh] xs:h-[40vh] lg:w-[30%] lg:h-[40vh] xl:w-[30%] xl:h-[58vh] xs:rounded-[30px] lg:rounded-[50px] border border-[#2D3154] flex-shrink-0  "
           key={data?.id}
         >
-          <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw]  align-center mt-16">
-            {/* <Image src={data?.icon} alt="" /> */}
+          <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] align-center xl:mt-16">
             <Image
               src={data?.icon}
               alt=""
-              className="w-[60vw] h-[20vh] flex justify-center items-center"
+              className="xl:w-[60vw] xl:h-[20vh]  md:w-[50vw] md:h-[20vh] xs:w-[50vw] flex justify-center items-center"
             />
 
-            <p className="font-Sora font-semibold text-[1.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent mb-5 ">
+            <p className="font-Sora font-semibold xs:text-[4vw] md:text-[1.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent mb-5 justify-center items-center ">
               {data?.content}
             </p>
-            <span className=" font-Inter font-medium text-[0.85vw] text-[#908EB5] text-center px-5">
+            <span className="font-Inter font-medium xs:text-[3vw] md:text-[0.85vw] lg:text-[1vw] text-[#908EB5] text-center  lg:px-5 xs:px-1">
               {data?.content1}
             </span>
           </div>

@@ -15,15 +15,15 @@ export default function MenuListCard(props: any) {
         {...prop}
       >
         <div className=" flex-column items-center">
-          <div className="flex items-center w-[15vw] h-[6vh] ">
+          <div className="flex items-center   xl:w-[15vw] xl:h-[6vh] ">
             {data?.icon && <Image src={data?.icon} alt="icon" className=" " />}
 
-            <div className="md:text-[1vw] xs:text-[3.5vw] font-semibold font-Inter text-[#908EB5]   ">
+            <div className=" xs:w-[44vw] xl:text-[1vw] lg:text-[2vw]  xs:text-[3.5vw] md:text-[2.5vw] font-semibold font-Inter text-[#908EB5]   ">
               {data?.title}
             </div>
           </div>
           {data?.content && (
-            <div className="md:text-[13px] font-medium text-[#616874] md:pl-14 -mt-5 pt-6  xs:text-[3.5vw] md:w-[20vw] xs:w-[80vw]">
+            <div className="md:text-[13px] font-medium text-[#616874] md:pl-14 -mt-5  xs:pt-1 lg:pt-6  xs:text-[3.5vw] md:w-[40vw] lg:w-[30vw] xs:w-[80vw]">
               {data?.content}
             </div>
           )}

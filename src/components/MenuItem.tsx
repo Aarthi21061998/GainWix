@@ -25,7 +25,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
   return (
     <div className="relative group cursor-pointer h-auto ">
       <div className="md:py-2.5 flex items-center  md:px-2.5">
-        <p className=" text-[#908EB5] font-Inter font-semibold text-[0.85vw]">
+        <p className=" text-[#908EB5] font-Inter font-semibold xl:text-[0.85vw] xs:text-[4vw] lg:text-[1.5vw]">
           {data?.title}
         </p>
         <div className="group-hover:rotate-180 transition-all ease-linear duration-200">
@@ -34,7 +34,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
       </div>
 
       {data?.subMenu.length > 0 && (
-        <div className="md:w-[620px]   lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
+        <div className="xl:w-[620px] lg:w-[700px] md:w-[700px] xs:w-[350px] xs:absolute xs:right-[-50vw]  lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
           {data.subMenu.map((item) => (
             <div
               key={item.id}
@@ -47,7 +47,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
               }`}
             >
               {item.title && (
-                <div className="text-base font-semibold text-[#BBBEC5] md:mb-1  font-Inter uppercase">
+                <div className="text-base font-semibold text-[#BBBEC5] md:mb-1  font-Inter uppercase ">
                   {item.title}
                 </div>
               )}
@@ -78,6 +78,10 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
                     }`}
                   />
                 ))}
+                <div className="lg:hidden items-center gap-5 xs:py-10 xs:flex xs:flex-row    ">
+                  <button className="btn secondary">Login</button>
+                  <button className="btn btn_primary">Request Demo</button>{" "}
+                </div>
               </div>
             </div>
           ))}

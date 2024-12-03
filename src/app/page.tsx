@@ -561,67 +561,10 @@ export default function Home() {
         <SegmentAnimation />
       </div>
 
-      {/* <div className="w-full relative flex flex-row">
-        <div className="relative flex flex-row h-[70vh]">
-          <Image src={Scale} alt="" />
+      <div className=" ">
+        <ScaleThorugh />
+      </div>
 
-          <div className="w-[100%] flex flex-row px-40 absolute top-10 gap-10">
-            <div className="w-[45%] flex justify-center blend-screen ">
-              <div
-                ref={rotatingRef}
-                className="relative flex flex-row blend-screen"
-                onMouseEnter={() => resetToInitialPosition()}
-              >
-                <Image src={scale1} alt="" className="" />
-
-                {["instagram", "message", "whatsapp", "facebook"].map(
-                  (icon, index) => (
-                    <div
-                      key={index}
-                      ref={(el) => {
-                        iconsRefs.current[index] = el;
-                      }}
-                      className="circle-image absolute"
-                      style={{
-                        top: iconPositions[index].top,
-                        left: iconPositions[index].left,
-                      }}
-                    >
-                      <div className="image-wrapper">
-                        {activeIcon === index ? (
-                          icon === "instagram" ? (
-                            <Image src={inst1} alt="Instagram" />
-                          ) : icon === "message" ? (
-                            <Image src={mess} alt="Message" />
-                          ) : icon === "whatsapp" ? (
-                            <Image src={whats1} alt="WhatsApp" />
-                          ) : icon === "facebook" ? (
-                            <Image src={Fbook} alt="Facebook" />
-                          ) : null
-                        ) : (
-                          <Image src={icons[index].src} alt={icon} />
-                        )}
-                      </div>
-                    </div>
-                  )
-                )}
-              </div>
-            </div>
-            <div className="w-[60%] flex flex-col justify-center text-[white]">
-              <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
-                Scale Through Automation
-              </h1>
-              <p className="lg:w-[60vw]  xl:w-[55%] text-start pl-20 font-Inter font-normal text-[1vw] leading-8">
-                Effortlessly scale your marketing efforts with Automation,
-                optimizing performance and expanding your reach without
-                compromising quality or efficiency.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      <ScaleThorugh />
       {/* Slider Section */}
       <DigitalMarketing />
       <div className="py-10 ">

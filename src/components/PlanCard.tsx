@@ -41,8 +41,8 @@ export default function PlanCard() {
                 <PlansCard plan={"Monthly"} />
                 <PlansCard plan={"Yearly"} />
               </div>
-              <div className="mt-[2vw] from-[#0ACD95] via-[#0ACD95] to-[#05674B] bg-gradient-to-r rounded-full px-2 w-full flex justify-center items-center">
-                <p className="p-[0.85vw] font-Inter font-medium xs:w-[70vw] xs:text-center xs:text-[3vw] md:text-[1vw] text-white leading-2">
+              <div className="mt-[2vw] from-[#0ACD95] via-[#0ACD95] to-[#05674B] bg-gradient-to-r rounded-full px-2  flex justify-center items-center">
+                <p className="p-[0.85vw] font-Inter font-medium  xs:text-center xs:text-[3vw] md:text-[1vw] text-white leading-2">
                   🎉 Get 2 months free with annual subscription
                 </p>
               </div>
@@ -64,9 +64,9 @@ export default function PlanCard() {
                 isGrowthPlan ? "z-10" : "z-10"
               } ${
                 p.title === "Starter"
-                  ? "hover:border-[4px] hover:border-[#6940F2]"
+                  ? "hover:border-[4px] hover:border-[#6940F2] !z-50"
                   : p.title === "Growth"
-                  ? "hover:border-[4px] hover:border-[#3A69E3]"
+                  ? "hover:border-[4px] hover:border-[#3A69E3] mt-[-5vw] !w-[70vw] !z-30"
                   : p.title === "Magnum"
                   ? "hover:border-[4px] hover:border-[#09CC94]"
                   : "border border-[#6940F2]"

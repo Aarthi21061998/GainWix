@@ -1,33 +1,3 @@
-// import Image from "next/image";
-
-// import FullLogo from "@logos/full-logo.svg";
-// import { cn } from "@helpers/cn";
-// import Link from "next/link";
-
-// export default function NavBar() {
-//   const navLink = "text-base font-medium";
-//   return (
-//     <nav className="w-full h-20 bg-[#060A22] px-[5vw]">
-//       <div className="w-full h-full  max-w-screen-2xl flex items-center justify-between mx-auto">
-//         <Link href={"/"} className=" pointer">
-//           <Image src={FullLogo} alt="GainWix Full Logo" />
-//         </Link>
-//         <div className="flex items-center gap-10 text-[#908EB5]">
-//           <div className={cn(navLink, "")}>Product</div>
-//           <div className={cn(navLink, "")}>Industries</div>
-//           <Link href={"/pricing"} className={cn(navLink, "")}>
-//             Pricing
-//           </Link>
-//         </div>
-//         <div className="flex items-center gap-5">
-//           <button className="btn secondary">Login</button>
-//           <button className="btn btn_primary">Request Demo</button>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// }
-
 "use client";
 import Image from "next/image";
 
@@ -46,6 +16,8 @@ import Retail from "../assets/Icons/Retaile.svg";
 import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
 import Marketing from "../assets/Icons/Marketing.svg";
+
+import navIcon from "../assets/Icons/navIcon.svg";
 
 export default function NavBar() {
   const navLink = "text-base font-medium";
@@ -274,51 +246,65 @@ export default function NavBar() {
   // }, [open]);
   return (
     <div
-      className={`md:w-full h-20 shadow-[0px_4px_8px_0px_#0000000F] mx-auto bg-[#060A22] sm:layout xs:w-[100%] xs:p-10 z-50 fixed backdrop-blur-xl`}
+      className={`2xl:w-full h-20 shadow-[0px_4px_8px_0px_#0000000F] mx-auto bg-[#060A22] sm:layout xs:w-[100%] xs:p-10 z-50 fixed backdrop-blur-xl`}
       ref={navRef}
     >
-      <div className=" w-full m-auto mt-5  items-center  ">
-        <div className="xs:hidden">
-          <div className=" flex w-[full] justify-evenly items-center   text-[#908EB5]">
-            <Link href={"/"} className=" pointer">
-              <Image src={FullLogo} alt="GainWix Full Logo" />{" "}
-            </Link>
-            <div className="lg:hidden flex">
-              {/* <div onClick={() => setOpen(!open)}>
-                {open ? (
-                  <Image src={meta} alt="Close menu" />
-                ) : (
-                  <Image src={logo} alt="Open menu" />
-                )}
-              </div> */}
+      <div className=" h-full flex flex-row items-center  lg:mx-auto  justify-between   xs:w-[100%]  xs:justify-between  ">
+        {/* <div className=" flex w-[full] justify-evenly items-center   text-[#908EB5]"> */}
+        <div className=" w-full flex flex-row  justify-between items-center ">
+          <Link href={"/"} className=" pointer">
+            <Image src={FullLogo} alt="GainWix Full Logo" />{" "}
+          </Link>
+          <div className="lg:hidden flex">
+            <div onClick={() => setOpen(!open)}>
+              {open ? (
+                <Image src={meta} alt="Close menu" />
+              ) : (
+                <Image src={navIcon} alt="Open menu" />
+              )}
             </div>
-            <div
-              className={`hidden lg:flex items-center md:gap-10 px-5 md:pl-20 `}
-            >
-              {MenuLists?.map((menu: any) => (
-                <MenuItem key={menu?.id} data={menu} type={menu.type} />
-              ))}
+          </div>
+          <div
+            className={`hidden lg:flex items-center md:gap-10 px-5 md:pl-20  2xl:mr-10`}
+          >
+            {MenuLists?.map((menu: any) => (
+              <MenuItem key={menu?.id} data={menu} type={menu.type} />
+            ))}
+            <div className="hidden lg:block cursor-pointer m-0 pl-5 text-base font-semibold  ">
               <Link
                 href={"/pricing"}
                 className={cn(
                   navLink,
-                  "text-[#908EB5] font-Inter font-semibold text-[0.85vw]"
+                  "text-[#908EB5] font-Inter font-semibold xl:text-[1vw] lg:text-[1.5vw]  "
                 )}
               >
                 Pricing{" "}
               </Link>{" "}
             </div>
+          </div>
 
-            <div className="flex items-center gap-5">
-              <button className="btn secondary">Login</button>
-              <button className="btn btn_primary">Request Demo</button>{" "}
-            </div>
+          <div className="lg:block items-center lg:gap-10 xl:gap-5 xs:hidden ">
+            <button className="btn secondary">Login</button>
+            <button className="btn btn_primary">Request Demo</button>{" "}
           </div>
         </div>
+      </div>
 
-        <div className=" hidden h-auto lg:w-[70vw] xl:w-[70%] lg:flex lg:flex-row justify-center items-center gap-10 text-base font-semibold md:hidden">
-          <>
-            {/* <div className="mt-1.5 flex items-center ">
+      {/* For responsive */}
+      {open && (
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-[#060A22] shadow-lg h-[auto] max-h-[auto] ">
+          <div className="flex flex-row gap-4 p-4 md:items-center">
+            {MenuLists?.map((menu: any) => (
+              <>
+                <MenuItem key={menu?.id} data={menu} type={menu.type} />
+              </>
+            ))}
+            <div className="cursor-pointer text-base font-semibold md:pl-[1vw] text-[#908EB5] md:text-[3.5vw] lg:text-[1.5vw] xl:text-[2vw]">
+              <Link href={"/pricing"} target="_top">
+                Pricing
+              </Link>
+            </div>
+            {/* <div className="mt-1.5 flex items-center">
               <DropDown
                 items={countryList}
                 selectedItem={selectedCountry}
@@ -338,61 +324,9 @@ export default function NavBar() {
                 </div>
               </DropDown>
             </div> */}
-          </>
-          {/* <div className="hidden lg:block">
-            <a
-              href="https://calendly.com/sales-h-cn/30min"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="h-3  flex flex-row items-center gap-5">
-                <Button type="primary">
-                  <p>Book a Demo</p>
-                  <div className="-rotate-90">
-                    <ArrowDown color={"#fff"} />
-                  </div>
-                </Button>
-              </div>
-            </a>
-          </div> */}
-        </div>
-      </div>
-
-      {/* For responsive */}
-      {/* {open && (
-        <div className="lg:hidden absolute top-20 left-0 w-full bg-white shadow-lg h-[auto] max-h-[auto]">
-          <div className="flex flex-col gap-4 p-4">
-            {MenuLists?.map((menu) => (
-              <MenuItem key={menu?.id} data={menu} />
-            ))}
-            <div className="cursor-pointer text-base font-semibold text-[#202421] md:pl-[1vw]">
-              <Link href={"/pricing"} target="_top">
-                Pricing
-              </Link>
-            </div>
-            <div className="mt-1.5 flex items-center">
-              <DropDown
-                items={countryList}
-                selectedItem={selectedCountry}
-                onChange={onCountryChange}
-                listStyle="w-28"
-                className="bg-gray-100"
-              >
-                <div>
-                  {selectedCountry ? (
-                    <div className="flex items-center gap-2.5">
-                      <img src={selectedCountry?.icon} alt="country images" />
-                      <div className="uppercase">{selectedCountry?.title}</div>
-                    </div>
-                  ) : (
-                    <div>Please Select</div>
-                  )}
-                </div>
-              </DropDown>
-            </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }

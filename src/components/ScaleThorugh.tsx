@@ -1,110 +1,87 @@
+import React, { useEffect, useRef } from "react";
+import lottie, { AnimationItem } from "lottie-web";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
 
 import Scale from "../assets/Icons/Scale.svg";
-import scale1 from "../assets/Icons/scal.svg";
-import instagram from "../assets/Icons/insta.svg";
-import message from "../assets/Icons/message.svg";
-import whatsapp from "../assets/Icons/whatsappIcon.svg";
-import facebook from "../assets/Icons/facebook.svg";
-import Image1 from "../assets/Icons/instaMarketing.svg";
-import Image2 from "../assets/Icons/message1.svg";
-import Image3 from "../assets/Icons/messanger.svg";
-import Image4 from "../assets/Icons/whatsapp2.svg";
-import inst1 from "../assets/Icons/instagram.svg";
-import whats1 from "../assets/Icons/wApp.svg";
-import mess from "../assets/Icons/messIcon.svg";
-import Fbook from "../assets/Icons/fb.svg";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+const ScaleThrough = () => {
+  const lottieContainerRef = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<AnimationItem | null>(null);
 
-const ScaleThorugh = () => {
-  const rotatingRef = useRef(null);
-  const iconsRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [activeIcon, setActiveIcon] = useState(3); // Initially set active to WhatsApp icon
-  const iconPositions = [
-    { top: "1vw", left: "17vw" },
-    { top: "9vw", left: "10vw" },
-    { top: "15vw", left: "17vw" },
-    { top: "9vw", left: "22vw" }, // Adjusted position for WhatsApp icon (far right)
-  ];
+  useEffect(() => {
+    if (lottieContainerRef.current) {
+      animationRef.current = lottie.loadAnimation({
+        container: lottieContainerRef.current,
+        renderer: "svg",
+        loop: false,
+        autoplay: false,
+        path: "https://lottie.host/4a43524e-2c28-4fd8-bde2-a10477aec437/7rwEjNuLai.json", // Ensure the path is correct
+      });
 
-  const icons = [
-    { src: instagram, alt: "Instagram", img: Image1 },
-    { src: message, alt: "Message", img: Image2 },
+      // Stop animation at the first frame initially
+      animationRef.current.addEventListener("DOMLoaded", () => {
+        animationRef.current?.goToAndStop(0, true);
+      });
+    }
 
-    { src: facebook, alt: "Facebook", img: Image4 },
-    { src: whatsapp, alt: "WhatsApp", img: Image3 },
-  ];
+    const handleScroll = () => {
+      if (!animationRef.current) return;
+
+      const container = lottieContainerRef.current;
+      if (!container) return;
+
+      const containerTop = container.getBoundingClientRect().top;
+      const containerHeight = container.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      const start = windowHeight * 0.5;
+      const end = start + containerHeight;
+
+      const scrollProgress = Math.min(
+        Math.max((start - containerTop) / containerHeight, 0),
+        1
+      );
+
+      const totalFrames = animationRef.current.totalFrames;
+      const frameToShow = Math.floor(scrollProgress * totalFrames);
+
+      animationRef.current.goToAndStop(frameToShow, true);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      animationRef.current?.destroy();
+    };
+  }, []);
 
   return (
-    <div className="w-full relative flex flex-row">
-      <div className="relative flex flex-row h-[70vh]">
-        <Image src={Scale} alt="" style={{ opacity: "0.75" }} />
+    <div style={{}} className="flex items-center justify-center relative">
+      <Image src={Scale} alt="" style={{ opacity: "0.75" }} />
 
-        <div className="w-[100%] flex flex-row px-20 absolute top-[10vw] gap-10">
-          <div className="w-[45%] flex justify-center blend-screen ">
-            <div
-              ref={rotatingRef}
-              className="relative flex flex-row blend-screen"
-            >
-              <Image src={scale1} alt="" className="" />
+      <div className="h-[50vh] flex items-center justify-center absolute right-1 ">
+        <div
+          ref={lottieContainerRef}
+          style={{
+            width: "30vw",
+            height: "130vh",
+          }}
+        ></div>
 
-              {["instagram", "message", "whatsapp", "facebook"].map(
-                (icon, index) => (
-                  <div
-                    key={index}
-                    ref={(el) => {
-                      iconsRefs.current[index] = el;
-                    }}
-                    className="circle-image absolute"
-                    style={{
-                      top: iconPositions[index].top,
-                      left: iconPositions[index].left,
-                    }}
-                  >
-                    <div className="image-wrapper">
-                      {activeIcon === index ? (
-                        icon === "whatsapp" ? (
-                          <Image src={Fbook} alt="" />
-                        ) : icon === "instagram" ? (
-                          <Image src={inst1} alt="Instagram" />
-                        ) : icon === "message" ? (
-                          <Image src={mess} alt="Message" />
-                        ) : icon === "facebook" ? (
-                          <>
-                            <Image src={whats1} alt="WhatsApp" />
-                            <Image
-                              src={Image3}
-                              alt="WhatsApp Message"
-                              className=" absolute top-[1vw] left-[7vw]"
-                            />
-                          </>
-                        ) : null
-                      ) : (
-                        <Image src={icons[index].src} alt={icon} />
-                      )}
-                    </div>
-                  </div>
-                )
-              )}
-            </div>
-          </div>
-          <div className="w-[50%] flex flex-col justify-center text-[white]">
-            <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
-              Scale Through Automation
-            </h1>
-            <p className="lg-[10vw]  xl:w-[55%] text-start pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
-              Effortlessly scale your marketing efforts with Automation,
-              optimizing performance and expanding your reach without
-              compromising quality or efficiency.
-            </p>
-          </div>
+        <div className="w-[50%] flex flex-col justify-center text-white">
+          <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
+            Scale Through Automation
+          </h1>
+          <p className="lg-[10vw] xl:w-[55%] text-start pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
+            Effortlessly scale your marketing efforts with Automation,
+            optimizing performance and expanding your reach without compromising
+            quality or efficiency.
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default ScaleThorugh;
+export default ScaleThrough;

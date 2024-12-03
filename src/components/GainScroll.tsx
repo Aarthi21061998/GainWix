@@ -32,12 +32,14 @@ const List = [
 ];
 export default function GainScroll() {
   return (
-    <div className="relative overflow-hidden  mx-40">
-      <div className="flex  animate-marquee space-x-8">
+    <div className="relative overflow-hidden md:w-full  m-auto   lg:w-[80vw] xs:w-[85vw]">
+      <div className="flex animate-marquee space-x-1 min-w-full">
         {[...List, ...List].map((item, index) => (
           <div className="w-full flex flex-row align-center items-center">
-            <Image src={star} alt="" />
-            <p className="text-[#908EB5] w-[13vw] pl-5">{item?.content}</p>
+            <Image src={star} alt="" className="xs:w-[10px]" />
+            <p className="text-[#908EB5] lg:w-[13vw] xs:w-[20vw] xs:text-[2vw] lg:text-[0.95vw] lg:pl-5">
+              {item?.content}
+            </p>
           </div>
         ))}
       </div>

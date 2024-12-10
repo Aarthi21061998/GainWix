@@ -1,35 +1,24 @@
 "use client";
 
 import Image from "next/image";
-import { MutableRefObject, useState } from "react";
-
-import Video1 from "../assets/Icons/SegmentVideo.gif";
-// import Video from 'icons/Strategy.gif';
-import Video from "../assets/Icons/Strategy.gif";
-// import Video2 from 'icons/final.gif';
-
-import Video2 from "../assets/Icons/final.gif";
-
-import Header from "../assets/Icons/header.gif";
 
 import MetaIcon from "../assets/Icons/meta.svg";
-import MainImage from "../assets/Icons/homeIcon.svg";
+import mainLine from "../assets/Icons/mainLine.svg";
+import what1 from "../assets/Icons/1.svg";
+import slack from "../assets/Icons/2.svg";
+import insts from "../assets/Icons/3.svg";
+import mess1 from "../assets/Icons/4.svg";
+import tik from "../assets/Icons/6.svg";
+import linked from "../assets/Icons/5.svg";
+import mainImage from "../assets/Icons/mainImage2.svg";
 
-import card from "../assets/Icons/cardIcon.svg";
-
-// import LightBackGround from "../assets/Icons/light.svg";
-import HomePage from "../assets/Icons/HomePage.svg";
 import Marketing_first from "../assets/Icons/Strategy Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
-import Segmentation from "../assets/Icons/Segmentation.svg";
-import Scale from "../assets/Icons/Scale.svg";
-import scale1 from "../assets/Icons/scal.svg";
+
 import DigitalMarketing from "@components/DigitalMarketing";
 
-import chessKing from "../assets/Icons/chessKing.png";
-
 import Goals from "@components/Goals";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
 import BrandScroll from "@components/BrandScroll";
@@ -38,20 +27,6 @@ import { MarketingGoalsList, MarketingGoalsListType } from "@constants/home";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import instagram from "../assets/Icons/insta.svg";
-import message from "../assets/Icons/message.svg";
-import whatsapp from "../assets/Icons/whatsappIcon.svg";
-import facebook from "../assets/Icons/facebook.svg";
-
-import inst1 from "../assets/Icons/instagram.svg";
-import whats1 from "../assets/Icons/wApp.svg";
-import mess from "../assets/Icons/messIcon.svg";
-import Fbook from "../assets/Icons/fb.svg";
-
-import Image1 from "../assets/Icons/instaMarketing.svg";
-import Image2 from "../assets/Icons/message1.svg";
-import Image3 from "../assets/Icons/messanger.svg";
-import Image4 from "../assets/Icons/whatsapp2.svg";
 import lottie, { AnimationItem } from "lottie-web";
 
 import homeBg from "../assets/Icons/Home Screen bg.svg";
@@ -60,332 +35,59 @@ import SegmentAnimation from "@components/SegmentAnimation";
 import ScaleThorugh from "@components/ScaleThorugh";
 
 export default function Home() {
+  const whatsappRef = useRef<HTMLImageElement | null>(null);
   const imageRef = useRef<HTMLImageElement | null>(null);
-
-  const divRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+  const slackRef = useRef<HTMLImageElement | null>(null);
+  const instagramRef = useRef<HTMLImageElement | null>(null);
+  const LinkedInRef = useRef<HTMLImageElement | null>(null);
+  const MessageRef = useRef<HTMLImageElement | null>(null);
+  const TicktokRef = useRef<HTMLImageElement | null>(null);
+  const divRef = useRef<HTMLDivElement | null>(null);
   const goalsRef = useRef<HTMLDivElement | null>(null);
   const travelDivRef = useRef<HTMLDivElement | null>(null);
-  const segmentImageRef = useRef<HTMLImageElement | null>(null);
-  const scaleRef = useRef<HTMLImageElement | null>(null);
+  const segmentImageRef = useRef<HTMLDivElement | null>(null);
+  const scaleThroughRef = useRef<HTMLDivElement | null>(null);
 
-  const rotatingRef = useRef(null);
-  const iconsRefs = useRef<(HTMLDivElement | null)[]>([]);
+  useEffect(() => {
+    const is2xl = window.matchMedia("(min-width: 1536px)").matches;
 
-  const iframeRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [isScrolling, setIsScrolling] = useState(false);
-  let scrollTimeout = null;
+    gsap.fromTo(
+      divRef.current,
+      {
+        y: 0,
+        willChange: "transform",
+      },
+      {
+        y: is2xl ? "153vh" : "138vh",
+        x: "-1vh", // Adjust 'y' based on screen size
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: goalsRef.current,
+          start: "top center",
+          end: "top center",
+          scrub: 2,
+        },
+      }
+    );
+  }, []);
 
-  const lottieContainerRef = useRef(null); // Ref for the Lottie container
-
-  const [activeIcon, setActiveIcon] = useState(null);
-
-  const handleMouseEnter = (index: any) => {
-    setActiveIcon(index);
-  };
-
-  const handleMouseLeave = () => {
-    setActiveIcon(null);
-  };
-  const iconPositions = [
-    { top: "1vw", left: "14vw" },
-    { top: "7vw", left: "6vw" },
-    { top: "12vw", left: "12vw" },
-    { top: "7vw", left: "20vw" },
-  ];
-
-  const icons = [
-    { src: instagram, alt: "Instagram", img: Image1 },
-    { src: message, alt: "Message", img: Image2 },
-    { src: whatsapp, alt: "WhatsApp", img: Image3 },
-    { src: facebook, alt: "Facebook", img: Image4 },
-  ];
-
-  // useEffect(() => {
-  //   if (imageRef.current) {
-  //     gsap.fromTo(
-  //       imageRef.current,
-  //       { scale: 1 },
-  //       {
-  //         scale: 0.8,
-  //         scrollTrigger: {
-  //           trigger: imageRef.current,
-  //           start: "bottom",
-  //           // end: "",
-  //           scrub: true,
-  //         },
-  //       }
-  //     );
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     divRef.current,
-  //     {
-  //       y: 0,
-  //     },
-  //     {
-  //       y: "100vh",
-  //       scrollTrigger: {
-  //         trigger: goalsRef.current,
-  //         start: "top center",
-  //         end: "top center",
-  //         scrub: true,
-  //       },
-  //     }
-  //   );
-  // }, []);
-
-  // travel the animation
-
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const updatePosition = () => {
-  //     if (
-  //       !travelDivRef.current ||
-  //       !segmentImageRef.current ||
-  //       !scaleRef.current
-  //     )
-  //       return;
-
-  //     const travelRect = travelDivRef.current.getBoundingClientRect();
-  //     const segmentRect = segmentImageRef.current.getBoundingClientRect();
-  //     const scaleRect = scaleRef.current.getBoundingClientRect();
-
-  //     const xDistanceFromSegment = segmentRect.left - travelRect.left + 290;
-  //     const yDistanceFromSegment = segmentRect.top - travelRect.top + 200;
-
-  //     const xDistanceToScale = scaleRect.left - segmentRect.left + 470;
-  //     const yDistanceToScale = scaleRect.top - segmentRect.top + 600;
-
-  //     const tl = gsap.timeline({
-  //       scrollTrigger: {
-  //         trigger: segmentImageRef.current,
-  //         start: "top center",
-  //         end: "bottom center",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     tl.to(travelDivRef.current, {
-  //       x: xDistanceFromSegment,
-  //       y: yDistanceFromSegment,
-  //       ease: "power2.out",
-  //     });
-
-  //     tl.to(travelDivRef.current, {
-  //       x: xDistanceToScale,
-  //       y: yDistanceToScale,
-
-  //       ease: "power2.out",
-  //       scrollTrigger: {
-  //         trigger: scaleRef.current,
-  //         start: "top center",
-  //         end: "bottom center",
-  //         scrub: true,
-  //       },
-  //     });
-
-  //     gsap.to(scaleRef.current, {
-  //       scale: 1, // The header will shrink to 80% of its original size
-
-  //       scrollTrigger: {
-  //         trigger: scaleRef.current,
-  //         start: "top center",
-  //         end: "bottom top",
-  //         scrub: true, // This ensures the scaling is tied to the scroll position
-  //       },
-  //     });
-  //   };
-
-  //   updatePosition();
-  //   window.addEventListener("resize", updatePosition);
-
-  //   gsap.fromTo(
-  //     travelDivRef.current,
-  //     { opacity: 0, y: 100 },
-  //     {
-  //       opacity: 1,
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: travelDivRef.current,
-  //         start: "top 80%",
-  //         end: "top 50%",
-  //         scrub: true,
-  //       },
-  //     }
-  //   );
-
-  //   return () => {
-  //     window.removeEventListener("resize", updatePosition);
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   // Register the ScrollTrigger plugin
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   gsap.to(imageRef.current, {
-  //     scrollTrigger: {
-  //       trigger: imageRef.current,
-  //       start: "top top",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     },
-  //     scale: 0.5,
-  //     ease: "none",
-  //   });
-
-  //   gsap.to(divRef.current, {
-  //     scrollTrigger: {
-  //       trigger: divRef.current,
-  //       start: "top center",
-  //       scrub: true,
-  //     },
-  //     width: "20vw",
-  //     height: "30vh",
-  //     top: "13.7%",
-  //     left: "50%",
-  //     x: "-50%",
-  //     ease: "none",
-  //   });
-
-  //   gsap.to(goalsRef.current, {
-  //     scrollTrigger: {
-  //       trigger: goalsRef.current,
-  //       start: "top bottom",
-  //       end: "bottom top",
-  //       scrub: true,
-  //     },
-  //     opacity: 1,
-  //     ease: "none",
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   let scrollStopTimeout: ReturnType<typeof setTimeout>;
-
-  //   const resetPositions = () => {
-  //     iconsRefs.current.forEach((icon, index) => {
-  //       if (!icon) return;
-  //       const imageWrapper = icon.querySelector(".image-wrapper");
-
-  //       // Reset position only if it's not the active icon
-  //       if (imageWrapper && index !== activeIcon) {
-  //         const { top, left } = iconPositions[index];
-  //         gsap.set(imageWrapper, {
-  //           rotation: 0,
-  //           top,
-  //           left,
-  //         });
-  //       }
-  //     });
-
-  //     // Only reset the active icon's position if it's not active
-  //     if (activeIcon !== null) {
-  //       const activeIconElement = iconsRefs.current[activeIcon];
-  //       const imageWrapper = activeIconElement?.querySelector(".image-wrapper");
-
-  //       if (imageWrapper) {
-  //         gsap.set(imageWrapper, {
-  //           rotation: 0,
-  //         });
-  //       }
-  //     }
-
-  //     gsap.set(rotatingRef.current, { rotation: 0 });
-  //     setActiveIcon(null); // Optionally reset active icon after reset
-  //   };
-
-  //   const handleScrollStop = () => {
-  //     clearTimeout(scrollStopTimeout);
-  //     scrollStopTimeout = setTimeout(() => {
-  //       resetPositions();
-  //     }, 200);
-  //   };
-
-  //   const rotationAnimation = gsap.to(rotatingRef.current, {
-  //     rotation: 360,
-  //     scrollTrigger: {
-  //       trigger: rotatingRef.current!,
-  //       start: "top center",
-  //       end: "bottom center",
-  //       scrub: true,
-  //       onUpdate: () => {
-  //         handleScrollStop();
-
-  //         iconsRefs.current.forEach((icon) => {
-  //           if (!icon) return;
-  //           const currentRotation = gsap.getProperty(
-  //             rotatingRef.current!,
-  //             "rotation"
-  //           );
-  //           const imageWrapper = icon.querySelector(".image-wrapper");
-
-  //           if (imageWrapper) {
-  //             gsap.set(imageWrapper, {
-  //               rotation: -currentRotation,
-  //             });
-  //           }
-  //         });
-
-  //         const rightmostIcon = getRightmostIcon();
-  //         if (rightmostIcon) {
-  //           iconsRefs.current.forEach((icon, index: any) => {
-  //             if (icon === rightmostIcon) {
-  //               setActiveIcon(index);
-  //             }
-  //           });
-  //         }
-  //       },
-  //       onLeave: resetPositions,
-  //       onEnterBack: resetPositions,
-  //     },
-  //   });
-
-  //   const getRightmostIcon = () => {
-  //     let rightmostIcon: HTMLDivElement | null = null;
-  //     let maxRight = -Infinity;
-
-  //     iconsRefs.current.forEach((icon) => {
-  //       if (!icon) return;
-  //       const rect = icon.getBoundingClientRect();
-  //       const iconRight = rect.left + rect.width;
-
-  //       if (iconRight > maxRight) {
-  //         maxRight = iconRight;
-  //         rightmostIcon = icon;
-  //       }
-  //     });
-
-  //     return rightmostIcon;
-  //   };
-
-  //   return () => {
-  //     if (rotationAnimation) rotationAnimation.kill();
-  //     ScrollTrigger.killAll();
-  //     clearTimeout(scrollStopTimeout);
-  //   };
-  // }, []);
-
-  // const resetToInitialPosition = () => {
-  //   gsap.set(rotatingRef.current, { rotation: 0 });
-  //   iconsRefs.current.forEach((icon, index) => {
-  //     if (!icon) return;
-  //     const imageWrapper = icon.querySelector(".image-wrapper");
-  //     if (imageWrapper) {
-  //       const { top, left } = iconPositions[index];
-  //       gsap.set(imageWrapper, {
-  //         rotation: 0,
-  //         top,
-  //         left,
-  //       });
-  //     }
-  //   });
-  //   setActiveIcon(null);
-  // };
+  useEffect(() => {
+    gsap.fromTo(
+      imageRef.current,
+      {
+        scale: 1,
+      },
+      {
+        scale: 0.5, // Shrinking size
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: "top top", // Trigger when the image is at the top of the screen
+          end: "bottom top", // End when the image reaches the top of the viewport
+          scrub: 5, // Makes the animation follow the scroll
+        },
+      }
+    );
+  }, []);
 
   useEffect(() => {
     let animation: AnimationItem | null = null; // Type for Lottie animation
@@ -438,8 +140,168 @@ export default function Home() {
     };
   }, []);
 
+  useEffect(() => {
+    const travelDiv = travelDivRef.current;
+    const segmentDiv = segmentImageRef.current;
+    const scaleThrough = scaleThroughRef.current;
+
+    if (travelDiv && segmentDiv && scaleThrough) {
+      gsap.to(travelDiv, {
+        scrollTrigger: {
+          trigger: travelDiv,
+          start: "top center",
+          endTrigger: segmentDiv,
+          end: "center center",
+          scrub: true,
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            const xDistance =
+              segmentDiv.getBoundingClientRect().left -
+              travelDiv.getBoundingClientRect().left +
+              1300;
+            const yDistance =
+              segmentDiv.getBoundingClientRect().top -
+              travelDiv.getBoundingClientRect().top +
+              900;
+
+            const newX = xDistance * progress;
+            const newY = yDistance * progress;
+
+            gsap.to(travelDiv, {
+              x: newX,
+              y: newY,
+              duration: 0.1,
+              ease: "none",
+            });
+          },
+        },
+      });
+
+      gsap.to(travelDiv, {
+        scrollTrigger: {
+          trigger: segmentDiv,
+          start: "center center",
+          endTrigger: scaleThrough,
+          // end: "center center",
+          scrub: true,
+
+          onUpdate: (self) => {
+            const progress = self.progress;
+
+            const xDistance =
+              scaleThrough.getBoundingClientRect().right -
+              segmentDiv.getBoundingClientRect().right;
+            const yDistance =
+              scaleThrough.getBoundingClientRect().top -
+              segmentDiv.getBoundingClientRect().top;
+
+            const newX = xDistance * progress + 6;
+            const newY = yDistance * progress + 750;
+
+            gsap.to(travelDiv, {
+              x: newX,
+              y: newY,
+            });
+          },
+        },
+      });
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
+  const [scale, setScale] = useState(1);
+  const [isImageHidden, setIsImageHidden] = useState(false);
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    // Decrease the size of the image with scroll
+    const newScale = Math.max(1 - scrollY / 1000, 0.5); // Min scale is 0.5
+    setScale(newScale);
+
+    // Hide or show the image based on scroll threshold
+    if (scrollY > 300) {
+      setIsImageHidden(true); // Hide the image when scrolling down
+    } else {
+      setIsImageHidden(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    const animateIcons = (direction: any) => {
+      const refs = [
+        {
+          ref: whatsappRef,
+          start: { y: -100, x: 10 },
+          end: { y: -80, x: -10 },
+        },
+        { ref: slackRef, start: { y: -100, x: 10 }, end: { y: -80, x: -10 } },
+        {
+          ref: instagramRef,
+
+          start: { y: -100, x: -10 },
+          end: { y: -80, x: 10 },
+        },
+        {
+          ref: LinkedInRef,
+          start: { y: -100, x: -10 },
+          end: { y: -90, x: 10 },
+        },
+        {
+          ref: MessageRef,
+          start: { y: -100, x: -10 },
+          end: { y: -80, x: 10 },
+        },
+        { ref: TicktokRef, start: { y: -100, x: 30 }, end: { y: -80, x: 10 } },
+      ];
+
+      refs.forEach(({ ref, start, end }) => {
+        if (ref.current) {
+          gsap.fromTo(
+            ref.current.querySelector("img"),
+            direction === "down" ? start : end,
+            {
+              ...((direction === "down" ? end : start) as object),
+              duration: 2,
+              ease: "power2.inOut",
+              repeat: -1,
+              yoyo: true,
+            }
+          );
+        }
+      });
+    };
+
+    animateIcons("down");
+
+    let lastScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const direction = currentScrollY > lastScrollY ? "down" : "up";
+      lastScrollY = currentScrollY;
+
+      animateIcons(direction);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="w-full h-full bg-[#060A22] w-100 flex flex-col justify-center">
+    <div className="w-full bg-[#060A22] w-100 flex flex-col justify-center">
       <Image
         src={homeBg}
         alt=""
@@ -447,7 +309,7 @@ export default function Home() {
         style={{ opacity: "0.25" }}
       />
       <div className=" w-[100vw]  absolute top-10  ">
-        <div className="w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 ">
+        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora py-10 ">
           <h1 className="text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
             <p className="text-center ">Transform your digital marketing</p>
             with awesome data-driven
@@ -457,7 +319,7 @@ export default function Home() {
             </span>
           </h1>
         </div>
-        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora xl:mt-12">
+        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora xl:mt-12 2xl:mt-6">
           <h1 className="text-[1vw] font-medium text-[#D7DEDA] -mt-14 font-Inter ">
             <p>
               Say goodbye to fragmented, ineffective marketing. Transforming
@@ -469,83 +331,162 @@ export default function Home() {
             </p>
           </h1>
         </div>
-        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12">
-          <button className="btn btn_primary text-[0.95vw] font-bold">
-            Request Demo
-          </button>
-          <button>
-            <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
-              <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-              <p className="text-[1.05vw] text-[#FFFFFF] font-Inter">
-                Tech Partner
-              </p>
+
+        {/* {!isImageHidden && ( */}
+        <div className="blend-screen">
+          <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12 z-0">
+            <button className="btn btn_primary text-[0.95vw] font-bold 2xl:p-8 ">
+              <p className="2xl:mt-[-0.7vw]">Request Demo</p>
+            </button>
+            <button>
+              <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center items-center ">
+                <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
+                <p className="text-[1.05vw] text-[#FFFFFF] font-Inter">
+                  Tech Partner
+                </p>
+              </div>
+            </button>
+          </div>
+
+          <div className="">
+            <Image src={mainLine} alt="" className="absolute  top-[16vw]  " />
+            <div ref={whatsappRef} className="relative">
+              <Image
+                src={what1}
+                alt="Animated Image"
+                className="absolute top-[7vw] left-[6vw] w-[20vw] h-[23vh] 2xl:left-[8vw] 2xl:top-[10vw]"
+              />
             </div>
-          </button>
+            <div ref={slackRef} className="relative">
+              <Image
+                src={slack}
+                alt="Animated Image"
+                className="scrolling-image absolute top-[4vw] left-[20vw] w-[20vw] h-[19vh] 2xl:left-[25vw] 2xl:top-[6vw]"
+              />
+            </div>
+            <div ref={instagramRef} className="relative">
+              <Image
+                src={insts}
+                alt=""
+                className=" absolute top-[-1vw] right-[16vw] w-[20vw] h-[13vh]  2xl:right-[20vw] 2xl:top-[3vw] "
+              />
+            </div>
+            <div ref={MessageRef} className="relative">
+              <Image
+                src={mess1}
+                alt=""
+                className=" absolute top-[-2vw] right-[4vw] w-[20vw] h-[23vh] 2xl:right-[4vw] 2xl:top-[3vw] "
+              />
+            </div>
+            <div ref={TicktokRef} className="relative">
+              <Image
+                src={tik}
+                alt=""
+                className=" absolute top-[12vw] right-[15vw] w-[20vw] h-[15vh] 2xl:top-[17vw]"
+              />
+            </div>
+            <div ref={LinkedInRef} className="relative">
+              <Image
+                src={linked}
+                alt=""
+                className=" absolute top-[20vw] left-[15vw] w-[20vw] h-[13vh] 2xl:top-[25vw] 2xl:left-[16vw]"
+              />
+            </div>
+          </div>
         </div>
+        {/* )} */}
+      </div>
+      <div className="">
         <div className="">
           <Image
-            src={MainImage}
-            alt="home"
-            ref={imageRef}
-            className="absolute top-[25vw]"
+            src={mainImage}
+            alt=""
+            className=" absolute top-[8vw] blend-screen"
+          />
+        </div>
+        <div
+          ref={divRef}
+          className="overflow-hidden absolute xl:top-[42vw]  left-[36vw] 2xl:left-[38vw]  w-[50vh]   z-10"
+        >
+          <iframe
+            src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
+            className="w-full h-full"
             style={{
-              width: "100vw !important",
-              height: "auto",
-              objectFit: "cover",
+              width: "100%",
+              height: "43vh",
+              border: "none",
             }}
           />
         </div>
       </div>
-      <div
-        ref={divRef}
-        className="overflow-hidden absolute top-[49vw] left-[34vw] w-[32vw] h-[44vh]  z-50"
-      ></div>
-      <div className="py-10 h-[120vh]">
+
+      <div className="py-10 xl:h-[120vh] 2xl:h-[140vh] " ref={goalsRef}>
         <Goals />
       </div>
+
       <div className="relative">
         <Image
           src={Strategy}
           alt="Background"
-          className="w-full h-auto "
+          className="w-full h-auto"
           style={{ opacity: "0.75" }}
         />
+
         <div className="flex flex-col items-center justify-center">
           <div className="flex justify-center text-[3vw] font-medium font-Sora absolute top-4">
             <h1 className="text-[3vw] font-semibold font-Sora text-[#FFFFFF] pt-16">
               <p className="pl-10">Integrate the &quot;3 S&quot; AI in your </p>
-              <span className="font-Sora text-[3vw] font-bold  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-32">
+              <span className="font-Sora text-[3vw] font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-32">
                 digital marketing
               </span>
             </h1>
           </div>
         </div>
 
-        <div className="w-[100%] overflow-visible flex flex-row   justify-center absolute top-44 ">
-          <div className=" flex relative  ">
+        <div className="w-[100%] overflow-visible flex flex-row justify-center absolute top-44">
+          <div className="flex relative">
             <Image
               src={Marketing_first}
               alt="marketing1"
-              className="w-[50vw]!important h-auto blend-screen "
+              className="w-[50vw] h-auto blend-screen"
             />
 
             <div className="scroll-container">
               <div
-                className="lottie-container absolute  flex justify-center items-center right-[-8vw] top-[6vw]"
+                className="lottie-container absolute  flex justify-center items-center xl:right-[-11.5vw] xl:h-[380px] xl:top-[4vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px]"
                 style={{
                   width: "70vw",
-                  height: "410px",
+                  // height: "380px",
+                  zIndex: 10,
                 }}
               ></div>
             </div>
+
             <div
-              className=" absolute top-16  flex justify-center items-center z-40 opacity-0"
+              className="absolute xl:top-1 flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[30vh] 2xl:h-[34vh]"
               ref={travelDivRef}
+              style={{
+                position: "absolute",
+                top: "10vw",
+                left: "-7vw",
+                width: "60vw",
+                // height: "30vh",
+                zIndex: 30,
+              }}
             >
-              <Image src={Header} alt="" className="w-80 h-80" />
+              <iframe
+                src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
+                className="w-full h-full"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  border: "none",
+                }}
+              />
             </div>
           </div>
-          <div className="w-[60%] flex flex-col justify-center  text-[white]">
+
+          <div className="w-[60%] flex flex-col justify-center text-[white]">
             <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
               Strategy AI
             </h1>
@@ -557,15 +498,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="">
+
+      <div ref={segmentImageRef}>
         <SegmentAnimation />
       </div>
 
-      <div className=" ">
+      <div className=" " ref={scaleThroughRef}>
         <ScaleThorugh />
       </div>
 
-      {/* Slider Section */}
       <DigitalMarketing />
       <div className="py-10 ">
         <BrandScroll />
@@ -608,6 +549,41 @@ export default function Home() {
             </div>
           ))}
         </div>
+        {/* <div className="xs:hidden md:hidden:w-full h-[45vh] relative flex justify-center items-center">
+          {MarketingGoalsList?.map(
+            (data: MarketingGoalsListType, index: number) => (
+              <div
+                className={`w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r absolute transform ${
+                  index === 0
+                    ? " z-[30] top-0  transform-origin-center" // First card (rotate 80 degrees, topmost)
+                    : index === 1
+                    ? "rotate-[-20deg] z-[20] top-[-10%]  transform-origin-center" // Second card (rotate -120 degrees, slightly left)
+                    : index === 2
+                    ? "rotate-[20deg] z-[10] top-[-10%]  transform-origin-center" // Third card (rotate 80 degrees, slightly right)
+                    : ""
+                }`}
+                key={data?.id}
+              >
+                <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] align-center mt-16">
+                  <Image
+                    src={data?.icon}
+                    alt=""
+                    className="w-[80vw] h-[15vh] flex justify-center items-center"
+                  />
+                  <p className="text-[#d7d2fc] mt-7 text-[1.2vw] font-Sora font-semibold">
+                    {data?.content}
+                  </p>
+                  <span className="text-[#d7d2fc] text-[1.2vw] font-Sora font-semibold">
+                    {data?.content1}
+                  </span>
+                  <p className="w-auto min-w-10 text-[0.95vw] px-10 py-2 flex justify-center font-Inter items-center text-center font-medium text-[#908eb5]">
+                    {data?.details}
+                  </p>
+                </div>
+              </div>
+            )
+          )}
+        </div> */}
       </div>
       <Growth />
     </div>

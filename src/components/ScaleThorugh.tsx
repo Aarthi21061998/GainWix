@@ -57,23 +57,24 @@ const ScaleThrough = () => {
   }, []);
 
   return (
-    <div style={{}} className="flex items-center justify-center relative">
+    <div style={{}} className="flex items-center justify-center relative ">
       <Image src={Scale} alt="" style={{ opacity: "0.75" }} />
 
-      <div className="h-[50vh] flex items-center justify-center absolute right-1 ">
+      <div className="h-[50vh] xl:w-[100vw]  flex items-center justify-center absolute">
         <div
           ref={lottieContainerRef}
           style={{
-            width: "30vw",
-            height: "130vh",
+            width: "50vw",
+            height: "100vh",
+            
           }}
         ></div>
 
-        <div className="w-[50%] flex flex-col justify-center text-white">
+        <div className="w-[40vw]  flex flex-col justify-center text-white">
           <h1 className="text-[2.7vw] font-Sora font-semibold px-20 pb-5">
             Scale Through Automation
           </h1>
-          <p className="lg-[10vw] xl:w-[55%] text-start pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
+          <p className="lg-[10vw]  text-start pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
             Effortlessly scale your marketing efforts with Automation,
             optimizing performance and expanding your reach without compromising
             quality or efficiency.

@@ -85,12 +85,12 @@ export default function Growth() {
             </div>
           </div>
         </div>
-        {/* <Image
+        <Image
           ref={sunRef}
           src={SunLight}
           alt="Sun"
           className="absolute top-[14vw] left-[66vw] rotate-6 "
-        /> */}
+        />
       </div>
     </div>
   );

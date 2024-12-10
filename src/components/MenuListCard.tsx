@@ -23,7 +23,7 @@ export default function MenuListCard(props: any) {
             </div>
           </div>
           {data?.content && (
-            <div className="md:text-[13px] font-medium text-[#616874] md:pl-14 -mt-5  xs:pt-1 lg:pt-6  xs:text-[3.5vw] md:w-[40vw] lg:w-[30vw] xs:w-[80vw]">
+            <div className="md:text-[13px] font-medium text-[#616874] md:pl-14 xl:-mt-5  2xl:-mt-8 xs:pt-1 lg:pt-6  xs:text-[3.5vw] md:w-[40vw] lg:w-[30vw] xs:w-[80vw] xl:w-[21vw] 2xl:w-[15vw]">
               {data?.content}
             </div>
           )}

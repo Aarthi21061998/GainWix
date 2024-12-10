@@ -33,7 +33,7 @@ export default function Goals() {
   return (
     <div className="text-white bg-[#060A22] w-full h-full">
       <div className="w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
-        <h1 className="text-[3vw] font-medium text-[#FFFFFF] font-Sora text-center">
+        <h1 className="text-[3vw] font-medium text-[#FFFFFF] font-Sora text-center ">
           <p className="pl-10">Set new benchmarks and hit Goals</p>
           <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
             effortlessly with our AI
@@ -56,16 +56,8 @@ export default function Goals() {
           <Image src={bentoBg} alt="" className=" opacity-0" />
 
           <div className="absolute ">
-            {/* <Image
-              src={light}
-              alt=""
-              className="w-[14vw] h-[25vh]  blend-screen "
-            /> */}
             <Image src={bentoBackGround} alt="" className="w-[60vw]" />
           </div>
-          {/* <div className=" absolute top-[7vh] right-[44.5vw] ">
-            <Image src={center} alt="strategy" className="w-[10vw] h-[72vh]" />
-          </div> */}
         </div>
       </div>
     </div>

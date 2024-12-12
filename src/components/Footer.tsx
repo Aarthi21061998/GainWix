@@ -156,7 +156,7 @@ export default function Footer() {
 
   return (
     <div className="xs:px-5 md:layout text-white bg-[#060A22]">
-      <div className="xl:min-h-[50vh] pt-[4.5vw] pl-[3vw] lg:flex pb-[1vw] gap-20 xs:block">
+      <div className="xl:min-h-[50vh] pt-[4.5vw] md:pl-[3vw] lg:flex pb-[1vw] gap-20 xs:block xl:w-[80vw] 2xl:w-[64vw] xl:m-auto">
         <div className="w-[40vw] lg:block">
           <Image
             src={FullLogo}
@@ -164,22 +164,22 @@ export default function Footer() {
             className="lg:w-[13.8vw] lg:h-[3.2vw] mb-6 xs:w-[50vw] xs:h-[5vh]"
           />
 
-          <p className="lg:max-w-[50vw] lg:w-full flex items-center gap-1 font-medium cursor-pointer font-Inter text-[#908EB5] xs:text-[14px]  xs:w-[88vw] xs:mb-5 ">
+          <p className="lg:max-w-[50vw] lg:w-full flex items-center gap-1 font-medium cursor-pointer font-Inter text-[#908EB5] xs:text-[16px] md:text-[18px]  xs:w-[88vw] xs:mb-5 ">
             Transform your digital marketing <br />
             with powerful, data-driven Generative AI
           </p>
 
           <div className="lg:flex flex-row items-center gap-5 mt-10 xs:hidden">
-            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]">
+            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram ">
               <Instagram />
             </div>
-            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]">
+            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
               <Facebook />
             </div>
-            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]">
+            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
               <Linkedin />
             </div>
-            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]">
+            <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
               <Twitter />
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Footer() {
             return (
               <div key={l.id} className="flex flex-col gap-5 xs:mt-3">
                 <h4
-                  className="lg:text-[0.97vw] xs:text-[2vw] text-[#908EB5] font-Inter font-bold flex xs:justify-between xs:w-[80vw] lg:w-[10vw] xs:py-2 items-center lg:justify-start cursor-pointer lg:cursor-default"
+                  className="lg:text-[0.97vw] xs:text-[3.5vw] text-[#908EB5] font-Inter font-bold flex xs:justify-between xs:w-[80vw] lg:w-[10vw] xs:py-2 items-center lg:justify-start cursor-pointer lg:cursor-default"
                   onClick={() => toggleSection(l.id.toString())} // Convert id to string if needed
                 >
                   {l.label}
@@ -233,16 +233,16 @@ export default function Footer() {
       <div className="w-full lg:h-20 flex-center xs:flex-col xs:h-40 gradient-border font-Inter font-medium text-[#908EB5] xs:text-[3.5vw] md:text-[2vw] lg:text-[1vw]">
         &copy; GainWix 2024, All Rights Reserved.
         <div className="xs:flex lg:hidden items-center gap-5 mt-10 xs:mb-5 xs:justify-center">
-          <div className="xs:rounded-[50%] xs:w-[12vw] xs:h-[5vh] md:w-[7vw] md:h-[5vh] md:rounded-[50%] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
+          <div className="xs:rounded-[50%] xs:w-[11.5vw] xs:h-[5.5vh] md:w-[7vw] md:h-[5vh] md:rounded-[50%] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
             <Instagram />
           </div>
-          <div className="xs:rounded-[50%] xs:w-[12vw] xs:h-[5vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
+          <div className="xs:rounded-[50%] xs:w-[11.5vw] xs:h-[5.5vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
             <Facebook />
           </div>
-          <div className="xs:rounded-[50%] xs:w-[12vw] xs:h-[5vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
+          <div className="xs:rounded-[50%] xs:w-[11.5vw] xs:h-[5.5vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
             <Linkedin />
           </div>
-          <div className="xs:rounded-[50%] xs:w-[12vw] xs:h-[5vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
+          <div className="xs:rounded-[50%] xs:w-[11.5vw] xs:h-[6vh] md:w-[7vw] md:h-[5vh] bg-[#2B2E4F] flex-center hover:bg-[#908EB5]">
             <Twitter />
           </div>
         </div>

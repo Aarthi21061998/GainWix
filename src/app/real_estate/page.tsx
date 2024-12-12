@@ -73,22 +73,22 @@ export default function RealEstate() {
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
-      <div className=" w-full 2xl:!min-h-[70vh] xl:min-h-[90vh] lg:min-h-[40vh] md:min-h-[60vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-10">
-        <div className="grid lg:grid-cols-2 justify-between gap-14  sm:grid-cols-1">
-          <div className=" flex flex-col xs:mt-[5vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className="md:hidden lg:block xl:block sm:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw]  font-bold   text-[white] font-sora  md:text-[3vw]  xs:text-center   lg:text-start xs:-mt-[50vw] lg:mt-[10vw] xl:mt-[50vw]">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[60vh] md:min-h-[65vh] xs:min-h-[35vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
+        <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
+          <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
+            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[45vw]">
               Grow Your Real Estate <br /> Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 AI Conversational <br /> Property Solutions{" "}
               </span>
             </h1>
-            <h1 className="md:block xs:hidden sm:hidden lg:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[3vw]  xs:text-center md:mt-[10vw]  lg:text-start xs:-mt-10 ">
-              Grow Your Real Estate  Business With <br />
+            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
+              Grow Your Real Estate Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                AI Conversational  Property Solutions{" "}
+                AI Conversational Property Solutions{" "}
               </span>
             </h1>
-            <p className="lg:w-[35vw] xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[2vw] md:items-center lg:items-baseline  xs:text-center lg:text-start  xs:text-[3vw] ">
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline  xs:text-center lg:text-center  xs:text-[4vw] xl:text-start ">
               Engage with potential buyers and sellers in real-time, answer
               questions 24/7, and schedule appointments effortlessly. Build
               richer customer profiles through natural conversation, and
@@ -107,14 +107,12 @@ export default function RealEstate() {
             </div>
           </div>
 
-          <div
+          {/* <div
             ref={scrollRef}
-            className={`h-[300px] overflow-y-scroll no-scrollbar relative right-[12vw] top-[10vw] ${
-              isBlurred ? "blur-md" : ""
-            }`}
+            className={`            xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[80vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
+${isBlurred ? "blur-md" : ""}`}
           >
-            {/* Scrollable content */}
-            {/* <div className="relative h-[800px]">
+            <div className="flex md:space-x-4 xs:space-x-1">
               {RealEstateScrolling?.map((data, index) => (
                 <div
                   className="scroll-item mb-4 flex items-center justify-center"
@@ -124,21 +122,22 @@ export default function RealEstate() {
                     src={data.icon}
                     alt={`Real Estate Icon ${index + 1}`}
                     style={{ marginBottom: "1vw" }}
+                    className="xl:h-[30vh] xs:h-[50vh]"
                   />
                 </div>
               ))}
-            </div> */}
-          </div>
-          <div className="absolute xs:right-[5vw] xs:top-[60vw] lg:right-[-2vw] lg:top-[4vw] xl:left-[13vw] xl:top-[63vw]  w-full h-full flex justify-end">
+            </div>
+          </div> */}
+          <div className="absolute 2xl:right-[4vw] 2xl:top-[32vw]  xs:top-[80vw] lg:right-[20vw] lg:top-[70vw] xl:right-[1vw] xl:top-[31vw] md:top-[90vw] md:right-[10vw] w-full h-full flex justify-end">
             <Image
               src={RealEstateHero}
               alt="hero"
-              className="xl:w-[80vw] xl:h-[50vh] lg:w-[60vw] lg:h-[50vh]"
+              // className="xl:w-[80vw] xl:h-[50vh] lg:w-[60vw] lg:h-[50vh]"
             />{" "}
           </div>
         </div>
       </div>
-      <div className="lg:mt-20 xs:mt-[160vw] md:mt-[120vw]">
+      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[160vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">
@@ -148,11 +147,11 @@ export default function RealEstate() {
         </div>
       </div>
 
-      <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh]  ">
+      <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] ">
         <div className="md:py-0 xs:py-5  ">
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="xl:mx-[5rem] lg:mx-[3rem]  w-full "
+              // className="xl:mx-[5rem] lg:mx-[3rem]  w-full "
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw] xs:mx-[5vw] md:mx-[-1vw] lg:mx-0  ">
@@ -161,17 +160,17 @@ export default function RealEstate() {
                       Gain Acquisition
                     </p>
                   </div>
-                  <div className="md:hidden xs:text-[8vw] md:w-[50%] md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
+                  <div className="md:hidden  xs:ml-[-6vw] xs:text-[8vw] md:w-[50%] md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora ">
                     Effortless Lead <br />
                     Generation &
                     <p className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw]  font-bold">
                       Qualification{" "}
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
+                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]   lg:w-[40vw] font-bold text-[white] font-sora  leading-tight 2xl:tracking-wide ">
                     Effortless Lead <br />
                     Generation &
-                    <p className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
+                    <p className=" from-[#8C76F7] via-[#F9AD68] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
                       Qualification{" "}
                     </p>
                   </div>
@@ -185,16 +184,16 @@ export default function RealEstate() {
 
           <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="xl:mx-[13rem] lg:mx-[7rem] md:mx-[5rem] xs:mx-[2rem] "
+              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] "
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw]   ">
                   <div className="p-2 border-2 border-[#0F4EEF] rounded-[30px] inline-flex items-center bg-[#061b4d] mb-5">
-                    <p className="text-[#A7C0FF]  lg:text-[1vw] font-semibold pl-2">
+                    <p className="text-[#A7C0FF]  lg:text-[1vw] md:text-[2vw] font-semibold pl-2 xl:px-4">
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88%] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
+                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide leading-tight">
                     Boost <br /> Engagement &
                     <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
@@ -207,7 +206,7 @@ export default function RealEstate() {
                   </div>
                   <div className="lg:hidden xs:hidden  md:block xs:text-[8vw] xs:w-[88%] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
                     Boost <br /> Engagement &
-                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[40vw] font-bold">
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Streamline <br />
                       </span>
@@ -222,24 +221,32 @@ export default function RealEstate() {
               image={RealEstateCard2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 xl:pb-10 ">
             <CommonCard
               text
-              className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
+              // className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
               customTitle={
                 <>
-                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5">
-                    <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold pl-2 text-[#09CC94]">
+                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5 xl:mt-20">
+                    <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold lg:pl-2 text-[#09CC94] xl:px-4">
                       Gain Loyalty
                     </p>
                   </div>
-                  <div className=" md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw]">
+                  <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide leading-tight">
                     <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                       Build Lasting <br /> Relationships & <br />
                       <span className="lg:text-[2.2vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Cultivate Loyalty{" "}
                       </span>
                     </span>
+                  </div>
+                  <div className="md:hidden xs:block md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
+                    <p className="text-[white] lg:text-[2.2vw]  xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                      Build Lasting <br /> Relationships & <br />
+                      <span className="md:text-[4vw]   from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                        Cultivate Loyalty{" "}
+                      </span>
+                    </p>
                   </div>
                 </>
               }
@@ -251,40 +258,41 @@ export default function RealEstate() {
         </div>
       </div>
 
-      <div className="py-10">
+      <div className="md:py-10">
         <DigitalMarketing />
       </div>
-      <div className="mt-10">
+      <div className="mt-10 xs:hidden md:block">
         <BrandScroll />
       </div>
 
       <div className="">
         <div className="flex justify-center text-[3vw] font-semibold">
-          <h1 className="lg:text-[3vw] md:text-[3vw] xs:text-[8vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center">
+          <h1 className="lg:text-[3vw] md:text-[3vw] xs:text-[8vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center xl:tracking-wide">
             <p className="lg:pl-10">Personalize Customer Experience To</p>
             <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
-              scale your business{" "}
+              scale your business
             </span>
           </h1>
         </div>
-        <div className="w-full mt-5 overflow-x-auto lg:overflow-visible">
+
+        <div className="lmd:w-full mt-5 overflow-x-auto lg:overflow-visible 2xl:w-[64vw] xl:w-[74vw] xl:m-auto">
           <div
             className="
-      flex flex-row gap-5 xs:flex-row sm:flex-row overflow-x-auto
+      flex flex-row md:gap-5 xs:flex-row sm:flex-row overflow-x-auto
       md:grid md:grid-cols-3 md:grid-rows-2 md:gap-y-5
       lg:grid-cols-5 lg:grid-rows-1 lg:gap-5"
           >
             {CommerceCardList?.map((data, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center"
+                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5"
               >
-                <div className="w-full flex justify-center">
+                <div className="w-full flex flex-col xs:justify-center xl:justify-start">
                   <Image src={data?.icon} alt="icon" />
+                  <p className="py-5 font-Inter font-medium  text-white xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] md:text-[2.5vw] ">
+                    {data?.text}
+                  </p>
                 </div>
-                <p className="py-5 font-Inter font-medium text-center text-white xs:text-[2vw] sm:text-[1.5vw] lg:text-[1vw]">
-                  {data?.text}
-                </p>
               </div>
             ))}
           </div>

@@ -125,16 +125,15 @@ export default function NavBar() {
 
   return (
     <div
-      className={`2xl:w-full h-20 shadow-[0px_4px_8px_0px_#0000000F] mx-auto bg-[#060A22] sm:layout xs:w-[100%] xs:p-10 z-50 fixed backdrop-blur-xl`}
+      className={`2xl:w-full h-[15vh]  shadow-[0px_4px_8px_0px_#0000000F] mx-auto bg-[#060A22] sm:layout xs:w-[100%] xs:p-10 z-50 fixed backdrop-blur-xl`}
       ref={navRef}
     >
       <div className=" h-full flex flex-row items-center  lg:mx-auto  justify-between   xs:w-[100%]  xs:justify-between  ">
-        {/* <div className=" flex w-[full] justify-evenly items-center   text-[#908EB5]"> */}
-        <div className=" w-full flex flex-row  justify-between items-center ">
+        <div className="  2xl:w-[76vw] xl:w-[76vw] 2xl:m-auto  xl:m-auto flex flex-row  justify-between items-center  w-full ">
           <Link href={"/"} className=" pointer">
             <Image src={FullLogo} alt="GainWix Full Logo" />{" "}
           </Link>
-          <div className="lg:hidden flex">
+          <div className="lg:hidden flex ">
             <div onClick={() => setOpen(!open)}>
               {open ? (
                 <Image src={meta} alt="Close menu" />
@@ -172,7 +171,7 @@ export default function NavBar() {
       {/* For responsive */}
       {open && (
         <div className="lg:hidden absolute top-20 left-0 w-full bg-[#060A22] shadow-lg h-[auto] max-h-[auto] ">
-          <div className="flex flex-row gap-4 p-4 md:items-center">
+          <div className="flex flex-row gap-4 p-4 md:items-center ">
             {MenuLists?.map((menu: any) => (
               <>
                 <MenuItem key={menu?.id} data={menu} type={menu.type} />

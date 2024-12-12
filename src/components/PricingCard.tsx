@@ -38,14 +38,14 @@ const PricingCard = () => {
 
   return (
     <div className="w-full relative">
-      <div className="w-full align-center flex flex-col justify-center text-center">
-        <div className="text-[3vw] font-sora font-bold text-[white]">
+      <div className="w-full align-center flex flex-col justify-center text-center xs:mt-[25vw] lg:mt-0">
+        <div className="xs:text-[4vw] lg:text-[3vw] font-sora font-bold text-[white]">
           Flexible and{" "}
           <span className="pl-1 from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora font-bold ">
             Transparent Pricing
           </span>
         </div>
-        <p className="xs:text-[1.5vw] md:text-[0.95vw] text-[#616874] font-medium font-Inter">
+        <p className="xs:text-[2.5vw] md:text-[0.95vw] text-[#616874] font-medium font-Inter xs:mt-[2vw] lg:mt-0 ">
           Pricing built for businesses of all sizes. Always know what you’ll
           pay.
         </p>
@@ -53,12 +53,12 @@ const PricingCard = () => {
 
       <div className=" w-full h-[17vh] flex md:flex-row items-center md:my-16 sticky top-[5rem]  backdrop-blur-xl xs:flex-col xs:p-6 xs:my-6 xs:gap-10 md:gap-0">
         <div className="md:w-[30%] h-full flex flex-row justify-center items-center md:border-b border-b-[#2D3154] xs:w-full">
-          <div className="bg-[] flex flex-row gap-5 justify-center items-center p-[0.6vw] rounded-[46px] w-[60%] border border-[#4A2DAA]">
+          <div className="bg-[] flex flex-row gap-5 justify-center items-center xs:p-[3vw] md:p-[0.6vw] rounded-[46px] w-[60%] border border-[#4A2DAA]">
             {["monthly", "yearly"].map((option: string) => (
               <p
                 key={option}
                 onClick={() => handleClick(option)}
-                className={`md:w-[10vw] px-[2vw] py-[0.6vw] rounded-[2vw] md:text-[0.95vw] font-semibold font-Inter text-center transition-colors ease-linear duration-300 xs:text-[2.5vw] cursor-pointer`}
+                className={`md:w-[10vw] md:px-[2vw] md:py-[0.6vw] xs:px-3 xs:py-2 md:rounded-[2vw] xs:rounded-[10vw] md:text-[0.95vw] font-semibold font-Inter text-center transition-colors ease-linear duration-300 xs:text-[2.5vw] cursor-pointer`}
                 style={{
                   color: selectedOption === option ? "#F6EDFF" : "#2B2E4F",
                   backgroundColor:
@@ -80,13 +80,13 @@ const PricingCard = () => {
                   style={BrandStyle}
                   className="flex flex-col text-center items-center justify-center pb-10 pt-5   border-r-[#2D3154] border-b-[#2D3154]"
                 >
-                  <span className="md:text-[1.5vw] text-[#55567A] font-Sora font-semibold xs:text-[3vw]">
+                  <span className="md:text-[1.5vw] text-[#55567A] font-Sora font-semibold xs:text-[4vw]">
                     {data.name}
                   </span>
-                  <p className="text-[2vw]  font-Inter font-bold text-[#FFFFFF] flex flex-row justify-center xs:pt-2 md:pt-0">
+                  <p className="md:text-[2vw] xs:text-[4vw]  font-Inter font-bold text-[#FFFFFF] flex flex-row justify-center xs:pt-2 md:pt-0">
                     {data.value}
                     {data?.text && (
-                      <span className="text-[#FFFFFF] font-Sora  md:text-[0.95vw] font-medium md:pt-4 md:pl-2 xs:text-[2vw]">
+                      <span className="text-[#FFFFFF] font-Sora  md:text-[0.95vw] xs:text-[2vw] font-medium md:pt-4 xs:pt-2 md:pl-2 ">
                         {data.text}
                       </span>
                     )}

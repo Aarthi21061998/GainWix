@@ -47,7 +47,7 @@ const BrandList = [
 ];
 export default function BrandScroll() {
   return (
-    <div className="relative overflow-hidden md:w-full  m-auto   lg:w-[80vw]  xs:w-[85vw]">
+    <div className="relative overflow-hidden md:w-full  m-auto   lg:w-[80vw]  xs:w-[85vw] xl:w-[74.5vw] 2xl:w-[64vw]">
       <div className="flex animate-marquee space-x-8 min-w-full">
         {[...BrandList, ...BrandList].map((item, index) => (
           <Image

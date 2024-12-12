@@ -157,8 +157,8 @@ const Card: React.FC<CardProps> = (props) => {
     <div
       className={cn(
         `flex items-center 
-        ${revers ? "md:flex-row-reverse" : "md:flex-row"}
-        max-md:flex-col  md:gap-6`,
+        ${revers ? "md:flex-row-reverse gap-10 " : "md:flex-row"}
+        max-md:flex-col   xl:w-[72vw] xl:m-auto xs:mx-5  `,
         className
       )}
       {...restProps}
@@ -166,7 +166,7 @@ const Card: React.FC<CardProps> = (props) => {
       <div
         className={cn(
           `${revers ? "text-left " : "text-left"} 
-          w-full md:w-1/2 max-md:w-full flex flex-col`,
+          md:w-1/2 max-md:w-full flex flex-col  `,
           cardClassName
         )}
       >
@@ -175,7 +175,7 @@ const Card: React.FC<CardProps> = (props) => {
         )}
         {content && (
           <p
-            className={`md:text-lg font-medium text-[#3B3F46] mt-5 mb-7  md:w-[80vw] xs:w-[80vw] xs:text-[3vw] xl:w-full font-Inter ${
+            className={`md:text-lg font-medium text-[#3B3F46] mt-5 mb-7  md:w-[80vw] xs:w-[75vw] xs:text-[3vw] xl:w-full font-Inter ${
               revers ? "max-md:w-full flex flex-col w-full text-left" : "w-5/6"
             }`}
           >
@@ -186,28 +186,28 @@ const Card: React.FC<CardProps> = (props) => {
           <div className={`w-full ${text ? "mt-[1vw]" : ""}`}>
             {list.map((data) => (
               <div
-                className="flex items-center gap-[0.8vw] py-2 xs:mx-[6vw] md:mx-[-1vw] "
+                className="flex items-center gap-[0.8vw] py-2  md:mx-[-1vw]"
                 key={data.text || data.content}
               >
                 {text ? (
-                  <div className="flex flex-col">
-                    <div className="flex">
+                  <div className="flex flex-col ">
+                    <div className="flex   tracking-wide ">
                       <Image
                         src={BulletPoint}
                         alt="list icon"
-                        className="mb-4 xs:w-[3vw] md:w-[2vw] lg:w-[1.5vw]"
+                        className="md:mb-6 xs:w-[5vw] md:w-[3vw] lg:mt-2 lg:w-[2vw] xl:w-[1.5vw] "
                       />
-                      <h1 className="lg:text-[1.3vw]  pl-[1vw] font-semibold from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-l bg-clip-text text-transparent md:text-[2vw] xs:text-[3vw] font-Sora">
+                      <h1 className="lg:text-[2.6vw] xl:text-[1.6vw]   xs:pl-[2vw] md:pl-[1vw] font-semibold from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-l bg-clip-text text-transparent md:text-[3vw] xs:text-[5vw] font-Sora">
                         {data.text}
                       </h1>
                     </div>
-                    <p className="lg:pl-[1.8vw] xs:leading-1 font-Inter   lg:w-[30vw] md:w-[30vw] lg:text-[0.95vw] md:text-[1.5vw] font-medium text-[#908EB5] xs:text-[3vw] xs:w-[80vw] ">
+                    <p className="lg:pl-[1.8vw] xs:pt-3 md:pt-0 xs:leading-1 font-Inter tracking-wide xl:w-[30vw] 2xl:w-[35vw] lg:w-[42vw] md:w-[30vw] lg:text-[2.2vw] xl:text-[1.3vw] md:text-[2vw] font-medium text-[#908EB5] xs:text-[4vw] xs:w-[85vw] ">
                       {data.content}
                     </p>
                   </div>
                 ) : (
-                  <div className="flex lg:text-lg font-medium align-center font-Inter">
-                    <li className="pl-[1.8vw] xs:leading-1 md:leading-7 md:w-[38vw] lg:w-[35vw] xl:text-[0.95vw] md:text-[1.5vw] font-medium text-[#908EB5] md:mt-3 xs:text-[3vw] xs:w-[80vw] sm:w-[10vw] ">
+                  <div className="flex lg:text-lg font-medium align-center font-Inter tracking-wide">
+                    <li className="pl-[1.8vw] xs:leading-1 md:leading-7 md:w-[38vw] lg:w-[35vw] xl:text-[0.95vw] md:text-[1.5vw]  font-medium text-[#908EB5] md:mt-3 lg:mt-[0.03vw] xs:text-[4vw] xs:w-[80vw] sm:w-[10vw] ">
                       {data.content}
                     </li>
                   </div>
@@ -218,11 +218,11 @@ const Card: React.FC<CardProps> = (props) => {
         )}
       </div>
       {image && (
-        <div className="xs:w-[90vw] md:w-[70vw] lg:w-[40vw] xl:w-[clamp(700px,700px,700px)] xl:h-[clamp(650px,700px,650px)]">
+        <div className="xs:w-[90vw] md:w-[70vw]  lg:w-[40vw] xl:w-[82vw] xl:h-[65vh] ">
           <Image
             src={image}
             alt="Card Image"
-            className="xl:w-[70vw] xl:h-[55vh] lg:w-[40vw] lg:h-[40vh]  md:h-[40vh] xl:mt-[11vw]"
+            className=" xl:w-[82vw] xl:h-[65vh] lg:w-[40vw] lg:h-[40vh] 2xl:w-[85vw]  2xl:h-[60vh]  md:h-[40vh] xl:mt-[5vw] 2xl:mt-20   md:ml-0  lg:mx-0 xs:mt-2 "
           />
         </div>
       )}

@@ -28,13 +28,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
         <p className=" text-[#908EB5] font-Inter font-semibold xl:text-[0.85vw] xs:text-[4vw] lg:text-[1.5vw]">
           {data?.title}
         </p>
-        <div className="group-hover:rotate-180 transition-all ease-linear duration-200">
-          <Image src={Arrow} alt="arrow" />
-        </div>
+        {data.id === 2 && (
+          <div className="group-hover:rotate-180 transition-all ease-linear duration-200">
+            <Image src={Arrow} alt="arrow" />
+          </div>
+        )}
       </div>
 
       {data?.subMenu.length > 0 && (
-        <div className="xl:w-[620px] lg:w-[700px] 2xl:w-[750px] md:w-[700px] xs:w-[350px] xs:absolute xs:right-[-50vw] 2xl:absolute 2xl:right-[-17vw]  lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
+        <div className="xl:w-[620px] lg:w-[700px] 2xl:w-[750px] md:w-[700px] xs:w-[350px] xs:absolute xs:right-[-50vw] 2xl:absolute 2xl:right-[-1vw]  lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
           {data.subMenu.map((item) => (
             <div
               key={item.id}
@@ -54,9 +56,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
 
               <div
                 className={`w-full ${
-                  data.type === "single"
-                    ? ""
-                    : data.type === "multiple"
+                  // data.type === "single"
+                  //   ? ""
+                  data.type === "multiple"
                     ? "grid md:grid-cols-2 gap-x-0 gap-y-0 xs:grid-cols-1 xs:max-h-[75vh] xs:h-auto md:max-h-full"
                     : ""
                 }`}

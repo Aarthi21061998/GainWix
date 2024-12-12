@@ -9,12 +9,12 @@ export default function MenuListCard(props: any) {
     <Link href={data?.path || "/default-path"} target="_top">
       <div
         className={cn(
-          "flex items-start align-center md:py-3  xs:p-1 rounded-xl hover:bg-[#2D2E4F] ",
+          "flex items-start align-center md:py-3 xl:pb-3 xs:p-1 rounded-xl md:hover:bg-[#2D2E4F] ",
           className
         )}
         {...prop}
       >
-        <div className=" flex-column items-center">
+        <div className=" flex-column items-center  ">
           <div className="flex items-center   xl:w-[15vw] xl:h-[6vh] ">
             {data?.icon && <Image src={data?.icon} alt="icon" className=" " />}
 
@@ -23,9 +23,9 @@ export default function MenuListCard(props: any) {
             </div>
           </div>
           {data?.content && (
-            <div className="md:text-[13px] font-medium text-[#616874] md:pl-14 xl:-mt-5  2xl:-mt-8 xs:pt-1 lg:pt-6  xs:text-[3.5vw] md:w-[40vw] lg:w-[30vw] xs:w-[80vw] xl:w-[21vw] 2xl:w-[15vw]">
+            <span className="md:text-[13px] font-medium text-[#616874] md:pl-14 xl:-mt-5 xl:w-[22vw]  xl:text-start  2xl:-mt-8 xs:pt-1 lg:pt-6  xs:text-[3.5vw] md:w-[40vw]  xs:w-[80vw]  xl:flex xl:items-center xl:pr-10  2xl:w-[15vw]">
               {data?.content}
-            </div>
+            </span>
           )}
         </div>
       </div>

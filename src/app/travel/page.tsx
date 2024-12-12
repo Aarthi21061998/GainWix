@@ -38,10 +38,10 @@ export default function Travel() {
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
-      <div className=" w-full 2xl:!min-h-[70vh] xl:min-h-[0vh] lg:min-h-[60vh] md:min-h-[40vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-10">
-        <div className="grid lg:grid-cols-2 justify-between gap-14  sm:grid-cols-1">
-          <div className=" flex flex-col xs:mt-[5vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className="md:hidden lg:block xl:block sm:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw]  font-bold   text-[white] font-sora  md:text-[3vw]  xs:text-center   lg:text-start xs:-mt-[60vw] xl:mt-[50vw]">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[50vh] md:min-h-[60vh] xs:min-h-[30vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
+        <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
+          <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
+            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
               Grow Your Travel <br /> Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 AI Conversational <br />{" "}
@@ -50,14 +50,13 @@ export default function Travel() {
                 Travel Assistant{" "}
               </span>
             </h1>
-            <h1 className="md:block xs:hidden sm:hidden lg:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[3vw]  xs:text-center   lg:text-start xs:-mt-10 ">
+            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
               Grow Your Travel Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                AI Conversational 
-                Travel Assistant{" "}
+                AI Conversational Travel Assistant{" "}
               </span>
             </h1>
-            <p className="lg:w-[35vw] xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[2vw] md:items-center lg:items-baseline  xs:text-center lg:text-start  xs:text-[3vw] ">
+            <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline  xs:text-center lg:text-center  xs:text-[4vw] xl:text-start ">
               Gainwix empowers your agency to create a delightful travel
               experience for your customers, from initial inquiry to post-trip
               support. Let's transform your travel business together!
@@ -74,16 +73,16 @@ export default function Travel() {
               </button>{" "}
             </div>
           </div>
-          <div className="absolute xs:right-[5vw] xs:top-[60vw] lg:right-[4vw] lg:top-[4vw] xl:left-[13vw] xl:top-[63vw]  w-full h-full flex justify-end">
+          <div className="absolute  xs:top-[80vw] lg:right-[25vw] lg:top-[80vw] xl:left-[6vw] xl:top-[31vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
             <Image
               src={TravelHero}
               alt="hero"
-              className="xl:w-[80vw] xl:h-[50vh] lg:w-[45vw] lg:h-[50vh]"
+              // className="xl:w-[80vw] xl:h-[50vh] lg:w-[45vw] lg:h-[50vh]"
             />{" "}
           </div>
         </div>
       </div>
-      <div className="lg:mt-20 xs:mt-[160vw] md:mt-[120vw]">
+      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[160vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">
@@ -93,11 +92,11 @@ export default function Travel() {
         </div>
       </div>
 
-      <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh]  ">
+      <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] ">
         <div className="md:py-0 xs:py-5  ">
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="xl:mx-[5rem] lg:mx-[3rem]  w-full "
+              // className="xl:mx-[5rem] lg:mx-[3rem]  w-full "
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw] xs:mx-[5vw] md:mx-[-1vw] lg:mx-0  ">
@@ -106,17 +105,17 @@ export default function Travel() {
                       Gain Acquisition
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
+                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[3vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
                     Boost Bookings
-                    <p className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
+                    <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw] lg:text-[3vw]  font-bold">
                       & Revenue{" "}
-                    </p>
+                    </span>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
+                  <div className="md:hidden  xs:ml-[-6vw] xs:text-[8vw] md:w-[50%] md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
                     Boost Bookings
-                    <p className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
+                    <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw]  font-bold">
                       & Revenue{" "}
-                    </p>
+                    </span>
                   </div>
                 </div>
               }
@@ -128,18 +127,18 @@ export default function Travel() {
 
           <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="xl:mx-[13rem] lg:mx-[7rem] md:mx-[5rem] xs:mx-[2rem] "
+              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[4rem] xs:mx-[1rem] "
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw]   ">
                   <div className="p-2 border-2 border-[#0F4EEF] rounded-[30px] inline-flex items-center bg-[#061b4d] mb-5">
-                    <p className="text-[#A7C0FF]  lg:text-[1vw] font-semibold pl-2">
+                    <p className="text-[#A7C0FF]  lg:text-[1vw] md:text-[2vw] font-semibold pl-2 xl:px-4">
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88%] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
+                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw]  lg:text-[3vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
                     Cultivate Customer 
-                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] md:text-[2.5vw]  lg:text-[3vw]  lg:w-[40vw] font-bold">
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Retention & Loyalty
                       </span>
@@ -162,15 +161,23 @@ export default function Travel() {
           <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 ">
             <CommonCard
               text
-              className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
+              // className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
               customTitle={
                 <>
-                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5">
-                    <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold pl-2 text-[#09CC94]">
+                  <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5 xl:mt-20">
+                    <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold lg:pl-2 text-[#09CC94] xl:px-4">
                       Gain Loyalty
                     </p>
                   </div>
-                  <div className=" md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw]">
+                  <div className="md:block xs:hidden  md:text-[2vw]  md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
+                    <span className="text-[white]  lg:text-[3vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                      Seamless Support & <br />
+                      <span className=" lg:text-[3vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                        Improved Efficiency{" "}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="md:hidden xs:block md:text-[2vw]  md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
                     <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                       Seamless Support & <br />
                       <span className="lg:text-[2.2vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">

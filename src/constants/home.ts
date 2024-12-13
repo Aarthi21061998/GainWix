@@ -225,6 +225,7 @@ export const CampaignList = [
     title: 'campaigns',
     color: 'white',
     border: '#6940F2',
+    borderBottom:'#6940F2',
     // icon: ICONS?.CampaignIcon,
     subtitle: [
       {
@@ -526,9 +527,9 @@ export const CampaignList = [
       {
         id: 3,
         name: 'Messages speed',
-        speed: '100 messages / sec',
-        speed1: '300 messages / sec',
-        speed3: '1000 messages / sec',
+        speed: '100 Msg / sec',
+        speed1: '300 Msg / sec',
+        speed3: '1000 Msg / sec',
       },
     ],
   },

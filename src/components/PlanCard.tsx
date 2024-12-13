@@ -15,23 +15,6 @@ type PlansTypes = "Monthly" | "Yearly";
 export default function PlanCard() {
   const [selectedPrice, setSelectedPrice] = useState<PlansTypes>("Monthly");
 
-   const [sliderRef, instanceRef] = useKeenSlider({
-     loop: false,
-     mode: "snap",
-     slides: {
-       perView: 1, // 1 slide per view for mobile
-       spacing: 10,
-     },
-     breakpoints: {
-       "(min-width: 768px)": {
-         slides: { perView: 2, spacing: 15 }, // 2 slides for tablets
-       },
-       "(min-width: 1024px)": {
-         slides: { perView: 3, spacing: 20 }, // 3 slides for desktop
-       },
-     },
-   });
-
   const PlansCard = ({ plan }: { plan: PlansTypes }) => {
     return (
       <button
@@ -69,123 +52,112 @@ export default function PlanCard() {
         </div>
       </div>
 
-      <div className="relative w-full h-fit flex   lg:flex-row justify-center mt-10 md:flex-col xs:justify-center xs:items-center md:align-center md:items-center py-10">
-        <div ref={sliderRef} className="keen-slider">
-          {pricing?.map((p: PricingListTypes) => {
-            const isGrowthPlan = p.title === "Growth";
+      <div className="relative w-full h-fit flex   md:flex-row justify-center mt-10  xs:justify-center xs:items-center md:align-center md:items-center md:px-10 lg:py-10">
+        {pricing?.map((p: PricingListTypes) => {
+          const isGrowthPlan = p.title === "Growth";
 
-            console.log("object", p[selectedPrice.toLowerCase()]);
+          console.log("object", p[selectedPrice.toLowerCase()]);
 
-            return (
+          return (
+            <div
+              key={p.title}
+              className={`min-w-[15vw] lg:h-[70vh] md:h-[50vh] xs:w-[90vw] md:max-w-[35vh] flex justify-center items-center h-auto lg:max-w-[22vw] xs:rounded-[3vw] lg:rounded-[1.375vw] p-[0.25vw] border border-[#616BC1] relative  ${
+                isGrowthPlan ? "z-10" : "z-10"
+              } ${
+                p.title === "Starter"
+                  ? "hover:border-[4px] hover:border-[#6940F2]  "
+                  : p.title === "Growth"
+                  ? "hover:border-[4px] hover:border-[#3A69E3] mt-[-5vw] !w-[70vw]  "
+                  : p.title === "Magnum"
+                  ? "hover:border-[4px] hover:border-[#09CC94]"
+                  : "border border-[#6940F2]"
+              }`}
+            >
               <div
-                key={p.title}
-                className={`min-w-[15vw] xs:w-[90vw] md:max-w-[30vh] flex justify-center items-center h-auto lg:min-h-[70vh] xs:min-h-[80vh] lg:max-w-[22vw] xs:rounded-[3vw] lg:rounded-[1.375vw] p-[0.25vw] border border-[#616BC1] relative ${
-                  isGrowthPlan ? "z-10" : "z-10"
-                } ${
-                  p.title === "Starter"
-                    ? "hover:border-[4px] hover:border-[#6940F2]  "
-                    : p.title === "Growth"
-                    ? "hover:border-[4px] hover:border-[#3A69E3] mt-[-5vw] !w-[70vw] "
-                    : p.title === "Magnum"
-                    ? "hover:border-[4px] hover:border-[#09CC94]"
-                    : "border border-[#6940F2]"
+                className={`absolute lg:-top-[7vw] lg:left-[5vw] xs:top-[-18vw] ${
+                  p.title === "Starter" ? "" : ""
                 }`}
               >
-                <div
-                  className={`absolute lg:-top-[7vw] lg:left-[5vw] xs:top-[-18vw] ${
-                    p.title === "Starter" ? "" : ""
+                {p.title === "Starter" ? (
+                  <Image
+                    src={starter}
+                    alt="s"
+                    className="lg:w-[11vw] xs:w-[40vw]"
+                  />
+                ) : p.title === "Growth" ? (
+                  <Image src={growth} alt="s" className="w-[11vw]" />
+                ) : p.title === "Magnum" ? (
+                  <Image src={magnum} alt="s" className="w-[11vw]" />
+                ) : null}
+              </div>
+              <div className="w-full h-full rounded-[1.2vw] md:px-[1vw] md:py-[1.2vw] xs:py-[5vw] xs:px-[3vw] ">
+                <h3
+                  className={`md:text-[1.2vw] font-medium text-[white] font-inter xs:text-[5vw] rounded-full flex justify-center w-full max-w-[50%] items-center m-auto py-2 xs:mt-[14vw] lg:mt-4 ${
+                    p.title === "Starter"
+                      ? "border border-[#6940F2]"
+                      : p.title === "Growth"
+                      ? "border border-[#3A69E3]"
+                      : p.title === "Magnum"
+                      ? "border border-[#09CC94]"
+                      : "border border-[#6940F2]"
                   }`}
                 >
-                  {p.title === "Starter" ? (
-                    <Image
-                      src={starter}
-                      alt="s"
-                      className="lg:w-[11vw] xs:w-[40vw]"
-                    />
-                  ) : p.title === "Growth" ? (
-                    <Image src={growth} alt="s" className="w-[11vw]" />
-                  ) : p.title === "Magnum" ? (
-                    <Image src={magnum} alt="s" className="w-[11vw]" />
-                  ) : null}
-                </div>
-                <div className="w-full h-full rounded-[1.2vw] md:px-[1vw] md:py-[1.2vw] xs:py-[5vw] xs:px-[3vw] ">
-                  <h3
-                    className={`md:text-[1.2vw] font-medium text-[white] font-inter xs:text-[5vw] rounded-full flex justify-center w-full max-w-[50%] items-center m-auto py-2 xs:mt-[14vw] ${
-                      p.title === "Starter"
-                        ? "border border-[#6940F2]"
-                        : p.title === "Growth"
-                        ? "border border-[#3A69E3]"
-                        : p.title === "Magnum"
-                        ? "border border-[#09CC94]"
-                        : "border border-[#6940F2]"
-                    }`}
-                  >
-                    {p.title}
-                  </h3>
+                  {p.title}
+                </h3>
 
-                  <div className="mt-[0.7vw] items-center w-full flex justify-center xs:mt-[7vw]">
-                    <span className="md:text-[2vw]  xs:text-[9vw] xs:font-extrabold font-bold text-[white] font-Inter">
-                      {p.custom
-                        ? "Custom"
-                        : p[selectedPrice.toLowerCase()]?.price}
+                <div className="mt-[0.7vw] items-center w-full flex justify-center xs:mt-[7vw]">
+                  <span className="md:text-[2vw]  xs:text-[9vw] xs:font-extrabold font-bold text-[white] font-Inter">
+                    {p.custom
+                      ? "Custom"
+                      : p[selectedPrice.toLowerCase()]?.price}
+                  </span>
+                  {!p.custom && (
+                    <span className="font-medium text-[white] xs:text-[3vw]  lg:text-[1.05vw] xs:mt-[4vw] lg:mt-0 lg:pt-0 font-Inter pl-2">
+                      / {selectedPrice === "Monthly" ? "Month" : "Yearly"}
                     </span>
-                    {!p.custom && (
-                      <span className="font-medium text-[white] xs:text-[3vw] xs:mt-[4vw] lg:pt-0 font-Inter pl-2">
-                        / {selectedPrice === "Monthly" ? "Month" : "Yearly"}
-                      </span>
-                    )}
-                  </div>
+                  )}
+                </div>
 
-                  <div className="flex xs:mt-5 flex-row font-medium font-Inter text-white pt-[1vw] md:text-[1vw] xs:text-[4vw]  w-full items-center">
-                    <Image
-                      src={p[selectedPrice.toLowerCase()]?.tick}
-                      alt="icon"
-                      className="lg:w-[3vw] md:w-[20px] xs:w-[25px]"
-                    />
-                    <span>Business Verification</span>
+                <div className="flex xs:mt-5 lg:mt-0 flex-row font-medium font-Inter text-white pt-[1vw] md:text-[1vw] xs:text-[4vw]  w-full items-center">
+                  <Image
+                    src={p[selectedPrice.toLowerCase()]?.tick}
+                    alt="icon"
+                    className="lg:w-[3vw] md:w-[20px] xs:w-[25px]"
+                  />
+                  <span>Business Verification</span>
 
-                    <Image
-                      src={p[selectedPrice.toLowerCase()]?.tick2}
-                      alt="icon"
-                      className="ml-4 lg:w-[1vw] md:w-[20px] xs:w-[16px]"
-                    />
-                  </div>
+                  <Image
+                    src={p[selectedPrice.toLowerCase()]?.tick2}
+                    alt="icon"
+                    className="ml-4 lg:w-[1vw] md:w-[20px] xs:w-[16px]"
+                  />
+                </div>
 
-                  <div className="xs:text-[4vw] xs:my-[7vw] w-full items-center flex flex-row font-Inter font-medium text-[white] pt-[0.5vw] pb-[1.5vw] md:text-[1vw]">
-                    <Image
-                      src={p[selectedPrice.toLowerCase()]?.tick1}
-                      alt="icon"
-                      className="lg:w-[3vw] md:w-[18px] xs:w-[25px]"
-                    />
-                    <span>Green Tick</span>
+                <div className="xs:text-[4vw]  lg:my-0 xs:my-[7vw] w-full items-center flex flex-row font-Inter font-medium text-[white] pt-[0.5vw] pb-[1.5vw] md:text-[1vw]">
+                  <Image
+                    src={p[selectedPrice.toLowerCase()]?.tick1}
+                    alt="icon"
+                    className="lg:w-[3vw] md:w-[18px] xs:w-[25px]"
+                  />
+                  <span>Green Tick</span>
 
-                    {/* <span>
-                    {!p
-                      ? selectedPrice === 'Monthly'
-                        ? `${p[selectedPrice.toLowerCase()]?.yearly}`
-                        : `${p[selectedPrice.toLowerCase()]?.yearly}`
-                      : 'Green Tick'}
-                  </span> */}
-                    <Image
-                      src={p[selectedPrice.toLowerCase()]?.tick3}
-                      alt="icon"
-                      className="ml-[6vw] lg:w-[1vw] md:w-[18px] xs:w-[16px]"
-                    />
-                  </div>
+                  <Image
+                    src={p[selectedPrice.toLowerCase()]?.tick3}
+                    alt="icon"
+                    className="ml-[6vw] lg:w-[1vw] md:w-[18px] xs:w-[16px]"
+                  />
+                </div>
 
-                  <p className="w-[100%] h-[5vh] font-Inter font-medium md:text-[1.3vw] xs:text-[3.5vw] lg:text-[0.789vw] text-[#908eb5] mt-[2vw]">
-                    {p.content}
-                  </p>
-                  <div className="h-[10vh] flex items-center gap-5 xs:py-[20vw] ">
-                    <button className="getButton get_button">
-                      Get Started
-                    </button>
-                  </div>
+                <p className="w-[100%] h-[5vh] font-Inter font-medium md:text-[1.3vw] xs:text-[3.5vw] lg:text-[0.789vw] text-[#908eb5] mt-[2vw]">
+                  {p.content}
+                </p>
+                <div className="h-[10vh] flex items-center gap-5 xs:py-[20vw] lg:py-0 ">
+                  <button className="getButton get_button">Get Started</button>
                 </div>
               </div>
-            );
-          })}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

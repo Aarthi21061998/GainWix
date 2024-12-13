@@ -21,14 +21,14 @@ export default function PricingPage() {
             <div className="  xs:text-[3.1vw] md:text-[3.2vw] font-bold text-white">
               Get Started with Zero Setup Fee
             </div>
-            <p className="xs:text-[3vw] md:text-[3.2vw] font-bold font-sora from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
+            <p className="xs:text-[3vw] md:text-[3.2vw] text-center font-bold font-sora from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
               & Affordable Pricing
             </p>
-            <span className="xs:text-[2.5vw] md:text-[1vw] font-semibold text-[#616874] md:pt-5 xs:pt-2  font-Inter">
+            <span className="xs:text-[2.5vw] pl-[15vw] text-center md:text-[1vw] font-semibold text-[#616874] md:pt-5 xs:pt-2  font-Inter">
               First 1,000 service conversations per month for free*
             </span>
           </div>
-          <div className=" xs:block md:hidden absolute top-7 flex flex-col xs:text-center ">
+          <div className=" xs:block md:hidden absolute top-7 flex flex-col xs:text-center mt-5 ">
             <div className="  xs:text-[7vw] md:text-[3.2vw] font-extrabold text-white">
               Get Started with Zero <br /> Setup Fee
             </div>
@@ -41,7 +41,6 @@ export default function PricingPage() {
           </div>
         </div>
 
-        
         <div className="absolute xl:top-[0vw] xl:left-[20vw] xs:left-[5vw] xs:top-[30vw] ">
           <div className="py-10 grid xs:grid-cols-[repeat(3,minmax(0,1fr))] xs:auto-rows-auto xs:gap-[15vw] md:gap-0 md:grid-cols-3 md:place-items-center lg:place-items-start md:w-[100%] lg:flex lg:justify-center xs:m-auto  xs:mt-[20vw]">
             {PricingCardList?.map((data) => (
@@ -72,15 +71,15 @@ export default function PricingPage() {
         <div className="pt-10">
           <PricingCard />
         </div>
-        {/* <Calculator /> */}
+        <Calculator />
 
-        {/* <DigitalMarketing /> */}
-        {/* <div className="mt-[10vw]">
+        <DigitalMarketing />
+        <div className="mt-[10vw]">
           <BrandScroll />
         </div>
         <div className="py-10">
           <Growth />
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -120,23 +120,23 @@ const PricingCalculator = () => {
     <div className="flex flex-col items-center">
       <p className="py-10 text-[3vw] font-bold font-Inter text-[white]">
         Estimate
-        <span className=" font-Inter pl-3 from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+        <span className=" font-Inter pl-2 from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
           Your Conversation Usage Cost
         </span>
       </p>
       <div className=" bg-[#12152E] rounded-lg  mt-4 ">
         <div className="flex flex-col items-center">
-          <div className="xs:[100vw] md:w-[60vw] md:h-[80vh] rounded-[26px] shadow-[0px_4px_16px_0px_#2D30360F] flex flex-col items-start justify-between px-5 py-5">
-            <div className="w-[100%] flex flex-row justify-between">
-              <Image src={DotIcon} alt="" />
-              <p className="text-[1vw] font-semibold font-Inter text-[white]">
+          <div className="xs:w-[100vw] md:w-[95vw]  lg:w-[80vw]   rounded-[26px] shadow-[0px_4px_16px_0px_#2D30360F] flex flex-col items-start justify-between px-5 py-5">
+            <div className="w-[100%] flex md:flex-row md:justify-between xs:justify-center">
+              <Image src={DotIcon} alt="" className="xs:hidden md:block" />
+              <p className="xs:text-[5vw] md:text-[1.5vw] lg:text-[1vw] font-semibold font-Inter text-[white]">
                 Conversation Cost Calculator
               </p>
             </div>
-            <div className="w-full h-full  mt-4 flex flex-row rounded-[26px]">
-              <div className="w-[60%] p-5">
+            <div className="w-full h-full  mt-4 flex md:flex-row xs:flex-col rounded-[26px]">
+              <div className="w-[45%] p-5">
                 <div className="flex flex-col">
-                  <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter font-medium text-[white]">
+                  <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.75vw] font-Inter font-medium text-[white]">
                     Country
                   </p>
                   {/* <Popover
@@ -146,8 +146,8 @@ const PricingCalculator = () => {
                 open={visible}
                 onOpenChange={handleVisibleClick}
               > */}
-                  <div className="flex flex-row justify-between pointer w-[25vw] px-3 py-2 mt-4 border border-[#2D3154] outline-none rounded-[8px]  cursor-pointer">
-                    <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter font-medium text-[#3C416C]">
+                  <div className="flex flex-row md:justify-between pointer xs:w-[70vw] lg:w-[20vw] md:w-[25vw] px-3 py-2 mt-4 border border-[#2D3154] outline-none rounded-[8px]  cursor-pointer">
+                    <p className="xs:text-[3vw] md:text-[2vw] lg:text-[0.75vw] font-Inter font-medium text-[#3C416C]">
                       India
                     </p>
                     {/* <img
@@ -159,7 +159,7 @@ const PricingCalculator = () => {
                   {/* </Popover> */}
                 </div>
                 <div className="flex flex-col mt-4">
-                  <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter font-medium text-[white]">
+                  <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.75vw] font-Inter font-medium text-[white]">
                     Plan
                   </p>
                   <Popover
@@ -170,8 +170,8 @@ const PricingCalculator = () => {
                     arrow={false}
                     onOpenChange={handlePlanChange}
                   >
-                    <div className="flex flex-row justify-between pointer w-[25vw] px-3 py-2 mt-4 border border-[#2D3154] outline-none rounded-[8px]  cursor-pointer">
-                      <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter  font-medium text-[white]">
+                    <div className="flex flex-row justify-between pointer xs:w-[70vw] lg:w-[20vw] md:w-[25vw] px-3 py-2 mt-4 border border-[#2D3154] outline-none rounded-[8px]  cursor-pointer">
+                      <p className="xs:text-[3vw] md:text-[2vw] lg:text-[0.75vw] font-Inter  font-medium text-[white]">
                         {planOpen
                           ? (planOpen as { value: string })?.value
                           : "Select a plan"}
@@ -184,40 +184,40 @@ const PricingCalculator = () => {
                     </div>
                   </Popover>
                   <div className="flex flex-col mt-4 ">
-                    <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter  font-medium text-[white] mb-5 ">
+                    <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.75vw] xs:w-[60vw]  font-Inter  font-medium text-[white] mb-5 ">
                       No. of Marketing Messages
                     </p>
-                    <div className="flex flex-row border w-[97%] rounded-[10px] border-[#2D3154] ">
+                    <div className="flex flex-row border xs:w-[70vw] lg:w-[20vw] md:w-[97%] rounded-[10px] border-[#2D3154] ">
                       <input
                         type="number"
-                        className="w-[100%] h-[4.5vh] px-4  outline-none rounded-[10px] bg-[#12152E] border-[#2D3154] xs:text-[1.3vw] md:text-[0.75vw] font-semibold text-[white]"
+                        className="w-[100%] h-[4.5vh] px-4  outline-none rounded-[10px] bg-[#12152E] border-[#2D3154] xs:text-[3vw] md:text-[2vw] lg:text-[0.75vw] font-semibold text-[white]"
                         value={marketingCount}
                         onChange={handleInputFirstChange}
                       />
                     </div>
                   </div>
                   <div className="flex flex-col mt-4">
-                    <p className="xs:text-[1.3vw] md:text-[0.75vw]  font-Inter font-medium text-[white] mb-5  border-[#2D3154]">
+                    <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.75vw] xs:w-[60vw]  font-Inter font-medium text-[white] mb-5  border-[#2D3154]">
                       No. of Utility Messages
                     </p>
 
-                    <div className="flex flex-row border w-[97%] rounded-[10px] border-[#2D3154]">
+                    <div className="flex flex-row border xs:w-[70vw] lg:w-[20vw] md:w-[97%] rounded-[10px] border-[#2D3154]">
                       <input
                         type="number"
-                        className="w-[100%] h-[4.5vh] px-4  outline-none  rounded-[10px] xs:text-[1.3vw] md:text-[0.75vw] font-semibold text-[white] bg-[#12152E]  border-[#2D3154]"
+                        className="w-[100%] h-[4.5vh] px-4  outline-none  rounded-[10px] xs:text-[3vw] md:text-[2vw] lg:text-[0.75vw] font-semibold text-[white] bg-[#12152E]  border-[#2D3154]"
                         value={utilityCount}
                         onChange={handleInputSecondChange}
                       />
                     </div>
                   </div>
                   <div className="flex flex-col mt-4 ">
-                    <p className="xs:text-[1.3vw] md:text-[0.75vw] font-Inter font-medium text-[white] mb-5">
+                    <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.75vw] xs:w-[60vw] font-Inter font-medium text-[white] mb-5">
                       No. of User Initiated Messages
                     </p>
-                    <div className="flex flex-row border w-[97%] rounded-[10px]  border-[#2D3154] bg-[#12152E]">
+                    <div className="flex flex-row border xs:w-[70vw] lg:w-[20vw] md:w-[97%] rounded-[10px]  border-[#2D3154] bg-[#12152E]">
                       <input
                         type="number"
-                        className="w-[100%] h-[4.5vh] px-4  outline-none  rounded-[10px] xs:text-[1.3vw] md:text-[0.75vw] font-semibold text-[white]  bg-[#12152E] border-[#2D3154]"
+                        className="w-[100%] h-[4.5vh] px-4  outline-none  rounded-[10px] xs:text-[3vw] md:text-[2vw] lg:text-[0.75vw] font-semibold text-[white]  bg-[#12152E] border-[#2D3154]"
                         value={Initiated}
                         onChange={handleInitiatedChange}
                       />
@@ -239,72 +239,72 @@ const PricingCalculator = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-[60%]">
+              <div className="w-[55%] ">
                 <div>
-                  <p className="flex justify-center p-4 xs:text-[1.3vw] md:text-[1.3vw] font-Sora font-semibold text-[white]">
-                    Platform Fee
+                  <p className="flex justify-center p-4 xs:w-[85vw] lg:w-full md:w-[30vw] xs:text-[4vw] md:text-[2vw] lg:text-[1.3vw] font-Sora font-semibold text-[white]">
+                    Conversation Charges{" "}
                   </p>
-                  <div className="flex flex-row px-14 py-3 justify-between align-center items-center border-b-2">
-                    <p className="text-[white] text-[0.85vw] font-semibold">
+                  <div className="flex flex-row px-14 py-3 justify-between align-center  items-center border-b-2">
+                    <p className="text-[white] xs:text-[3vw] md:text-[2vw] lg:text-[0.85vw] font-semibold">
                       {planOpen ? (planOpen as { value: string }).value : "***"}
                     </p>
-                    <p className="text-[1.3vw] font-bold text-[white]">
+                    <p className="xs:text-[3vw] md:text-[2vw] lg:text-[0.85vw] font-bold text-[white]">
                       {planOpen
                         ? (planOpen as unknown as { cost: string }).cost
                         : "*** "}
                     </p>
                   </div>
-                  <p className="flex justify-center p-4 xs:text-[1.3vw] md:text-[1vw] font-Sora font-bold text-[#D4D4D4]">
+                  <p className="flex justify-center xs:w-[85vw] md:w-[25vw] lg:w-[20vw] p-4 xs:text-[4vw] md:text-[2vw] lg:text-[1vw] font-Sora font-bold text-[#D4D4D4]">
                     Conversation fee
                   </p>
                   <div className="flex flex-col gap-10">
-                    <div className="flex flex-row justify-between px-2">
+                    <div className="flex md:flex-row xs:flex-col   px-2">
                       <div className="flex flex-col">
-                        <p className="xs:text-[1.3vw] md:text-[0.85vw] font-Inter font-black text-[#0ACD95]">
-                          <p>Business Initiated Conversations:</p>
+                        <p className="xs:text-[4vw] md:text-[1.5vw] lg:text-[0.85vw] font-Inter font-black text-[#0ACD95] xs:w-[80vw] md:w-[30vw] lg:w-[25vw] ">
+                          <span>Business Initiated Conversations:</span>
                         </p>
-                        <span className="xs:text-[1.3vw] md:text-[0.75vw] font-medium text-[#898E99]">
+                        <span className="xs:text-[3vw] md:text-[1.5vw] lg:text-[0.75vw] font-medium text-[#898E99] xs:mt-[2vw] ">
                           <p>( Marketing + Utility )</p>
                         </span>
                       </div>
-                      <p className=" w-[40%] h-[5vh] flex flex-row align-center items-center rounded-lg border border-[#E8E8EA]">
-                        <span className="bg-[] w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white">
+                      <p className="xs:w-[78vw] md:w-[40vw]  lg:w-[40%] h-[5vh] flex flex-row align-center items-center rounded-lg xs:border border-[#E8E8EA] xs:mt-[5vw] md:mt-0 lg:mt-0">
+                        <span className="bg-[] w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white xs:pl-5">
                           ₹
                         </span>
-                        <span className="text-[white] xs:text-[1.3vw] md:text-[0.85vw] font-bold pl-2">
+                        <span className="text-[white] xs:text-[3vw] md:text-[0.85vw] font-bold pl-2">
                           {result || 0}
                         </span>
                       </p>
                     </div>
-                    <div className="flex flex-row gap-5 justify-between px-2">
+                    <div className="flex md:flex-row  xs:flex-col gap-5 md:justify-between px-2">
                       <div className="flex flex-col">
-                        <p className="xs:text-[1.3vw] md:text-[0.85vw] font-Inter font-black text-[#0ACD95]">
-                          <p>User Initiated Conversations:</p>
+                        <p className="xs:text-[4vw] md:text-[1.5vw] lg:text-[0.85vw] font-Inter font-black text-[#0ACD95] xs:w-[80vw] md:w-[30vw] lg:w-[20vw]">
+                          <span>User Initiated Conversations:</span>
                         </p>
-                        <span className="xs:text-[1.3vw] md:text-[0.75vw] font-medium text-[#898E99]">
+                        <span className="xs:text-[3vw] md:text-[1.5vw] lg:text-[0.75vw] font-medium text-[#898E99] xs:mt-[2vw] md:mt-[2vw] lg:mt-0">
                           <p>( Service conversations )</p>
                         </span>
                       </div>
-                      <p className=" w-[40%] h-[5vh] flex flex-row align-center items-center rounded-lg border border-[#E8E8EA]">
-                        <span className=" w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white">
+                      <p className="xs:w-[78vw] md:w-[45vw]  lg:w-[40%] h-[5vh] flex flex-row align-center items-center rounded-lg border border-[#E8E8EA] xs:mt-[2vw] md:mt-0 lg:mt-0">
+                        <span className="bg-[] w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white xs:pl-5">
                           ₹
                         </span>
-                        <span className="text-[white] xs:text-[1.3vw] md:text-[0.85vw] font-bold pl-2">
+                        <span className="text-[white] xs:text-[3vw] md:text-[0.85vw] font-bold pl-2">
                           {total}
                         </span>
                       </p>
                     </div>
-                    <div className="flex flex-row  justify-between border-t px-2 ">
+                    <div className="flex md:flex-row  xs:flex-col md:justify-between md:border-t px-2 xs:mt-[-15vw] md:mt-0 lg:mt-0 ">
                       <div className="flex flex-col mt-10">
-                        <p className="xs:text-[1.3vw] md:text-[0.85vw] font-Inter font-black text-[#0ACD95] ">
+                        <p className="xs:text-[4vw] md:text-[2vw] lg:text-[0.85vw] font-Inter font-black text-[#0ACD95] xs:w-[80vw] md:w-[30vw] lg:w-[20vw]">
                           <p>Total Conversation Cost:</p>
                         </p>
                       </div>
-                      <p className=" w-[40%] h-[5vh] flex flex-row align-center items-center rounded-lg border border-[#E8E8EA] mt-8">
-                        <span className=" w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white">
+                      <p className="xs:w-[78vw] md:w-[40vw]  lg:w-[40%] flex flex-row align-center items-center rounded-lg border border-[#E8E8EA] xs:mt-[2vw]">
+                        <span className="bg-[] w-[2.5vw] h-[5vh] rounded-sm flex justify-center align-center items-center text-white xs:pl-5">
                           ₹
                         </span>
-                        <span className="text-[white] xs:text-[1.3vw] md:text-[0.85vw] font-bold pl-2">
+                        <span className="text-[white] xs:text-[3vw] md:text-[0.85vw] font-bold pl-2">
                           {totalConversationCost}
                         </span>
                       </p>

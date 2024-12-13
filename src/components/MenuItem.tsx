@@ -28,7 +28,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
         <p className=" text-[#908EB5] font-Inter font-semibold xl:text-[0.85vw] xs:text-[4vw] lg:text-[1.5vw]">
           {data?.title}
         </p>
-        {data.id === 2 && (
+        {(data as any).id === 2 && (
           <div className="group-hover:rotate-180 transition-all ease-linear duration-200">
             <Image src={Arrow} alt="arrow" />
           </div>

@@ -32,7 +32,7 @@ export default function Goals() {
 
   return (
     <div className="text-white bg-[#060A22] w-full h-full">
-      <div className="w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
+      <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
         <h1 className="text-[3vw] font-medium text-[#FFFFFF] font-Sora text-center ">
           <p className="md:pl-10">Set new benchmarks and hit Goals</p>
           <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -40,8 +40,21 @@ export default function Goals() {
           </span>
         </h1>
       </div>
+      <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 mt-[100vw]">
+        <h1 className="text-[6vw] font-bold text-[#FFFFFF] font-Sora text-center ">
+          <p className="md:pl-10">
+            Set new benchmarks And <br /> Hit Goals{" "}
+            <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
+              Effortlessly{" "}
+            </span>
+          </p>
+          <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
+            with GainWix.AI
+          </span>
+        </h1>
+      </div>
 
-      <div className="relative w-full h-[100vh] flex  ">
+      <div className=" xs:hidden md:block relative w-full h-[100vh] flex  ">
         <div
           className="absolute w-full h-full flex justify-center"
           ref={goalImageRef}
@@ -50,14 +63,27 @@ export default function Goals() {
         </div>
 
         <div
-          className=" w-full h-full flex justify-center opacity-0"
+          className="w-full h-full flex justify-center opacity-0"
           ref={strategyImageRef}
         >
           <Image src={bentoBg} alt="" className=" opacity-0" />
 
-          <div className="absolute ">
-            <Image src={bentoBackGround} alt="" className="w-[60vw]" />
+          <div className="absolute   md:top-0">
+            <Image
+              src={bentoBackGround}
+              alt=""
+              className="md:w-[60vw] xs:w-[90vw]"
+            />
           </div>
+        </div>
+      </div>
+      <div className=" xs:block md:hidden relative w-full h-[40vh] flex  ">
+        <div className="absolute mx-5  md:top-0">
+          <Image
+            src={bentoBackGround}
+            alt=""
+            className="md:w-[60vw] xs:w-[90vw]"
+          />
         </div>
       </div>
     </div>

@@ -63,7 +63,7 @@ export default function Ecommerce() {
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  2xl:top-[40vw] xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
             <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">

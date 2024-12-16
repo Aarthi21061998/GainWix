@@ -44,6 +44,7 @@ export default function Retail() {
 
     return () => clearInterval(intervalId);
   }, [RetailScrolling.length]);
+
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
@@ -82,6 +83,7 @@ export default function Retail() {
 
           <div className="h-full lg:max-h-[60vh] xs:max-h-[5vh]  md:block xl:w-[15vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]">
             <div className="flex flex-col h-[60vh] relative">
+
               {RetailScrolling?.map((data, index) => (
                 <div
                   key={index}

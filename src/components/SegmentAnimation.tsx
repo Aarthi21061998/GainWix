@@ -4,6 +4,7 @@ import Lottie from "lottie-web";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Responsive1 from "../assets/Icons/reponsive1.svg";
 
 import Strategy from "../assets/Icons/Strategy.svg";
 import SegmentAnimation from "../assets/Icons/Segment Animation.svg";
@@ -12,15 +13,19 @@ import SegmentsAnimations from "./SegmentsAnimations";
 export default function Home() {
   return (
     // <div className="w-full overflow-x-hidden">
-    <div className="flex flex-col xl:flex-row items-center px-10 ">
+    <div className="flex flex-col xl:flex-row items-center md:px-10 ">
       {/* Text Section */}
 
       {/* Image and Animations Section */}
       <div className="w-full   flex justify-center relative">
-        <Image src={Strategy} alt="Background" className="w-full h-auto" />
+        <Image
+          src={Strategy}
+          alt="Background"
+          className="w-full md:h-auto xs:hidden md:block"
+        />
 
-        <div className=" absolute left-[1vh] lg:w-[100%]  h-[70vh] flex flex-row  justify-center text-white mb-10 xl:mb-0 ">
-          <div className="w-[50%] flex flex-col mt-[30vh] pl-[15vw] ">
+        <div className=" absolute left-[1vh] lg:w-[100%]  lg:h-[70vh] flex flex-row  justify-center text-white mb-10 xl:mb-0 ">
+          <div className="md:block xs:hidden w-[50%] flex flex-col mt-[30vh] pl-[15vw] ">
             <h1 className="text-3xl font-Sora font-semibold mb-5">
               Segmentation AI
             </h1>
@@ -30,7 +35,23 @@ export default function Home() {
               rates.
             </p>
           </div>
-          <div className="scroll-container1 overflow-hidden  w-[50vw] ">
+
+          <div className="md:hidden xs:block flex flex-col  h-[80vh] mt-[-80vw] pl-2  ">
+            <h1 className="text-[5vw] font-semibold pb-5 font-Sora">
+              Segmentation AI
+            </h1>
+            <p className="w-full font-Inter font-semibold text-[#908EB5] text-[3.8vw] leading-6">
+              Accurately segment your audience using AI to deliver personalized
+              messages that resonate, driving higher engagement and conversion
+              rates.
+              <Image
+                src={Responsive1}
+                alt="Marketing Animation"
+                className=" blend-screen absolute top-[-38vw] right-[7vw]  z-[1] "
+              />
+            </p>
+          </div>
+          <div className="md:block xs:hidden scroll-container1 overflow-hidden  w-[50vw] ">
             <div className="segment-animation-container relative">
               <div className="mt-20">
                 <Image

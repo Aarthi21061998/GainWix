@@ -51,10 +51,14 @@ export default function Retail() {
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[25vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] md:pt-0 xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
-              Grow Your Retail Business With{" "}
+            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[3.5vw]">
+              Grow Your Retail{" "}
+              <span className="bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent">
+                Business With
+              </span>{" "}
+              <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                Online to offline Marketing{" "}
+                Online to Offline <br /> Marketing{" "}
               </span>
             </h1>
             <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
@@ -83,7 +87,6 @@ export default function Retail() {
 
           <div className="h-full lg:max-h-[60vh] xs:max-h-[5vh]  md:block xl:w-[15vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]">
             <div className="flex flex-col h-[60vh] relative">
-
               {RetailScrolling?.map((data, index) => (
                 <div
                   key={index}
@@ -108,7 +111,7 @@ export default function Retail() {
             </div>
           </div>
 
-          <div className="absolute 2xl:left-[-9vw] 2xl:top-[32vw]  xs:top-[30vw]  lg:top-[30vw] xl:left-[-5vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
+          <div className="absolute 2xl:left-[-9.2vw] 2xl:top-[31.5vw]  xs:top-[30vw]  lg:top-[30vw] xl:left-[-4vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
             <Image
               src={RetailHero}
               alt="hero"
@@ -148,11 +151,11 @@ export default function Retail() {
                       </span>
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
+                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[3vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora leading-[3.5vw]">
                     Boost Footfall <br />
-                    <p className=" xs:text-[8vw] md:text-[4vw]  lg:text-[2.5vw] w-[40vw] font-bold font-Sora">
+                    <p className=" xs:text-[8vw] md:text-[4vw]  lg:text-[3vw] w-[40vw] font-bold font-Sora">
                       At
-                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw]  font-bold">
+                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw] lg:text-[3vw]  font-bold">
                         Your Physical <br /> Outlet.{" "}
                       </span>
                     </p>
@@ -175,20 +178,20 @@ export default function Retail() {
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
+                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:text-[3vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide leading-[3.5vw]">
                     Increase <br />
-                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] lg:text-[3vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
                       Revenue with <br />
                       Your
-                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent lg:pl-2">
+                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent  lg:text-[3vw] lg:pl-2">
                         New Sales <br />
                         Channel{" "}
                       </span>
                     </p>
                   </div>
-                  <div className="lg:hidden xs:hidden  md:block xs:text-[8vw] xs:w-[88%] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
+                  <div className="lg:hidden xs:hidden  md:block xs:text-[8vw] xs:w-[88%] md:w-[95%] md:text-[4vw] leading-[3vw] lg:text-[3vw] lg:w-[60vw] font-bold text-[white] font-sora">
                     Increase <br />
-                    <p className=" xs:text-[8vw] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] md:w-[95%] md:text-[4vw] lg:text-[3 vw] lg:w-[40vw] font-bold">
                       Revenue with <br />
                       Your
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
@@ -203,20 +206,20 @@ export default function Retail() {
               image={RetailCard2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  md:pb-[10vw] md:pt-[5vw]">
             <CommonCard
               // className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
               customTitle={
                 <>
                   <div className="bg-[#253c35] inline-flex p-2 border-2 border-[#09CC94]  rounded-[30px]  items-center mb-5 xl:mt-20">
                     <p className="lg:text-[1vw] md:text-[1vw] xs:text-[4vw] font-semibold lg:pl-2 text-[#09CC94] xl:px-4">
-                      Gain Retention & cross selling{" "}
+                      Gain Loyalty{" "}
                     </p>
                   </div>
-                  <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
-                    <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                  <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  leading-[3vw] font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
+                    <span className="text-[white] lg:text-[3vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                       Build  End to End <br />
-                      <span className="lg:text-[2.2vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                      <span className="lg:text-[3vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Customer  <br /> Experience{" "}
                       </span>
                     </span>

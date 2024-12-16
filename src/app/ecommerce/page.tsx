@@ -62,11 +62,11 @@ export default function Ecommerce() {
 
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  2xl:top-[40vw] xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
-        <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
-          <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
+      <Image src={ECommerceBg} alt="" className="" />
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[115vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20 ">
+        <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
+          <div className=" flex flex-col xs:mt-[5vw] xl: mt-[13vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
+            <h1 className=" md:hidden lg:hidden xl:block  2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[4vw] ">
               Grow Your <br /> E-Commerce Business <br />
               <p className="xl:text-[3vw] xs:text-[7vw] lg:text-[2.5vw] md:text-[3vw] font-bold   text-[white] font-sora    xs:text-center   lg:text-start">
                 {" "}
@@ -77,7 +77,7 @@ export default function Ecommerce() {
                 </span>
               </p>
             </h1>
-            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
+            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 xl:-mt-10 ">
               Grow Your <br /> E-Commerce Business With <br />
               <p className="xl:text-[3vw] xs:text-[7vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-start">
                 {" "}
@@ -107,7 +107,7 @@ export default function Ecommerce() {
           </div>
           <div
             ref={scrollRef}
-            className=" xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[80vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
+            className=" xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[73  vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
           >
             <div className="flex md:space-x-4 xs:space-x-1">
               {EcommerceScorlling?.map((data, index) => (
@@ -126,7 +126,7 @@ export default function Ecommerce() {
               ))}
             </div>
           </div>
-          <div className="absolute  xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:right-[6vw] xl:top-[30vw]  md:right-[10vw] w-full h-full flex justify-end">
+          <div className="absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:right-[8vw] xl:top-[30vw]  md:right-[10vw] w-full h-full flex justify-end">
             <Image src={ecommerce1} alt="hero" className="" />
           </div>
         </div>
@@ -163,12 +163,12 @@ export default function Ecommerce() {
                       Drive Traffic
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]   lg:w-[40vw] font-bold text-[white] font-sora 2xl:tracking-wide ">
+                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[3vw] xs:w-[90%]   lg:w-[40vw] font-bold text-[white] font-sora 2xl:tracking-wide lg:leading-[3.5vw] ">
                     Attract New <br />
-                    <span className=" xs:text-[8vw] md:text-[4vw]  lg:text-[2.5vw] w-[40vw] font-bold font-raleway">
+                    <span className=" xs:text-[8vw] md:text-[4vw]  lg:text-[3vw] w-[40vw] font-bold font-raleway">
                       Customers And{" "}
                     </span>{" "}
-                    <p className=" from-[#8C76F7] via-[#F9AD68] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
+                    <p className=" from-[#8C76F7] via-[#F9AD68] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[3vw] font-bold">
                       Drive Traffic
                     </p>
                   </div>
@@ -182,7 +182,7 @@ export default function Ecommerce() {
 
           <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
             <CommonCard
-              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] "
+              className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] lg:py-10 "
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw]   ">
@@ -191,11 +191,11 @@ export default function Ecommerce() {
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
+                  <div className="md:hidden lg:block xs:text-[8vw] lg:text-[3vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide leading-[3.5vw]">
                     Build Loyalty and
-                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw]  lg:text-[3vw] font-bold">
                       Drive{" "}
-                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] lg:text-[3vw] bg-gradient-to-r bg-clip-text text-transparent">
                         Repeat <br /> Business{" "}
                       </span>
                     </p>
@@ -215,7 +215,7 @@ export default function Ecommerce() {
               image={EcommerceCard2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  xl:py-10 xl:pb-20">
             <CommonCard
               text
               // className="xl:mx-[3rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
@@ -226,10 +226,10 @@ export default function Ecommerce() {
                       Gain Loyalty
                     </p>
                   </div>
-                  <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
-                    <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                  <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide leading-[3vw]">
+                    <span className="text-[white] lg:text-[3vw] xl:w-[40vw] font-semibold  font-sora md:text-[4vw] xs:text-[8vw] ">
                       Omni-channel <br />
-                      <span className="lg:text-[2.2vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                      <span className="lg:text-[3vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Support{" "}
                       </span>
                     </span>
@@ -264,7 +264,7 @@ export default function Ecommerce() {
           <h1 className="lg:text-[3vw] md:text-[3vw] xs:text-[8vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center xl:tracking-wide">
             <p className="lg:pl-10">Personalize Customer Experience To</p>
             <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
-              scale your business
+              Scale Your Business
             </span>
           </h1>
         </div>
@@ -279,7 +279,8 @@ export default function Ecommerce() {
             {CommerceCardList?.map((data, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5"
+                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5   md:border-l-[#2d3154] 
+"
               >
                 <div className="w-full flex flex-col xs:justify-center xl:justify-start">
                   <Image src={data?.icon} alt="icon" />

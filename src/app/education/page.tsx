@@ -48,16 +48,18 @@ export default function Education() {
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[90vh] lg:min-h-[90vh] md:min-h-[100vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
+            <h1 className=" leading-[4vw] md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
               Grow Your Ed Tech <br /> Institution With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                AI Conversational
+                AI Conversational <br />
+                Learning
               </span>
             </h1>
             <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
               Grow Your Ed Tech Institution With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                AI Conversational
+                AI Conversational <br />
+                Learning
               </span>
             </h1>
             <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline  xs:text-center lg:text-center  xs:text-[4vw] xl:text-start ">
@@ -69,7 +71,7 @@ export default function Education() {
             <div className="items-center gap-5">
               <button className="btn btn_primary">Request Demo</button>{" "}
               <button>
-                <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
+                <div className="w-[100%] items-center flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
                   <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
                   <p className=" xs:text-[4vw] md:text-[2vw] lg:text-[1.05vw] text-[#FFFFFF] font-Inter font-medium">
                     Tech Partner
@@ -102,7 +104,7 @@ export default function Education() {
               ))}
             </div>
           </div>
-          <div className="absolute  xs:top-[40vw] lg:right-[20vw] lg:top-[40vw] xl:left-[8vw] xl:top-[31vw] 2xl:top-[33vw] 2xl:left-[5vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
+          <div className="absolute   xs:top-[40vw] lg:right-[20vw] lg:top-[40vw] xl:left-[7vw] xl:top-[31vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
             <Image
               src={Educationhero}
               alt="Education Hero"
@@ -117,7 +119,7 @@ export default function Education() {
       <div className="py-12">
         <Card />
         <div className="pt-10">
-          <GainScroll />
+          <GainScroll  />
         </div>
       </div>
 
@@ -134,15 +136,15 @@ export default function Education() {
                       Gain Acquisition
                     </p>
                   </div>
-                  <div className="md:hidden xs:text-[8vw] md:w-[50vw]  md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora tracking-wide ">
+                  <div className="md:hidden xs:text-[8vw] lg:text-[3vw] md:w-[50vw]  md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora tracking-wide  ">
                     Streamline Student
-                    <p className=" from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw]  font-bold">
+                    <p className=" from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw] lg:text-[3vw]  font-bold">
                       Acquisition & Enrollment{" "}
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[2.5vw] xs:w-[90%]   lg:w-[40vw] font-bold text-[white] font-sora 2xl:tracking-wide ">
+                  <div className="md:block leading-[3.5vw] lg:text-[3vw]  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%]  xs:w-[90%]   lg:w-[45vw] font-bold text-[white] font-sora 2xl:tracking-wide ">
                     Streamline Student
-                    <p className=" from-[#8C76F7] via-[#F9AD68] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[2.5vw] font-bold">
+                    <p className=" from-[#8C76F7] via-[#F9AD68] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw]  md:text-[4vw]  lg:text-[3vw] font-bold">
                       Acquisition & Enrollment{" "}
                     </p>
                   </div>
@@ -165,16 +167,16 @@ export default function Education() {
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
+                  <div className="md:hidden lg:block leading-[3.5vw] lg:text-[3vw]  xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
                     Effortless <br />{" "}
-                    <p className=" xs:text-[8vw] md:text-[2.5vw] lg:w-[40vw] font-bold">
+                    <p className=" xs:text-[8vw] md:text-[2.5vw] leading-[3.5vw] lg:text-[3vw]  lg:w-[40vw] font-bold">
                       Enrollment with <br />
-                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                      <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent leading-[3.5vw] lg:text-[3vw] ">
                         Integrated Forms
                       </span>
                     </p>
                   </div>
-                  <div className="lg:hidden xs:hidden  md:block xs:text-[8vw] xs:w-[88%] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
+                  <div className="lg:hidden xs:hidden   md:block xs:text-[8vw] xs:w-[88%] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[60vw] font-bold text-[white] font-sora">
                     Effortless <br />{" "}
                     <p className=" xs:text-[8vw] md:w-[95%] md:text-[4vw] lg:text-[2.5vw] lg:w-[40vw] font-bold">
                       Enrollment with <br />
@@ -190,7 +192,7 @@ export default function Education() {
             ></CommonCard>
           </div>
 
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  ">
             <CommonCard
               text
               // className="xl:mx-[13rem] lg:mx-[7rem] md:mx-[5rem] xs:mx-[2rem] "
@@ -201,8 +203,8 @@ export default function Education() {
                       Gain Retention & cross selling{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88%]  md:text-[2.5vw] font-bold text-[white] font-sora">
-                    <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[3vw] xs:text-[8vw]">
+                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88%]  md:text-[2.5vw] leading-[3.5vw] lg:text-[3vw]  font-bold text-[white] font-sora">
+                    <span className="text-[white] leading-[3.5vw] lg:text-[3vw]  xl:w-[40vw] font-bold  font-sora md:text-[3vw] xs:text-[8vw]">
                       Boost <br /> Engagement with <br />
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Automated Class Reminders{" "}
@@ -224,7 +226,7 @@ export default function Education() {
               revers
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10">
+          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  2xl:py-40">
             <CommonCard
               text
               className="2xl:mx-[20rem] xl:mx-[13rem] md:mx-[1.5rem] lg:mx-[8rem] xs:mx-[1rem] "
@@ -236,12 +238,12 @@ export default function Education() {
                     </p>
                   </div>
                   <div className="md:block xs:hidden  md:text-[2vw] xs:w-[40vw] md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide ">
-                    <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                    <span className="text-[white] lg:text-[3vw] leading-[3.5vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                       Streamlined <br /> Support{" "}
-                      <span className="text-[white] lg:text-[2.2vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                      <span className="text-[white]  lg:text-[3vw] leading-[3.5vw]  xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                         & Rapid <br />
                       </span>
-                      <span className="lg:text-[2.2vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
+                      <span className=" lg:text-[3vw] leading-[3.5vw]  xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Issue Resolution{" "}
                       </span>
                     </span>

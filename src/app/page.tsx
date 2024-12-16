@@ -11,6 +11,7 @@ import mess1 from "../assets/Icons/4.svg";
 import tik from "../assets/Icons/6.svg";
 import linked from "../assets/Icons/5.svg";
 import mainImage from "../assets/Icons/mainImage2.svg";
+import Mobile from "../assets/Icons/mbl.svg";
 
 import Marketing_first from "../assets/Icons/Strategy Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
@@ -30,6 +31,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import lottie, { AnimationItem } from "lottie-web";
 
 import homeBg from "../assets/Icons/Home Screen bg.svg";
+import Responsive from "../assets/Icons/responsive.svg";
 
 import SegmentAnimation from "@components/SegmentAnimation";
 import ScaleThorugh from "@components/ScaleThorugh";
@@ -146,38 +148,6 @@ export default function Home() {
     const scaleThrough = scaleThroughRef.current;
 
     if (travelDiv && segmentDiv && scaleThrough) {
-      // gsap.to(travelDiv, {
-      //   scrollTrigger: {
-      //     trigger: travelDiv,
-      //     start: "top center",
-      //     endTrigger: segmentDiv,
-      //     end: "center center",
-      //     scrub: true,
-      //     onUpdate: (self) => {
-      //       const progress = self.progress;
-
-      //       const xDistance =
-      //         segmentDiv.getBoundingClientRect().left -
-      //         travelDiv.getBoundingClientRect().left +
-      //         1300;
-      //       const yDistance =
-      //         segmentDiv.getBoundingClientRect().top -
-      //         travelDiv.getBoundingClientRect().top +
-      //         900;
-
-      //       const newX = xDistance * progress;
-      //       const newY = yDistance * progress;
-
-      //       gsap.to(travelDiv, {
-      //         x: newX,
-      //         y: newY,
-      //         duration: 0.1,
-      //         ease: "none",
-      //       });
-      //     },
-      //   },
-      // });
-
       gsap.to(travelDiv, {
         scrollTrigger: {
           trigger: travelDiv,
@@ -226,35 +196,6 @@ export default function Home() {
           },
         },
       });
-
-      // gsap.to(travelDiv, {
-      //   scrollTrigger: {
-      //     trigger: segmentDiv,
-      //     start: "center center",
-      //     endTrigger: scaleThrough,
-      //     // end: "center center",
-      //     scrub: true,
-
-      //     onUpdate: (self) => {
-      //       const progress = self.progress;
-
-      //       const xDistance =
-      //         scaleThrough.getBoundingClientRect().right -
-      //         segmentDiv.getBoundingClientRect().right;
-      //       const yDistance =
-      //         scaleThrough.getBoundingClientRect().top -
-      //         segmentDiv.getBoundingClientRect().top;
-
-      //       const newX = xDistance * progress + 6;
-      //       const newY = yDistance * progress + 750;
-
-      //       gsap.to(travelDiv, {
-      //         x: newX,
-      //         y: newY,
-      //       });
-      //     },
-      //   },
-      // });
 
       gsap.to(travelDiv, {
         scrollTrigger: {
@@ -422,9 +363,9 @@ export default function Home() {
         className=" relative w-full "
         style={{ opacity: "0.25" }}
       />
-      <div className=" w-[100vw]  absolute top-10  ">
-        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora py-10 ">
-          <h1 className="text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
+      <div className=" w-[100vw]  absolute md:top-10 xs:top-1   ">
+        <div className="xs:hidden md:block w-[100%] flex justify-center text-[3vw] font-medium font-Sora py-10  ">
+          <h1 className="text-[3vw] font-bold text-[#FFFFFF]  text-center font-Sora  xl:mt-16">
             <p className="text-center ">Transform your digital marketing</p>
             with awesome data-driven
             <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -433,8 +374,20 @@ export default function Home() {
             </span>
           </h1>
         </div>
-        <div className="w-[100%] flex justify-center text-[3vw] font-medium font-Sora xl:mt-12 2xl:mt-6">
-          <h1 className="text-[1vw] font-medium text-[#D7DEDA] -mt-14 font-Inter ">
+        <div className="xs:block md:hidden w-[95%] flex justify-center text-[3vw] font-medium font-Sora py-10  ">
+          <h1 className=" xs:text-center  md:text-[3vw] xs:text-[7vw] lg:text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
+            <p className="text-center ">
+              Transform your <br /> digital marketing with
+            </p>
+            Awesome data-driven <br />
+            <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
+              {" "}
+              Generative AI
+            </span>
+          </h1>
+        </div>
+        <div className="xs:hidden md:block  flex justify-center md:text-[3vw]  font-medium font-Sora xl:mt-12 2xl:mt-6">
+          <h1 className="md:text-[1vw] text-center font-medium text-[#D7DEDA] -mt-14 font-Inter ">
             <p>
               Say goodbye to fragmented, ineffective marketing. Transforming
               your agency into a Cutting-edge, AI-powered
@@ -442,6 +395,15 @@ export default function Home() {
             <p className="pl-14">
               powerhouse. Experience a seamless, data-driven approach that
               drives Real results.
+            </p>
+          </h1>
+        </div>
+        <div className="xs:block md:hidden  xs:w-[80vw] flex text-center  xs:mx-10 items-center justify-center md:text-[3vw]  font-medium font-Sora xs:mt-10 2xl:mt-6">
+          <h1 className="md:text-[1vw] font-medium text-[#908EB5] -mt-14 font-Inter ">
+            <p>
+              Say goodbye to fragmented, ineffective marketing. Transforming
+              your agency into a Cutting-edge, AI-powered powerhouse. Experience
+              a seamless, data-driven approach that drives Real results.
             </p>
           </h1>
         </div>
@@ -462,7 +424,11 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="">
+          <div className="xs:block md:hidden">
+            <Image src={Mobile} alt="" />
+          </div>
+
+          <div className="xs:hidden md:block">
             <Image src={mainLine} alt="" className="absolute  top-[16vw]  " />
             <div ref={whatsappRef} className="relative">
               <Image
@@ -515,12 +481,12 @@ export default function Home() {
           <Image
             src={mainImage}
             alt=""
-            className=" absolute top-[8vw] blend-screen"
+            className=" absolute md:top-[8vw] xs:top-[135vw] blend-screen"
           />
         </div>
         <div
           ref={divRef}
-          className="overflow-hidden absolute xl:top-[42vw]  xl:left-[36.5vw] 2xl:left-[38vw]  w-[50vh]   z-10"
+          className="overflow-hidden absolute xl:top-[42vw]  xl:left-[36.5vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:hidden md:block"
         >
           <iframe
             src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
@@ -532,6 +498,17 @@ export default function Home() {
             }}
           />
         </div>
+        <div className="overflow-hidden absolute top-[165vw]  left-[-3vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:block md:hidden">
+          <iframe
+            src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
+            className="w-full h-full"
+            style={{
+              width: "100%",
+              height: "13vh",
+              border: "none",
+            }}
+          />
+        </div>
       </div>
 
       <div className="py-10 xl:h-[120vh] 2xl:h-[140vh] " ref={goalsRef}>
@@ -539,81 +516,120 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <Image
-          src={Strategy}
-          alt="Background"
-          className="w-full h-auto"
-          style={{ opacity: "0.75" }}
-        />
+        <div className="relative xs:py-5 md:py-0 flex !flex-row">
+          <Image
+            src={Strategy}
+            alt="Background"
+            className="w-full md:h-auto xs:h-[100vh]  "
+            style={{ opacity: "0.75" }}
+          />
 
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex justify-center text-[3vw] font-medium font-Sora absolute top-4">
-            <h1 className="text-[3vw] font-semibold font-Sora text-[#FFFFFF] pt-16">
-              <p className="pl-10">Integrate the &quot;3 S&quot; AI in your </p>
-              <span className="font-Sora text-[3vw] font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-32">
-                digital marketing
-              </span>
-            </h1>
+          <div className="flex flex-col items-center justify-center ">
+            <div className="  xs:block md:hidden flex justify-center text-[3vw] font-medium font-Sora absolute top-[-13vw] left-[4vw]">
+              <h1 className="text-[6vw] text-center  font-bold font-Sora text-[#FFFFFF]">
+                <p className="">
+                  Integrate The <br /> &quot;3 S&quot; AI in your
+                  <span className="font-Sora text-[6vw] pl-1 font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent ">
+                    digital
+                  </span>
+                </p>
+                <span className="font-Sora text-[6vw] font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent ">
+                  marketing
+                </span>
+              </h1>
+              <div className="text-[white]  pl-[5vw]">
+                Become one of the first ever AI powered digital Agency
+              </div>
+            </div>
+            <div className=" xs:hidden md:block flex justify-center text-[3vw] font-medium font-Sora absolute top-4  left-[25vw]">
+              <h1 className="text-[3vw] font-semibold font-Sora text-[#FFFFFF] pt-16">
+                <p className="pl-10">
+                  Integrate the &quot;3 S&quot; AI in your{" "}
+                </p>
+                <span className="font-Sora text-[3vw] font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-32">
+                  digital marketing
+                </span>
+              </h1>
+              <div className="text-[white] text-[1.5vw] text-center">
+                Become one of the first ever AI powered digital Agency
+              </div>
+            </div>
+          </div>
+
+          <div className=" xs:hidden md:flex w-[100%] overflow-visible flex  flex-row  justify-center absolute top-44">
+            <div className="flex relative">
+              <Image
+                src={Marketing_first}
+                alt="marketing1"
+                className="w-[50vw] h-auto blend-screen"
+              />
+
+              <div className="scroll-container">
+                <div
+                  className="lottie-container absolute  flex justify-center items-center xl:right-[40vw] xl:h-[380px] xl:top-[5vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px]"
+                  style={{
+                    width: "70vw",
+                    zIndex: 10,
+                  }}
+                ></div>
+              </div>
+
+              <div
+                className="absolute xl:top-[10vw] xl:left-[-4.8vw] flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[33vh] 2xl:h-[34vh]"
+                ref={travelDivRef}
+                style={{
+                  position: "absolute",
+
+                  width: "60vw",
+                  zIndex: 30,
+                }}
+              >
+                <iframe
+                  src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
+                  className="w-full h-full"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "none",
+                  }}
+                />
+              </div>
+            </div>
+            <div className="w-1/2 flex flex-col justify-center text-white">
+              <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
+                Strategy AI
+              </h1>
+              <p className="w-[80%] pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
+                Create intelligent, data-driven strategies that respond to
+                evolving market trends and customer behavior, ensuring alignment
+                with your strategic goals & objectives.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="w-[100%] overflow-visible flex flex-row justify-center absolute top-44">
-          <div className="flex relative">
-            <Image
-              src={Marketing_first}
-              alt="marketing1"
-              className="w-[50vw] h-auto blend-screen"
-            />
-
-            <div className="scroll-container">
-              <div
-                className="lottie-container absolute  flex justify-center items-center xl:right-[-11.5vw] xl:h-[375px] xl:top-[4.5vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px]"
-                style={{
-                  width: "70vw",
-                  // height: "380px",
-                  zIndex: 10,
-                }}
-              ></div>
-            </div>
-
-            <div
-              className="absolute xl:top-1 flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[32vh] 2xl:h-[34vh]"
-              ref={travelDivRef}
-              style={{
-                position: "absolute",
-                top: "9vw",
-                left: "-7vw",
-                width: "60vw",
-                // height: "30vh",
-                zIndex: 30,
-              }}
-            >
-              <iframe
-                src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
-                className="w-full h-full"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  border: "none",
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="w-[60%] flex flex-col justify-center text-[white]">
-            <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
+        <div className="xs:block md:hidden overflow-visible flex flex-row justify-center items-center absolute top-44 space-x-4">
+          <div className="flex flex-col justify-center text-[white] pl-3">
+            <h1 className="w-[90%] text-[5vw] font-semibold pb-5 font-Sora">
               Strategy AI
             </h1>
-            <p className="w-[60%] pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
+            <p className="w-[90%] font-Inter font-semibold text-[#908EB5] text-[3.8vw] leading-6">
               Create intelligent, data-driven strategies that respond to
               evolving market trends and customer behavior, ensuring alignment
               with your strategic goals & objectives.
             </p>
           </div>
+          <div className="flex relative overflow-hidden">
+            <Image
+              src={Responsive}
+              alt="marketing1"
+              className="blend-screen !w-[90%] max-w-[450px]"
+            />
+          </div>
         </div>
       </div>
 
-      <div ref={segmentImageRef}>
+      <div ref={segmentImageRef} className="xs:py-[45vw] md:py-0">
         <SegmentAnimation />
       </div>
 
@@ -626,7 +642,7 @@ export default function Home() {
         <BrandScroll />
       </div>
       <div className="flex flex-col items-center justify-center">
-        <div className="flex justify-center text-[3vw] font-semibold font-Sora ">
+        {/* <div className="flex justify-center text-[3vw] font-semibold font-Sora ">
           <h1 className="text-[3vw] font-Sora  text-[#FFFFFF] py-16">
             <p className="pl-10 font-Sora">
               The 3 S AI stabilizes your marketing goal{" "}
@@ -635,8 +651,8 @@ export default function Home() {
               And increase performance all time{" "}
             </span>
           </h1>
-        </div>
-        <div className="w-full flex flex-row gap-5 justify-center">
+        </div> */}
+        {/* <div className="w-full flex flex-row gap-5 justify-center">
           {MarketingGoalsList?.map((data: MarketingGoalsListType) => (
             <div
               className="w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
@@ -662,7 +678,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
         {/* <div className="xs:hidden md:hidden:w-full h-[45vh] relative flex justify-center items-center">
           {MarketingGoalsList?.map(
             (data: MarketingGoalsListType, index: number) => (

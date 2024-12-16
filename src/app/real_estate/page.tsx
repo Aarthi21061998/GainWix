@@ -35,40 +35,17 @@ import DigitalMarketing from "@components/DigitalMarketing";
 import Growth from "@components/Growth";
 
 export default function RealEstate() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isBlurred, setIsBlurred] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === EducationScrolling.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1000);
 
-    if (!scrollContainer) return;
-
-    let scrollPosition = 0;
-
-    const scrollImages = () => {
-      if (scrollContainer) {
-        scrollPosition += 2; // Adjust scrolling speed
-        if (
-          scrollPosition >=
-          scrollContainer.scrollHeight - scrollContainer.clientHeight
-        ) {
-          // Apply blur and reset to top
-          setIsBlurred(true);
-          setTimeout(() => {
-            scrollPosition = 0;
-            scrollContainer.scrollTop = 0;
-            setIsBlurred(false); // Remove blur after reset
-          }, 500); // Adjust blur duration (500ms)
-        } else {
-          scrollContainer.scrollTop = scrollPosition;
-        }
-      }
-    };
-
-    const intervalId = setInterval(scrollImages, 30); // Adjust interval for smoothness
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [EducationScrolling.length]);
 
   return (
     <div className=" relative bg-[#060A22] ">
@@ -107,27 +84,29 @@ export default function RealEstate() {
             </div>
           </div>
 
-          {/* <div
-            ref={scrollRef}
-            className={`            xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[80vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
-${isBlurred ? "blur-md" : ""}`}
-          >
-            <div className="flex md:space-x-4 xs:space-x-1">
+          <div className="h-full lg:max-h-[80vh] xs:max-h-[5vh]   xl:w-[20vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]">
+            <div className="flex flex-col h-[60vh] relative">
               {RealEstateScrolling?.map((data, index) => (
                 <div
-                  className="scroll-item mb-4 flex items-center justify-center"
                   key={index}
+                  className={`scroll-item mb-2 flex items-center justify-end transition-transform duration-700 ease-in-out ${
+                    index <= currentIndex
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-full opacity-0"
+                  }`}
                 >
-                  <Image
-                    src={data.icon}
-                    alt={`Real Estate Icon ${index + 1}`}
-                    style={{ marginBottom: "1vw" }}
-                    className="xl:h-[30vh] xs:h-[50vh]"
-                  />
+                  {data?.icon && (
+                    <Image
+                      src={data.icon}
+                      alt={`Real Estate Icon ${index + 1}`}
+                      // style={{ marginBottom: "1vw" }}
+                      // className="xl:h-[30vh] xs:h-[50vh]"
+                    />
+                  )}
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
           <div className="absolute 2xl:right-[4vw] 2xl:top-[32vw]  xs:top-[80vw] lg:right-[20vw] lg:top-[70vw] xl:right-[1vw] xl:top-[31vw] md:top-[90vw] md:right-[10vw] w-full h-full flex justify-end">
             <Image
               src={RealEstateHero}

@@ -11,7 +11,7 @@ import RetailCard2 from "../../assets/Icons/RetailCard2.svg";
 import RetailCard3 from "../../assets/Icons/RetailCard3.svg";
 
 // components
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BrandScroll from "@components/BrandScroll";
 import CommonCard from "@components/CommonCard";
 import Card from "@components/Card";
@@ -33,65 +33,22 @@ import DigitalMarketing from "@components/DigitalMarketing";
 import Growth from "@components/Growth";
 
 export default function Retail() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === RetailScrolling.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1000);
 
-    if (!scrollContainer) return;
+    return () => clearInterval(intervalId);
+  }, [RetailScrolling.length]);
 
-    let scrollPosition = 0;
-
-    const scrollImages = () => {
-      if (scrollContainer) {
-        scrollPosition += 10; // Adjust speed here
-        if (
-          scrollPosition >=
-          scrollContainer.scrollWidth - scrollContainer.clientWidth
-        ) {
-          scrollPosition = 0; // Reset to start for seamless scrolling
-        }
-        scrollContainer.scrollTo({
-          left: scrollPosition,
-          behavior: "smooth", // Smooth scrolling
-        });
-      }
-    };
-
-    const intervalId = setInterval(scrollImages, 30); // Adjust interval for smoother scroll
-
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []);
-  // useEffect(() => {
-  //   const scrollContainer = scrollRef.current;
-
-  //   if (!scrollContainer) return;
-
-  //   let scrollPosition = 0;
-
-  //   const scrollImages = () => {
-  //     if (scrollContainer) {
-  //       scrollPosition += 2;
-  //       if (
-  //         scrollPosition >=
-  //         scrollContainer.scrollHeight - scrollContainer.clientHeight
-  //       ) {
-  //         scrollPosition = 0;
-  //       }
-  //       scrollContainer.scrollTo({
-  //         top: scrollPosition,
-  //         behavior: "smooth",
-  //       });
-  //     }
-  //   };
-
-  //   const intervalId = setInterval(scrollImages, 30);
-
-  //   return () => clearInterval(intervalId);
-  // }, []);
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[25vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[25vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] md:pt-0 xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
             <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
@@ -124,53 +81,34 @@ export default function Retail() {
             </div>
           </div>
 
-          {/* <div
-            ref={scrollRef}
-            className="xs:hidden lg:block xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[80vw] xl:left-[-1vw]  2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
-          >
-            <div className="flex space-x-4 ">
-              {RetailScrolling?.map((data, index) => (
-                <div
-                  className="scroll-item mb-4 flex items-center justify-center"
-                  key={index}
-                >
-                  <Image
-                    src={data.icon}
-                    alt={`Education Icon ${index + 1}`}
-                    width={200}
-                    height={150}
-                    style={{ marginTop: "-4vw" }}
-                    className="xl:h-[30vh] xs:h-[50vh]"
-                  />
-                </div>
-              ))}
-            </div>
-          </div> */}
+          <div className="h-full lg:max-h-[60vh] xs:max-h-[5vh]  md:block xl:w-[15vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]">
+            <div className="flex flex-col h-[60vh] relative">
 
-          <div
-            ref={scrollRef}
-            className=" xl:w-[15vw] xs:w-[30vw] overflow-x-scroll no-scrollbar relative lg:left-[1vw] lg:top-[15vw] md:top-[20vw] md:left-[1vw] xl:top-[80vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]"
-          >
-            <div className="flex space-y-4">
               {RetailScrolling?.map((data, index) => (
                 <div
-                  className="scroll-item mb-4 flex items-center justify-center"
                   key={index}
+                  className={`scroll-item mb-2 flex items-center justify-end transition-transform duration-700 ease-in-out ${
+                    index <= currentIndex
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-full opacity-0"
+                  }`}
+                  // style={{
+                  //   transitionDelay: `${index * 300}ms`, // Staggered delay for smooth cascade
+                  // }}
                 >
-                  <Image
-                    src={data.icon}
-                    alt={`Education Icon ${index + 1}`}
-                    width={200}
-                    height={150}
-                    style={{ marginTop: "-4vw" }}
-                    className="xl:h-[30vh] xs:h-[50vh]"
-                  />
+                  {data?.icon && (
+                    <Image
+                      src={data.icon}
+                      alt={`Retail Icon ${index + 1}`}
+                      className="transform"
+                    />
+                  )}
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="absolute 2xl:left-[-9vw] 2xl:top-[32vw]  xs:top-[68vw] lg:left-[0.95vw] lg:top-[30vw] xl:left-[-5vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
+          <div className="absolute 2xl:left-[-9vw] 2xl:top-[32vw]  xs:top-[30vw]  lg:top-[30vw] xl:left-[-5vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
             <Image
               src={RetailHero}
               alt="hero"

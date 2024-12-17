@@ -119,7 +119,7 @@ export default function Education() {
       <div className="py-12">
         <Card />
         <div className="pt-10">
-          <GainScroll  />
+          <GainScroll />
         </div>
       </div>
 
@@ -295,7 +295,7 @@ export default function Education() {
             {CommerceCardList?.map((data, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5"
+                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5 gradient-borders  last:border-r-0"
               >
                 <div className="w-full flex flex-col xs:justify-center xl:justify-start">
                   <Image src={data?.icon} alt="icon" />

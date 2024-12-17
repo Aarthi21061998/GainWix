@@ -279,10 +279,10 @@ export default function Ecommerce() {
             {CommerceCardList?.map((data, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5   md:border-l-[#2d3154] 
+                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5 gradient-borders  last:border-r-0
 "
               >
-                <div className="w-full flex flex-col xs:justify-center xl:justify-start">
+                <div className="w-full flex flex-col xs:justify-center xl:justify-start md:mt-10">
                   <Image src={data?.icon} alt="icon" />
                   <p className="py-5 font-Inter font-medium  text-white xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] md:text-[2.5vw] ">
                     {data?.text}

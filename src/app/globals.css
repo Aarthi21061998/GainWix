@@ -81,15 +81,16 @@
     border-image-slice: 1; /* Needed to apply the gradient correctly */
   }
   .gradient-borders {
-    border-left-width: 1.5px;
-    border-style: solid;
+    border-right: 1.5px solid red;
+    /* border-style: solid; */
     border-image-source: linear-gradient(
-      270deg,
+      20deg,
       rgba(1, 4, 22, 0) 0%,
       #2d3154 44%,
       rgba(1, 4, 22, 0) 100%
     );
-    border-image-slice: 1; /* Needed to apply the gradient correctly */
+    border-image-slice: 1; 
+    /* Needed to apply the gradient correctly */
   }
 
   [class^="number-slide"],
@@ -244,6 +245,39 @@
   /* iframe {
     z-index: 1; 
   } */
+
+  .carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dots .dot {
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+}
+
+.carousel-dots .dot.active {
+  background-color: #000;
+}
 
   .navbar {
     z-index: 100;

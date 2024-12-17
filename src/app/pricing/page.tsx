@@ -63,9 +63,9 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
-      {/* <div className="">
+      <div className="">
         <PlanCard />
-      </div> */}
+      </div>
 
       <div className="bg-[#060A22]">
         <div className="pt-10">

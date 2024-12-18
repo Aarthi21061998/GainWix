@@ -201,7 +201,7 @@ const Card: React.FC<CardProps> = (props) => {
                         {data.text}
                       </h1>
                     </div>
-                    <p className="lg:pl-[1.8vw] xs:pt-3 md:pt-0 xs:leading-1 font-Inter tracking-wide xl:w-[30vw] 2xl:w-[35vw] lg:w-[42vw] md:w-[30vw] lg:text-[2.2vw] xl:text-[1.3vw] md:text-[2vw] font-medium text-[#908EB5] xs:text-[4vw] xs:w-[85vw] ">
+                    <p className="lg:pl-[1.8vw] xs:pt-3 md:pt-0 xs:leading-1 font-Inter tracking-wide xl:w-[30vw] 2xl:w-[35vw] lg:w-[42vw] md:w-[30vw] lg:text-[2.2vw] xl:text-[1vw] md:text-[2vw] font-medium text-[#908EB5] xs:text-[4vw] xs:w-[85vw] ">
                       {data.content}
                     </p>
                   </div>

@@ -21,11 +21,11 @@ export default function Home() {
         <Image
           src={Strategy}
           alt="Background"
-          className="w-full md:h-auto xs:hidden md:block"
+          className="w-full md:h-auto xs:hidden md:hidden xl:block "
         />
 
-        <div className=" absolute left-[1vh] lg:w-[100%]  lg:h-[70vh] flex flex-row  justify-center text-white mb-10 xl:mb-0 ">
-          <div className="md:block xs:hidden w-[50%] flex flex-col mt-[30vh] pl-[15vw] ">
+        <div className=" absolute left-[1vh] xl:w-[100%] md:h-[40vh] lg:h-[70vh] flex flex-row  justify-center text-white mb-10 xl:mb-0 ">
+          <div className="lg:block  md:block xs:hidden w-[50%] flex flex-col xl:mt-[30vh] lg:mt-[-10vw] md:mt-[-20vw] xl:pl-[15vw] ">
             <h1 className="text-3xl font-Sora font-semibold mb-5">
               Segmentation AI
             </h1>
@@ -34,6 +34,11 @@ export default function Home() {
               messages that resonate, driving higher engagement and conversion
               rates.
             </p>
+            <Image
+              src={Responsive1}
+              alt="Marketing Animation"
+              className=" blend-screen absolute top-[-20vw] right-[-5vw]  z-[1] lg:block xl:hidden "
+            />
           </div>
 
           <div className="md:hidden xs:block flex flex-col  h-[80vh] mt-[-80vw] pl-2  ">
@@ -57,9 +62,10 @@ export default function Home() {
                 <Image
                   src={SegmentAnimation}
                   alt="Marketing Animation"
-                  className=" blend-screen absolute top-[3vw] "
+                  className=" blend-screen absolute top-[3vw] md:hidden xl:block "
                 />
-                <div className=" absolute w-[26vw]  xl:top-[5vw] xl:left-[11vw] 2xl:top-[9vw]">
+
+                <div className="xl:block md:hidden absolute w-[26vw]  xl:top-[5vw] xl:left-[11vw] 2xl:top-[9vw]">
                   <SegmentsAnimations />
                 </div>
               </div>

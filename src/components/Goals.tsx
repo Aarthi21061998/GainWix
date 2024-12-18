@@ -33,11 +33,15 @@ export default function Goals() {
   return (
     <div className="text-white bg-[#060A22] w-full h-full">
       <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
-        <h1 className="text-[3vw] font-medium text-[#FFFFFF] font-Sora text-center ">
+        <h1 className="xl:text-[3vw] lg:text-[5vw] font-medium text-[#FFFFFF] font-Sora text-center ">
           <p className="md:pl-10">Set new benchmarks and hit Goals</p>
           <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
             effortlessly with our AI
           </span>
+          <p className="lg:text-[2.5vw] xl:text-[1vw] text-[#908EB5] text-center ">
+            Leverage AI in every step of your digital marketing and optimize
+            your campaign performance
+          </p>
         </h1>
       </div>
       <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 mt-[100vw]">
@@ -54,7 +58,7 @@ export default function Goals() {
         </h1>
       </div>
 
-      <div className=" xs:hidden md:block relative w-full h-[100vh] flex  ">
+      <div className=" xs:hidden xl:block relative w-full xl:h-[100vh] flex  ">
         <div
           className="absolute w-full h-full flex justify-center"
           ref={goalImageRef}
@@ -72,17 +76,17 @@ export default function Goals() {
             <Image
               src={bentoBackGround}
               alt=""
-              className="md:w-[60vw] xs:w-[90vw]"
+              className="lg:w-[60vw] xs:w-[90vw] md:w-[90vw]"
             />
           </div>
         </div>
       </div>
-      <div className=" xs:block md:hidden relative w-full h-[40vh] flex  ">
-        <div className="absolute mx-5  md:top-0">
+      <div className=" xs:block md:block lg:block xl:hidden relative w-full xs:h-[40vh] md:h-[40vh] lg:h-[70vh] flex  ">
+        <div className="absolute mx-5  md:top-0 md:py-1">
           <Image
             src={bentoBackGround}
             alt=""
-            className="md:w-[60vw] xs:w-[90vw]"
+            className="lg:w-[100vw] xs:w-[90vw]"
           />
         </div>
       </div>

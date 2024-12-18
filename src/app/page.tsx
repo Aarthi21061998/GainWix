@@ -60,8 +60,8 @@ export default function Home() {
         willChange: "transform",
       },
       {
-        y: is2xl ? "153vh" : "138vh",
-        x: "-1vh", // Adjust 'y' based on screen size
+        y: is2xl ? "153vh" : "131vh",
+        x: "4vh", // Adjust 'y' based on screen size
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: goalsRef.current,
@@ -142,6 +142,131 @@ export default function Home() {
     };
   }, []);
 
+  // useEffect(() => {
+  //   const travelDiv = travelDivRef.current;
+  //   const segmentDiv = segmentImageRef.current;
+  //   const scaleThrough = scaleThroughRef.current;
+
+  //   if (travelDiv && segmentDiv && scaleThrough) {
+  //     gsap.to(travelDiv, {
+  //       scrollTrigger: {
+  //         trigger: travelDiv,
+  //         start: "top center",
+  //         endTrigger: segmentDiv,
+  //         end: "center center",
+  //         scrub: true,
+  //         onUpdate: (self) => {
+  //           const progress = self.progress;
+
+  //           const xOffset =
+  //             window.innerWidth >= 1280 // xl breakpoint
+  //               ? 1500 // Adjust offset for xl
+  //               : window.innerWidth >= 1536 // 2xl breakpoint
+  //               ? 1700 // Adjust offset for 2xl
+  //               : 1300; // Default offset
+
+  //           const yOffset =
+  //             window.innerWidth >= 1280
+  //               ? 1000
+  //               : window.innerWidth >= 1536
+  //               ? 1500
+  //               : 900;
+
+  //           const xDistance =
+  //             segmentDiv.getBoundingClientRect().left -
+  //             travelDiv.getBoundingClientRect().left +
+  //             xOffset;
+  //           const yDistance =
+  //             segmentDiv.getBoundingClientRect().top -
+  //             travelDiv.getBoundingClientRect().top +
+  //             yOffset;
+
+  //           // Calculate new positions
+  //           const newX = xDistance * progress;
+  //           const newY = yDistance * progress;
+
+  //           // Update travelDiv position
+  //           gsap.to(travelDiv, {
+  //             x: newX,
+  //             y: newY,
+  //             duration: 0.1,
+  //             ease: "none",
+  //           });
+  //         },
+  //       },
+  //     });
+
+  //     gsap.to(travelDiv, {
+  //       scrollTrigger: {
+  //         trigger: segmentDiv,
+  //         start: "center center",
+  //         endTrigger: scaleThrough,
+  //         scrub: true,
+
+  //         onUpdate: (self) => {
+  //           const progress = self.progress;
+
+  //           // Get screen size dynamically
+  //           const getScreenSize = () => {
+  //             if (window.matchMedia("(min-width: 1536px)").matches) {
+  //               return "2xl";
+  //             } else if (window.matchMedia("(min-width: 1280px)").matches) {
+  //               return "xl";
+  //             } else {
+  //               return "default";
+  //             }
+  //           };
+
+  //           // Calculate position based on screen size
+  //           const calculatePosition = (progress: any) => {
+  //             const screenSize = getScreenSize();
+
+  //             let xOffset, yOffset;
+
+  //             // Define offsets for each screen size
+  //             switch (screenSize) {
+  //               case "2xl":
+  //                 xOffset = 20; // Adjust this value for 2xl
+  //                 yOffset = 1050; // Adjust this value for 2xl
+  //                 break;
+  //               // case "xl":
+  //               //   xOffset = -100; // Adjust this value for xl
+  //               //   yOffset = 800; // Adjust this value for xl
+  //               //   break;
+  //               default:
+  //                 xOffset = -10; // Default value
+  //                 yOffset = 900; // Default value
+  //             }
+
+  //             const xDistance =
+  //               scaleThrough.getBoundingClientRect().right -
+  //               segmentDiv.getBoundingClientRect().right;
+  //             const yDistance =
+  //               scaleThrough.getBoundingClientRect().top -
+  //               segmentDiv.getBoundingClientRect().top;
+
+  //             const newX = xDistance * progress + xOffset;
+  //             const newY = yDistance * progress + yOffset;
+
+  //             return { newX, newY };
+  //           };
+
+  //           const { newX, newY } = calculatePosition(progress);
+
+  //           gsap.to(travelDiv, {
+  //             x: newX,
+  //             y: newY,
+  //           });
+  //         },
+  //       },
+  //     });
+  //   }
+
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  //   };
+  // }, []);
+
   useEffect(() => {
     const travelDiv = travelDivRef.current;
     const segmentDiv = segmentImageRef.current;
@@ -151,14 +276,13 @@ export default function Home() {
       gsap.to(travelDiv, {
         scrollTrigger: {
           trigger: travelDiv,
-          start: "top center",
+          start: "top center", // Top-to-bottom start
           endTrigger: segmentDiv,
-          end: "center center",
+          end: "bottom center", // Top-to-bottom end
           scrub: true,
           onUpdate: (self) => {
             const progress = self.progress;
 
-            // Calculate x and y distances dynamically
             const xOffset =
               window.innerWidth >= 1280 // xl breakpoint
                 ? 1500 // Adjust offset for xl
@@ -182,11 +306,9 @@ export default function Home() {
               travelDiv.getBoundingClientRect().top +
               yOffset;
 
-            // Calculate new positions
             const newX = xDistance * progress;
             const newY = yDistance * progress;
 
-            // Update travelDiv position
             gsap.to(travelDiv, {
               x: newX,
               y: newY,
@@ -200,14 +322,13 @@ export default function Home() {
       gsap.to(travelDiv, {
         scrollTrigger: {
           trigger: segmentDiv,
-          start: "center center",
+          start: "bottom center", // Bottom-to-top start
           endTrigger: scaleThrough,
+          end: "top center", // Bottom-to-top end
           scrub: true,
-
           onUpdate: (self) => {
             const progress = self.progress;
 
-            // Get screen size dynamically
             const getScreenSize = () => {
               if (window.matchMedia("(min-width: 1536px)").matches) {
                 return "2xl";
@@ -218,25 +339,19 @@ export default function Home() {
               }
             };
 
-            // Calculate position based on screen size
-            const calculatePosition = (progress: any) => {
+            const calculatePosition = (progress:any) => {
               const screenSize = getScreenSize();
 
               let xOffset, yOffset;
 
-              // Define offsets for each screen size
               switch (screenSize) {
                 case "2xl":
-                  xOffset = 20; // Adjust this value for 2xl
-                  yOffset = 1050; // Adjust this value for 2xl
-                  break;
-                case "xl":
-                  xOffset = 10; // Adjust this value for xl
-                  yOffset = 800; // Adjust this value for xl
+                  xOffset = 20;
+                  yOffset = 1050;
                   break;
                 default:
-                  xOffset = 6; // Default value
-                  yOffset = 700; // Default value
+                  xOffset = -10;
+                  yOffset = 500;
               }
 
               const xDistance =
@@ -356,16 +471,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full bg-[#060A22] w-100 flex flex-col justify-center">
+    <div className="w-full bg-[#060A22] w-100  md:h-auto  lg:h-auto flex flex-col justify-center">
       <Image
         src={homeBg}
         alt=""
         className=" relative w-full "
         style={{ opacity: "0.25" }}
       />
-      <div className=" w-[100vw]  absolute md:top-10 xs:top-1   ">
-        <div className="xs:hidden md:block w-[100%] flex justify-center text-[3vw] font-medium font-Sora py-10  ">
-          <h1 className="text-[3vw] font-bold text-[#FFFFFF]  text-center font-Sora  xl:mt-16">
+      <div className=" w-[100vw]  absolute xl:top-10 xs:top-1 md:top-[20vw] md:my-10    ">
+        <div className="xs:hidden md:block w-[100%] flex justify-center  lg:text-[3vw]   font-medium font-Sora py-10  ">
+          <h1 className="lg:text-[3vw] md:text-[4vw] font-bold text-[#FFFFFF]  text-center font-Sora  xl:mt-16">
             <p className="text-center ">Transform your digital marketing</p>
             with awesome data-driven
             <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -375,7 +490,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="xs:block md:hidden w-[95%] flex justify-center text-[3vw] font-medium font-Sora py-10  ">
-          <h1 className=" xs:text-center  md:text-[3vw] xs:text-[7vw] lg:text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xl:mt-16">
+          <h1 className=" xs:text-center  md:text-[3vw] xs:text-[7vw] lg:text-[3vw] font-bold text-[#FFFFFF]  font-Sora  xs:mt-[25vw]">
             <p className="text-center ">
               Transform your <br /> digital marketing with
             </p>
@@ -386,8 +501,8 @@ export default function Home() {
             </span>
           </h1>
         </div>
-        <div className="xs:hidden md:block  flex justify-center md:text-[3vw]  font-medium font-Sora xl:mt-12 2xl:mt-6">
-          <h1 className="md:text-[1vw] text-center font-medium text-[#D7DEDA] -mt-14 font-Inter ">
+        <div className="xs:hidden lg:block  flex justify-center md:text-[3vw]  font-medium font-Sora xl:mt-12 2xl:mt-6">
+          <h1 className="lg:text-[1vw] md:text-[2.5vw] text-center font-medium text-[#D7DEDA] lg:-mt-14 font-Inter ">
             <p>
               Say goodbye to fragmented, ineffective marketing. Transforming
               your agency into a Cutting-edge, AI-powered
@@ -398,8 +513,8 @@ export default function Home() {
             </p>
           </h1>
         </div>
-        <div className="xs:block md:hidden  xs:w-[80vw] flex text-center  xs:mx-10 items-center justify-center md:text-[3vw]  font-medium font-Sora xs:mt-10 2xl:mt-6">
-          <h1 className="md:text-[1vw] font-medium text-[#908EB5] -mt-14 font-Inter ">
+        <div className="xs:block md:block lg:hidden  xs:w-[80vw] md:w-[90vw] flex text-center  xs:mx-10 items-center justify-center md:text-[3vw]  font-medium font-Sora xs:mt-10 2xl:mt-6">
+          <h1 className="xs:text-[2vw] md:text-[2.5vw] font-medium text-[#908EB5] -mt-14 font-Inter ">
             <p>
               Say goodbye to fragmented, ineffective marketing. Transforming
               your agency into a Cutting-edge, AI-powered powerhouse. Experience
@@ -407,69 +522,76 @@ export default function Home() {
             </p>
           </h1>
         </div>
+        <div className="w-[100%]  flex justify-center md:text-[4vw] lg:text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12 z-20 relative">
+          <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 ">
+            <p className="2xl:mt-[-0.7vw]">Request Demo</p>
+          </button>
+          <button>
+            <div className="w-[100%] flex flex-row border-4 border-[#111449] p-4 rounded-full align-center justify-center items-center">
+              <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
+              <p className="lg:text-[1.05vw] md:text-[2vw] text-[#FFFFFF] font-Inter">
+                Tech Partner
+              </p>
+            </div>
+          </button>
+        </div>
 
         {/* {!isImageHidden && ( */}
         <div className="blend-screen">
-          <div className="w-[100%] flex justify-center text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12 z-0">
-            <button className="btn btn_primary text-[0.95vw] font-bold 2xl:p-8 ">
-              <p className="2xl:mt-[-0.7vw]">Request Demo</p>
-            </button>
-            <button>
-              <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center items-center ">
-                <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
-                <p className="text-[1.05vw] text-[#FFFFFF] font-Inter">
-                  Tech Partner
-                </p>
-              </div>
-            </button>
+          <div className="xs:block md:block lg:block xl:hidden ">
+            <Image
+              src={Mobile}
+              alt=""
+              className="md:mx-[10vw] lg:ml-[-1vw]  lg:-mt-[7vw] lg:w-[95vw] xl:w-full "
+            />
           </div>
 
-          <div className="xs:block md:hidden">
-            <Image src={Mobile} alt="" />
-          </div>
-
-          <div className="xs:hidden md:block">
-            <Image src={mainLine} alt="" className="absolute  top-[16vw]  " />
+          <div className="xs:hidden md:hidden xl:block z-10">
+            <Image
+              src={mainLine}
+              alt=""
+              className="absolute md:top-[40vw]  lg:top-[16vw]   z-0 "
+            />
             <div ref={whatsappRef} className="relative">
               <Image
                 src={what1}
                 alt="Animated Image"
-                className="absolute top-[7vw] left-[6vw] w-[20vw] h-[23vh] 2xl:left-[8vw] 2xl:top-[10vw]"
+                className="absolute md:top-[30vw] lg:top-[7vw] lg:left-[6vw] lg:w-[20vw] lg:h-[23vh] md:w-[10vw] md:h-[13vh] 2xl:left-[8vw] 2xl:top-[10vw]"
               />
             </div>
             <div ref={slackRef} className="relative">
               <Image
                 src={slack}
                 alt="Animated Image"
-                className="scrolling-image absolute top-[4vw] left-[20vw] w-[20vw] h-[19vh] 2xl:left-[25vw] 2xl:top-[6vw]"
+                className="scrolling-image absolute lg:top-[4vw] lg:left-[20vw] lg:w-[20vw] lg:h-[19vh]  md:w-[10vw] md:h-[13vh] 2xl:left-[25vw] 2xl:top-[6vw]"
               />
             </div>
             <div ref={instagramRef} className="relative">
               <Image
                 src={insts}
                 alt=""
-                className=" absolute xl:top-[1vw] xl:right-[16vw] w-[20vw] h-[13vh]  2xl:right-[20vw] 2xl:top-[3vw] "
+                className=" absolute xl:top-[1vw] xl:right-[16vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh]  2xl:right-[20vw] 2xl:top-[3vw] "
               />
             </div>
             <div ref={MessageRef} className="relative">
               <Image
                 src={mess1}
                 alt=""
-                className=" absolute xl:top-[-2vw] xl:right-[4vw] w-[20vw] h-[23vh] 2xl:right-[4vw] 2xl:top-[3vw] "
+                className=" absolute xl:top-[-2vw] xl:right-[4vw] lg:w-[20vw] lg:h-[23vh]   md:w-[10vw] md:h-[13vh] 2xl:right-[4vw] 2xl:top-[3vw] "
               />
             </div>
             <div ref={TicktokRef} className="relative">
               <Image
                 src={tik}
                 alt=""
-                className=" absolute xl:top-[13vw] xl:right-[15vw] w-[20vw] h-[15vh] 2xl:top-[17vw]"
+                className=" absolute xl:top-[13vw] xl:right-[15vw] lg:w-[20vw] lg:h-[15vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[17vw]"
               />
             </div>
             <div ref={LinkedInRef} className="relative">
               <Image
                 src={linked}
                 alt=""
-                className=" absolute top-[20vw] left-[15vw] w-[20vw] h-[13vh] 2xl:top-[25vw] 2xl:left-[16vw]"
+                className=" absolute lg:top-[20vw] lg:left-[15vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[25vw] 2xl:left-[16vw]"
               />
             </div>
           </div>
@@ -481,12 +603,12 @@ export default function Home() {
           <Image
             src={mainImage}
             alt=""
-            className=" absolute md:top-[8vw] xs:top-[135vw] blend-screen"
+            className=" absolute xl:top-[12vw] xl:left-[-3vw] lg:top-[75vw] lg:left-[10vw] md:top-[75vw] md:left-[-5vw] xs:top-[135vw] blend-screen lg:w-[70vw] xl:w-full"
           />
         </div>
         <div
           ref={divRef}
-          className="overflow-hidden absolute xl:top-[42vw]  xl:left-[36.5vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:hidden md:block"
+          className="overflow-hidden absolute xl:top-[44vw]  xl:left-[34vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:hidden md:hidden lg:hidden xl:block"
         >
           <iframe
             src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
@@ -498,24 +620,26 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="overflow-hidden absolute top-[165vw]  left-[-3vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:block md:hidden">
+        <div className="overflow-hidden absolute xs:h-[13vh] md:h-[18vh] lg:h-[16vh] md:top-[108vw] md:left-[12vw] xs:top-[165vw] lg:top-[96vw]  xs:left-[-3vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:block md:block lg:block xl:hidden">
           <iframe
             src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
             className="w-full h-full"
             style={{
               width: "100%",
-              height: "13vh",
               border: "none",
             }}
           />
         </div>
       </div>
 
-      <div className="py-10 xl:h-[120vh] 2xl:h-[140vh] " ref={goalsRef}>
+      <div
+        className="py-10 xl:h-[120vh] xl:mt-0 lg:mt-[30vw]   md:mt-[50vw] 2xl:h-[140vh] "
+        ref={goalsRef}
+      >
         <Goals />
       </div>
 
-      <div className="relative">
+      <div className="relative md:py-10 lg:py-0">
         <div className="relative xs:py-5 md:py-0 flex !flex-row">
           <Image
             src={Strategy}
@@ -546,7 +670,7 @@ export default function Home() {
                 <p className="pl-10">
                   Integrate the &quot;3 S&quot; AI in your{" "}
                 </p>
-                <span className="font-Sora text-[3vw] font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-32">
+                <span className="font-Sora text-[3vw] text-center font-bold from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent lg:pl-32 md:pl-24">
                   digital marketing
                 </span>
               </h1>
@@ -561,21 +685,23 @@ export default function Home() {
               <Image
                 src={Marketing_first}
                 alt="marketing1"
-                className="w-[50vw] h-auto blend-screen"
+                className="w-[50vw] h-auto blend-screen md:hidden xl:block"
+              />
+              <Image
+                src={Responsive}
+                alt="marketing1"
+                className="w-[50vw] blend-screen md:block lg:block xl:hidden"
               />
 
               <div className="scroll-container">
                 <div
-                  className="lottie-container absolute  flex justify-center items-center xl:right-[40vw] xl:h-[380px] xl:top-[5vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px]"
-                  style={{
-                    width: "70vw",
-                    zIndex: 10,
-                  }}
+                  className="lottie-container absolute  flex justify-center items-center xl:right-[13vw] xl:h-[378px] xl:top-[5.5vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px] lg:hidden xl:block lg:border-l-background"
+                  style={{}}
                 ></div>
               </div>
 
               <div
-                className="absolute xl:top-[10vw] xl:left-[-4.8vw] flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[33vh] 2xl:h-[34vh]"
+                className="absolute xl:top-[10.5vw] xl:left-[-4.8vw] flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[33vh] 2xl:h-[34vh] xl:block lg:hidden md:hidden"
                 ref={travelDivRef}
                 style={{
                   position: "absolute",
@@ -599,7 +725,7 @@ export default function Home() {
               <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
                 Strategy AI
               </h1>
-              <p className="w-[80%] pl-20 font-Inter font-medium text-[#908EB5] text-[1vw] leading-8">
+              <p className="lg:w-[80%] pl-20 font-Inter font-medium text-[#908EB5] md:text-lg xl:text-[1vw] leading-8">
                 Create intelligent, data-driven strategies that respond to
                 evolving market trends and customer behavior, ensuring alignment
                 with your strategic goals & objectives.
@@ -629,11 +755,14 @@ export default function Home() {
         </div>
       </div>
 
-      <div ref={segmentImageRef} className="xs:py-[45vw] md:py-0">
+      <div
+        ref={segmentImageRef}
+        className="xs:py-[45vw]  md:py-[40vw] lg:py-[30vw] xl:py-0"
+      >
         <SegmentAnimation />
       </div>
 
-      <div className=" " ref={scaleThroughRef}>
+      <div className="md:py-[10vw] lg:py-[10vw] xl:py-0 " ref={scaleThroughRef}>
         <ScaleThorugh />
       </div>
 
@@ -641,18 +770,18 @@ export default function Home() {
       <div className="py-10 ">
         <BrandScroll />
       </div>
-      <div className="flex flex-col items-center justify-center">
-        {/* <div className="flex justify-center text-[3vw] font-semibold font-Sora ">
+      <div className="xs:hidden xl:block flex flex-col items-center justify-center xl:py-[10vw]">
+        <div className="flex justify-center text-[3vw] font-semibold font-Sora ">
           <h1 className="text-[3vw] font-Sora  text-[#FFFFFF] py-16">
             <p className="pl-10 font-Sora">
               The 3 S AI stabilizes your marketing goal{" "}
             </p>{" "}
-            <span className="  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent pl-36">
+            <span className="  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xl:pl-32 xs:pl-24">
               And increase performance all time{" "}
             </span>
           </h1>
-        </div> */}
-        {/* <div className="w-full flex flex-row gap-5 justify-center">
+        </div>
+        <div className="w-full flex flex-row gap-5 justify-center">
           {MarketingGoalsList?.map((data: MarketingGoalsListType) => (
             <div
               className="w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
@@ -678,7 +807,7 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
         {/* <div className="xs:hidden md:hidden:w-full h-[45vh] relative flex justify-center items-center">
           {MarketingGoalsList?.map(
             (data: MarketingGoalsListType, index: number) => (

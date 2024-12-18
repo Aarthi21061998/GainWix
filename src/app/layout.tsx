@@ -32,7 +32,7 @@ export default function RootLayout({
         <div className="w-full  fixed  left-0 z-50">
           <NavBar />
         </div>
-        <div className="relative top-20">
+        <div className="relative ">
           {children}
           <Footer />
         </div>

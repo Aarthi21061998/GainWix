@@ -41,7 +41,7 @@ export default function Travel() {
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[50vh] md:min-h-[60vh] xs:min-h-[30vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
+            <h1 className=" md:hidden lg:hidden xl:block leading-[3.5vw] xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
               Grow Your Travel <br /> Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 AI Conversational <br />{" "}
@@ -73,7 +73,7 @@ export default function Travel() {
               </button>{" "}
             </div>
           </div>
-          <div className="absolute  xs:top-[80vw] lg:right-[25vw] lg:top-[80vw] xl:left-[6vw] xl:top-[31vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
+          <div className="absolute  2xl:left-[16vw] xs:top-[80vw] lg:right-[25vw] lg:top-[80vw] xl:left-[6vw] xl:top-[31vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
             <Image
               src={TravelHero}
               alt="hero"
@@ -94,7 +94,7 @@ export default function Travel() {
 
       <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] ">
         <div className="md:py-0 xs:py-5  ">
-          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l  ">
             <CommonCard
               // className="xl:mx-[5rem] lg:mx-[3rem]  w-full "
               text
@@ -105,8 +105,8 @@ export default function Travel() {
                       Gain Acquisition
                     </p>
                   </div>
-                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[3vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
-                    Boost Bookings
+                  <div className="md:block  xs:hidden xs:text-[8vw] md:text-[4vw] md:w-[88%] lg:text-[3vw] xs:w-[90%]  leading-[3.5vw] lg:w-[40vw] font-bold text-[white] font-sora">
+                    Boost Bookings <br />
                     <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent xs:text-[8vw] md:text-[2.5vw] lg:text-[3vw]  font-bold">
                       & Revenue{" "}
                     </span>
@@ -136,7 +136,7 @@ export default function Travel() {
                       Gain Retention{" "}
                     </p>
                   </div>
-                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw]  lg:text-[3vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
+                  <div className="md:hidden lg:block xs:text-[8vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw]  leading-[3.5vw] lg:text-[3vw] lg:w-[60vw] font-bold text-[white] font-sora tracking-wide">
                     Cultivate Customer 
                     <p className=" xs:text-[8vw] md:text-[2.5vw]  lg:text-[3vw]  lg:w-[40vw] font-bold">
                       <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
@@ -158,7 +158,7 @@ export default function Travel() {
               image={TravelCard2}
             ></CommonCard>
           </div>
-          <div className="w-full from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-r xs:pt-10 ">
+          <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l md:pb-[7vw]  ">
             <CommonCard
               text
               // className="xl:mx-[12rem] lg:mx-[4rem] xs:mx-[5vw] w-full"
@@ -170,7 +170,7 @@ export default function Travel() {
                     </p>
                   </div>
                   <div className="md:block xs:hidden  md:text-[2vw]  md:w-[38vw]  font-bold text-[#202421] font-sora xs:text-[8vw] tracking-wide">
-                    <span className="text-[white]  lg:text-[3vw] xl:w-[40vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
+                    <span className="text-[white]  lg:text-[3vw] xl:w-[40vw] leading-[3.5vw] font-bold  font-sora md:text-[4vw] xs:text-[8vw]">
                       Seamless Support & <br />
                       <span className=" lg:text-[3vw] xs:text-[8vw] lg:w-[40vw] font-bold text-[white] font-sora md:text-[4vw]  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
                         Improved Efficiency{" "}
@@ -204,31 +204,33 @@ export default function Travel() {
 
       <div className="">
         <div className="flex justify-center text-[3vw] font-semibold">
-          <h1 className="lg:text-[3vw] md:text-[3vw] xs:text-[8vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center">
+          <h1 className="lg:text-[3vw] md:text-[3vw] xs:text-[8vw] font-Sora font-semibold text-[#FFFFFF] py-16 text-center xl:tracking-wide">
             <p className="lg:pl-10">Personalize Customer Experience To</p>
             <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
-              scale your business{" "}
+              Scale Your Business
             </span>
           </h1>
         </div>
-        <div className="w-full mt-5 overflow-x-auto lg:overflow-visible">
+
+        <div className="lmd:w-full mt-5 overflow-x-auto lg:overflow-visible 2xl:w-[64vw] xl:w-[74vw] xl:m-auto">
           <div
             className="
-      flex flex-row gap-5 xs:flex-row sm:flex-row overflow-x-auto
+      flex flex-row md:gap-5 xs:flex-row sm:flex-row overflow-x-auto
       md:grid md:grid-cols-3 md:grid-rows-2 md:gap-y-5
       lg:grid-cols-5 lg:grid-rows-1 lg:gap-5"
           >
             {CommerceCardList?.map((data, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center"
+                className="flex-shrink-0 xs:w-[45%] w-[80%] sm:w-[60%] md:w-full lg:w-auto flex flex-col items-center xs:px-5 md:px-5   gradient-borders  last:border-r-0 
+"
               >
-                <div className="w-full flex justify-center">
+                <div className="w-full flex flex-col xs:justify-center xl:justify-start">
                   <Image src={data?.icon} alt="icon" />
+                  <p className="py-5 font-Inter font-medium  text-white xs:text-[3vw] sm:text-[1.5vw] lg:text-[1vw] md:text-[2.5vw] ">
+                    {data?.text}
+                  </p>
                 </div>
-                <p className="py-5 font-Inter font-medium text-center text-white xs:text-[2vw] sm:text-[1.5vw] lg:text-[1vw]">
-                  {data?.text}
-                </p>
               </div>
             ))}
           </div>

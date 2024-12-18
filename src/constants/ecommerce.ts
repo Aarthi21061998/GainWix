@@ -6,25 +6,24 @@ import ECommerceOffer from "../assets/Icons/Discount.svg";
 import ECommercePayment from "../assets/Icons/payment.svg";
 import ECommerceUpdate from "../assets/Icons/order.svg";
 
-import Education1 from "../assets/Icons/EducationImage1.svg";
-import Education2 from "../assets/Icons/EducationImage2.svg";
-import Education3 from "../assets/Icons/EducationImage3.svg";
-import Education4 from "../assets/Icons/EducationImage4.svg";
-import Education5 from "../assets/Icons/EducationImage5.svg";
-import Education6 from "../assets/Icons/EducationImage6.svg";
+import Education1 from "../assets/Icons/Education1.svg";
+import Education2 from "../assets/Icons/Education2.svg";
+import Education3 from "../assets/Icons/Education3.svg";
+import Education4 from "../assets/Icons/Education4.svg";
+import Education5 from "../assets/Icons/Education5.svg";
 
-import EcommerceScroll1 from "../assets/Icons/eCardScroll.svg"
-import EcommerceScroll2 from "../assets/Icons/eScroll1.svg"
-import EcoomerceScroll3 from "../assets/Icons/EcommerceScroll2.svg"
+import EcommerceScroll1 from "../assets/Icons/eCardScroll.svg";
+import EcommerceScroll2 from "../assets/Icons/eScroll1.svg";
+import EcoomerceScroll3 from "../assets/Icons/EcommerceScroll2.svg";
 
-import RetailScroll from "../assets/Icons/RetailScroll.svg"
-import RetailScroll1 from "../assets/Icons/RetailScroll1.svg"
-import RetailScroll2 from "../assets/Icons/RetailScroll2.svg"
-import RetailScroll3 from "../assets/Icons/RetailScroll3.svg"
+import RetailScroll from "../assets/Icons/RetailScroll.svg";
+import RetailScroll1 from "../assets/Icons/RetailScroll1.svg";
+import RetailScroll2 from "../assets/Icons/RetailScroll2.svg";
+import RetailScroll3 from "../assets/Icons/RetailScroll3.svg";
 
-import RealEstate from "../assets/Icons/RealEstate.svg"
-import RealEstate1 from "../assets/Icons/RealEstate1.svg"
-import RealEstate2 from "../assets/Icons/RealEstate2.svg"
+import RealEstate from "../assets/Icons/RealEstate.svg";
+import RealEstate1 from "../assets/Icons/RealEstate1.svg";
+import RealEstate2 from "../assets/Icons/RealEstate2.svg";
 
 export const MarketingGoalsList = [
   {
@@ -401,80 +400,84 @@ export const CommerceCardList = [
 export const EducationScrolling = [
   {
     id: 1,
+  },
+  {
+    id: 2,
     icon: Education1,
   },
   {
-    id: 2,
+    id: 3,
     icon: Education2,
   },
   {
-    id: 3,
+    id: 4,
     icon: Education3,
   },
   {
-    id: 4,
+    id: 5,
     icon: Education4,
   },
   {
-    id: 5,
-    icon: Education5,
-  },
-  {
     id: 6,
-    icon: Education6,
+    icon: Education5,
   },
 ];
 
-export const EcommerceScorlling = [{
-  id: 1,
-  icon:EcommerceScroll1
-},
+export const EcommerceScorlling = [
+  {
+    id: 1,
+    icon: EcommerceScroll1,
+  },
   {
     id: 2,
-    icon:EcommerceScroll2,
+    icon: EcommerceScroll2,
   },
   {
     id: 3,
     icon: EcoomerceScroll3,
   },
-
-
-]
+];
 
 export const RetailScrolling = [
   {
     id: 1,
-    icon:RetailScroll,
   },
-   {
+  {
     id: 2,
-    icon:RetailScroll1,
+    icon: RetailScroll,
   },
-    {
+  {
     id: 3,
-    icon:RetailScroll2,
+    icon: RetailScroll1,
   },
-     {
+  {
     id: 4,
-    icon:RetailScroll3,
+    icon: RetailScroll2,
   },
-]
+  {
+    id: 5,
+    icon: RetailScroll3,
+  },
+];
 
 export const RealEstateScrolling = [
   {
     id: 1,
-    icon:RealEstate,
   },
-   {
+  {
     id: 2,
-    icon:RealEstate1,
+    icon: RealEstate,
   },
-    {
+  {
     id: 3,
-    icon:RealEstate2,
+    icon: RealEstate1,
   },
-     {
+  {
     id: 4,
-    icon:RetailScroll3,
+    icon: RealEstate2,
   },
-]
+  {
+    id: 5,
+    icon: RetailScroll3,
+  },
+];

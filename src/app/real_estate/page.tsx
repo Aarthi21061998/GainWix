@@ -254,8 +254,8 @@ export default function RealEstate() {
           </h1>
         </div>
 
-        <div className="lmd:w-full mt-5 overflow-x-auto lg:overflow-visible 2xl:w-[64vw] xl:w-[74vw] xl:m-auto">
-          <div
+        {/* <div className="md:w-full mt-5 overflow-x-auto lg:overflow-visible 2xl:w-[64vw] xl:w-[74vw] xl:m-auto"> */}
+          {/* <div
             className="
       flex flex-row md:gap-5 xs:flex-row sm:flex-row overflow-x-auto
       md:grid md:grid-cols-3 md:grid-rows-2 md:gap-y-5
@@ -274,7 +274,30 @@ export default function RealEstate() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
+          <div className="h-full lg:max-h-[80vh] xs:max-h-[5vh]   xl:w-[20vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[65vw] 2xl:left-[-2vw] xs:left-[10vw] xs:top-[42vw]">
+            <div className="flex flex-col h-[60vh] relative">
+              {RealEstateScrolling?.map((data, index) => (
+                <div
+                  key={index}
+                  className={`scroll-item mb-2 flex items-center justify-end transition-transform duration-700 ease-in-out ${
+                    index <= currentIndex
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-full opacity-0"
+                  }`}
+                >
+                  {data?.icon && (
+                    <Image
+                      src={data.icon}
+                      alt={`Real Estate Icon ${index + 1}`}
+                      // style={{ marginBottom: "1vw" }}
+                      // className="xl:h-[30vh] xs:h-[50vh]"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          {/* </div> */}
         </div>
       </div>
       <Growth />

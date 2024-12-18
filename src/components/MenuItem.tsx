@@ -36,7 +36,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ data }) => {
       </div>
 
       {data?.subMenu.length > 0 && (
-        <div className="xl:w-[620px] lg:w-[700px] 2xl:w-[750px] md:w-[700px] xs:w-[350px] xs:absolute xs:right-[-50vw] 2xl:absolute 2xl:right-[-1vw]  lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
+        <div className=" xl:w-[620px] lg:w-[700px] 2xl:w-[750px] md:w-[700px] xs:w-[350px] xs:absolute xs:right-[-50vw] 2xl:absolute 2xl:right-[-15vw]  lg:absolute  lg:right-[-25vw]  bg-[#0E132D] rounded-2xl hidden shadow-[0px_4px_16px_0px_#2D303614] group-hover:flex">
           {data.subMenu.map((item) => (
             <div
               key={item.id}

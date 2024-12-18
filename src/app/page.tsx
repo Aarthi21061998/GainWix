@@ -233,8 +233,8 @@ export default function Home() {
                 //   yOffset = 1050;
                 //   break;
                 default:
-                  xOffset = 0;
-                  yOffset = 520;
+                  xOffset = 5;
+                  yOffset = 550;
               }
 
               const xDistance =

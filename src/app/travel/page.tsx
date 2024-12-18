@@ -92,7 +92,7 @@ export default function Travel() {
               </button>{" "}
             </div>
           </div>
-          <div className="absolute  2xl:left-[5vw] 2xl:top-[33vw] xs:top-[100vw] lg:right-[25vw] lg:top-[80vw] xl:left-[6vw] xl:top-[31vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
+          <div className="absolute  2xl:left-[5vw] 2xl:top-[33vw] xs:top-[100vw] lg:right-[25vw] lg:top-[80vw] xl:left-[7vw] xl:top-[33vw]  md:right-[10vw] md:top-[90vw] w-full h-full flex justify-end">
             <Image
               src={TravelHero}
               alt="hero"

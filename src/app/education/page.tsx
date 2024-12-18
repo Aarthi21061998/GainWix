@@ -9,7 +9,7 @@ import MetaIcon from "../../assets/Icons/meta.svg";
 
 import Educationhero from "../../assets/Icons/Educationhero.svg";
 import EducationCard1 from "../../assets/Icons/EducationCard1.svg";
-import EducationCard2 from "../../assets/Icons/EducationCard3.svg";
+import EducationCard2 from "../../assets/Icons/EducationCard2.svg";
 import EducationCard3 from "../../assets/Icons/EducationCard3.svg";
 import EducationCard4 from "../../assets/Icons/EducationCard4.svg";
 

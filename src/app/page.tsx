@@ -388,8 +388,7 @@ export default function Home() {
   const handleScroll = () => {
     const scrollY = window.scrollY;
 
-    // Decrease the size of the image with scroll
-    const newScale = Math.max(1 - scrollY / 1000, 0.5); // Min scale is 0.5
+    const newScale = Math.max(1 - scrollY / 1000, 0.5); 
     setScale(newScale);
 
     // Hide or show the image based on scroll threshold

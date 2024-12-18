@@ -578,23 +578,23 @@ export const MarketingGoalsList = [
     details:
       'Leverage AI to stay ahead by predicting market shifts with precision.',
   },
-  {
-    id: 2,
-    icon:image1,
-    content: 'Generate ',
-    content1: 'Target Audience',
-    details:
-      'AI-driven insights to identify and attract your ideal customers effortlessly.',
-  },
-  {
-    id: 3,
-        icon:image2,
+  // {
+  //   id: 2,
+  //   icon:image1,
+  //   content: 'Generate ',
+  //   content1: 'Target Audience',
+  //   details:
+  //     'AI-driven insights to identify and attract your ideal customers effortlessly.',
+  // },
+  // {
+  //   id: 3,
+  //       icon:image2,
 
-    content: 'Specific ',
-    content1: 'Channel Targeting',
-    details:
-      'Optimize outreach with AI-powered targeting for the most effective channels.',
-  },
+  //   content: 'Specific ',
+  //   content1: 'Channel Targeting',
+  //   details:
+  //     'Optimize outreach with AI-powered targeting for the most effective channels.',
+  // },
 ];
 
 export type MarketingGoalsListType = (typeof MarketingGoalsList)[0];

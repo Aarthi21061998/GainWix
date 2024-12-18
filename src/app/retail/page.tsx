@@ -47,11 +47,11 @@ export default function Retail() {
 
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[25vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] md:pt-0 xs:pt-20">
+      <Image src={ECommerceBg} alt="" className="" />
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[100vh] md:min-h-[110vh] xs:min-h-[75vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] md:pt-0 xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[3.5vw]">
+            <h1 className=" md:hidden lg:hidden xs:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[3.5vw]">
               Grow Your Retail{" "}
               <span className="bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent">
                 Business With
@@ -61,7 +61,17 @@ export default function Retail() {
                 Online to Offline <br /> Marketing{" "}
               </span>
             </h1>
-            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
+            <h1 className=" md:hidden lg:hidden xs:block xl:hidden xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[3vw]  font-bold   bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent font-sora   xs:text-center   lg:text-start xs:mt-[-140vw] lg:mt-[10vw] xl:mt-[50vw] ">
+              Grow Your Retail{" "}
+              <span className="bg-gradient-to-b from-white to-[#999999]  bg-clip-text text-transparent">
+                Business With{" "}
+                <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                  Online to Offline <br /> Marketing{" "}
+                </span>
+              </span>{" "}
+              <br />
+            </h1>
+            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden md:w-[90vw] xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw] md:-mt-[105vw] lg:mt-[30vw]  xs:text-center   lg:text-center xs:-mt-10 ">
               Grow Your Retail Business With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 Online to offline Marketing{" "}
@@ -72,8 +82,18 @@ export default function Retail() {
               your existing customers, and scale your revenue with GainWix’s
               conversational relationship platform.
             </p>
-            <div className="items-center gap-5  ">
-              <button className="btn btn_primary">Request Demo</button>{" "}
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 pointer ">
+                  Request Demo
+                </button>
+              </a>
               <button>
                 <div className="w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center md:items-center ">
                   <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
@@ -85,7 +105,7 @@ export default function Retail() {
             </div>
           </div>
 
-          <div className="h-full lg:max-h-[60vh] xs:max-h-[5vh]  md:block xl:w-[15vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[42vw]">
+          <div className="h-full lg:max-h-[60vh] xs:max-h-[5vh]  md:block xl:w-[15vw] xs:w-[30vw] overflow-hidden relative lg:left-[1vw] lg:top-[25vw] md:top-[20vw] md:left-[1vw] xl:top-[60vw] xl:left-[-1vw] 2xl:top-[80vw] 2xl:left-[-0.05vw] xs:left-[10vw] xs:top-[14vw]">
             <div className="flex flex-col h-[60vh] relative">
               {RetailScrolling?.map((data, index) => (
                 <div
@@ -111,7 +131,7 @@ export default function Retail() {
             </div>
           </div>
 
-          <div className="absolute 2xl:left-[-9.2vw] 2xl:top-[31.5vw]  xs:top-[30vw]  lg:top-[30vw] xl:left-[-4vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
+          <div className="absolute 2xl:left-[-9.2vw] 2xl:top-[31.5vw]  xs:top-[55vw]  lg:top-[30vw] xl:left-[-4vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
             <Image
               src={RetailHero}
               alt="hero"
@@ -120,7 +140,7 @@ export default function Retail() {
           </div>
         </div>
       </div>
-      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[130vw] md:mt-[120vw]">
+      <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[200vw] md:mt-[120vw]">
         <BrandScroll />
       </div>
       <div className="py-12">

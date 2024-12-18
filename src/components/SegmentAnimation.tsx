@@ -62,10 +62,10 @@ export default function Home() {
                 <Image
                   src={SegmentAnimation}
                   alt="Marketing Animation"
-                  className=" blend-screen absolute top-[3vw] md:hidden xl:block "
+                  className=" blend-screen absolute top-[3vw] right-[7vw] md:hidden xl:block "
                 />
 
-                <div className="xl:block md:hidden absolute w-[26vw]  xl:top-[5vw] xl:left-[11vw] 2xl:top-[9vw]">
+                <div className="xl:block md:hidden absolute w-[26vw]  xl:top-[5vw] xl:left-[4vw] 2xl:top-[9vw]">
                   <SegmentsAnimations />
                 </div>
               </div>

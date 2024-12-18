@@ -63,7 +63,7 @@ export default function Growth() {
             <p className=" font-Sora  xs:text-[6vw] md:text-[3vw] font-semibold  from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent">
               Every Way Possible with GainWix.ai{" "}
             </p>
-            <p className=" xs:hidden  lg:block font-Inter fond-semibold xs:text-[3vw] lg:text-[1.55vw] xl:text-[1vw] xs:px-5  text-[#908EB5] lg:mt-4 lg:mx-0 xs:mt-2">
+            <span className=" xs:hidden  lg:block font-Inter fond-semibold xs:text-[3vw] lg:text-[1.55vw] xl:text-[1vw] xs:px-5  text-[#908EB5] lg:mt-4 lg:mx-0 xs:mt-2">
               <p className="2xl:w-[56vw] xl:w-[48vw] 2xl:pl-[3vw] xl:pl-10  lg:pl-0 lg:w-[55vw]  md:w-[95vw] xs:w-[95vw] ">
                 Leverage Gainwix.ai as your all-in-one platform to streamline
                 your operations and keep
@@ -73,7 +73,7 @@ export default function Growth() {
                 multiple tools and harness the power of AI-driven <br />
               </p>
               insights to achieve your business objectives efficiently.
-            </p>
+            </span>
             <p className="  xs:w-[95vw] xs:block md:block  lg:hidden md:w-[105] w-full font-Inter  font-bold xs:text-[4.5vw] xl:text-[1.2vw]  lg:text-[2vw] md:text-[3vw] xs:px-5  text-[#908EB5] lg:mt-4 xs:mt-2">
               Leverage Gainwix.ai as your all-in-one platform to streamline your
               operations and keep your valuable data unified. Avoid the pitfalls
@@ -90,9 +90,17 @@ export default function Growth() {
               <div className="text-[#2D3154] font-Inter font-medium text-ellipsis md:hidden xs:block ">
                 example@mail.com
               </div>
-              <div className="btn btn_primary items-center ">
+              <div className="btn btn_primary items-center z-50 ">
                 <p className="2xl:mt-[7px] xs:mt-[7px] lg:mt-2 md:mt-1 font-Inter font-medium lg:text-[1vw] xs:text-[3vw] md:text-[2vw] ">
-                  Book a Demo
+                  <a
+                    href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="2xl:mt-[-0.7vw]"
+                  >
+                    {" "}
+                    Book a Demo
+                  </a>
                 </p>
               </div>
             </div>

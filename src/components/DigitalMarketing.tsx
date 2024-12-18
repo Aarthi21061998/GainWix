@@ -4,6 +4,11 @@ import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
 import Image1 from "../assets/Icons/image1.svg";
+import VGN from "../assets/Icons/VGN.svg";
+import Aachi from "../assets/Icons/Aachi.svg";
+import Diedam from "../assets/Icons/DiaDem.svg";
+import NKC from "../assets/Icons/NKC_TAMIL.svg";
+import tour from "../assets/Icons/tours.svg";
 
 interface SlideContent {
   id: number;
@@ -12,6 +17,7 @@ interface SlideContent {
   description: string;
   author?: string;
   position?: string;
+  brand: string;
 }
 
 const Carousel: React.FC = () => {
@@ -21,26 +27,47 @@ const Carousel: React.FC = () => {
     {
       id: 1,
       icon: Image1,
+      brand: VGN,
       description:
-        "The AI-powered marketing solutions from Gainwix.ai especially through WhatsApp, have revolutionized the way we interact with our customers. Gainwix Consulting's insights have enabled us to scale our campaigns effectively, resulting in impressive growth and engagement.",
-      author: "Pown",
-      position: "Digital Marketing Manager",
+        "Working with Gainwix.ai has transformed our marketing approach. Their AI solutions and expert guidance through Gainwix Consulting have streamlined our communication across platforms, allowing us to reach our target audience with precision. Our campaigns have never been more efficient, and our ROAS has soared.",
+      author: "Mathesh",
+      position: "Sales Manager",
     },
     {
       id: 2,
       icon: Image1,
+      brand: Aachi,
       description:
         "The AI-powered marketing solutions from Gainwix.ai especially through WhatsApp, have revolutionized the way we interact with our customers. Gainwix Consulting's insights have enabled us to scale our campaigns effectively, resulting in impressive growth and engagement.",
-      author: "Alex Roberts",
-      position: "Lead AI Strategist",
+      author: "Harish",
+      position: "Managing Director",
     },
     {
       id: 3,
       icon: Image1,
+      brand: Diedam,
       description:
-        "The AI-powered marketing solutions from Gainwix.ai especially through WhatsApp, have revolutionized the way we interact with our customers. Gainwix Consulting's insights have enabled us to scale our campaigns effectively, resulting in impressive growth and engagement.",
-      author: "Samantha Lee",
-      position: "Creative Director",
+        "Aptonworks (Digital Solutions Provider):- One of the most impactful decisions we've made is transforming into an AI-powered agency, thanks to Gainwix.ai. Their platform has truly elevated our capabilities, boosting our growth rate and customer satisfaction by an impressive 37%. Not only has this reduced our need to hire more employees, but it has also significantly decreased the time spent on tasks, which our clients appreciate. Gainwix.ai has been a game-changer for our agency.",
+      author: "Pown",
+      position: "Digital Marketing Manager",
+    },
+    {
+      id: 4,
+      icon: Image1,
+      brand: NKC,
+      description:
+        "Gainwix.ai has been a game-changer for us. With their AI-driven WhatsApp channel marketing, we've seen a significant increase in customer engagement and sales. The tailored strategies provided by Gainwix Consulting have helped us connect with our audience more effectively than ever before.",
+      author: "Arun kumar",
+      position: "Assistant Vice President",
+    },
+    {
+      id: 4,
+      icon: Image1,
+      brand: tour,
+      description:
+        "Aptonworks (Digital Solutions Provider):- One of the most impactful decisions we've made is transforming into an AI-powered agency, thanks to Gainwix.ai. Their platform has truly elevated our capabilities, boosting our growth rate and customer satisfaction by an impressive 37%. Not only has this reduced our need to hire more employees, but it has also significantly decreased the time spent on tasks, which our clients appreciate. Gainwix.ai has been a game-changer for our agency.",
+      author: "Basant Kumar Giri",
+      position: "CEO",
     },
   ];
 
@@ -79,13 +106,14 @@ const Carousel: React.FC = () => {
           <div key={slide.id} className="keen-slider__slide">
             <div className="w-[90%] md:w-[70%] lg:w-[70%] xl:h-[60vh] xl:flex xl:flex-row xs:flex-row-reverse bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] rounded-lg p-6 text-white shadow-lg mx-auto">
               <div className="flex flex-col">
+                <Image src={slide.brand} alt="Slide" />{" "}
                 <p className="lg:text-[1vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5] mt-[10vw] xl:w-[40vw]">
                   {slide.description}
                 </p>
                 <p className="text-[1.2vw] mt-4 font-bold lg:text-[1.5vw] md:text-[2vw] xs:text-[4vw]">
                   {slide.author}
                 </p>
-                <p className="text-[1vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5]">
+                <p className="lg:text-[0.85vw] md:text-[1.5vw] xs:text-[3vw] text-[#908eb5]">
                   {slide.position}
                 </p>
               </div>

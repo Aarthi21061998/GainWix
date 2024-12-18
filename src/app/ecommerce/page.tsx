@@ -93,8 +93,19 @@ export default function Ecommerce() {
               unified platform.
             </p>
 
-            <div className="items-center gap-5">
-              <button className="btn btn_primary">Request Demo</button>{" "}
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 pointer ">
+                  Request Demo
+                </button>
+              </a>
+
               {/* <button>
                 <div className="lg:hidden xs:block w-[100%] flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
                   <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />

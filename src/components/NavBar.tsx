@@ -29,35 +29,35 @@ export default function NavBar() {
     {
       id: 1,
       title: "Product",
-      type: "single",
+      // type: "single",
       subMenu: [
-        {
-          id: 1,
-          title: "Platform",
-          width: "lg",
-          list: [
-            {
-              id: 1,
-              path: "/",
-              title: "Conversational Relationship Platform ",
-              // icon: ICONS?.Chat,
-              content:
-                "Accelerate Business Growth with our Conversational Relationship Platform.",
-            },
-          ],
-        },
-        {
-          id: 2,
-          title: "Channels",
-          width: "sm",
-          list: [
-            {
-              id: 1,
-              title: "WhatsApp ",
-              // icon: ICONS?.Whatsapp,
-            },
-          ],
-        },
+        // {
+        //   id: 1,
+        //   title: "Platform",
+        //   width: "lg",
+        //   list: [
+        //     {
+        //       id: 1,
+        //       path: "/",
+        //       title: "Conversational Relationship Platform ",
+        //       // icon: ICONS?.Chat,
+        //       content:
+        //         "Accelerate Business Growth with our Conversational Relationship Platform.",
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: 2,
+        //   title: "Channels",
+        //   width: "sm",
+        //   list: [
+        //     {
+        //       id: 1,
+        //       title: "WhatsApp ",
+        //       // icon: ICONS?.Whatsapp,
+        //     },
+        //   ],
+        // },
       ],
     },
     {
@@ -110,13 +110,13 @@ export default function NavBar() {
               content:
                 "Grow Your Travel Business with Conversational Travel Assistant",
             },
-            {
-              id: 6,
-              title: "Digital Marketing Agency",
-              path: "/marketing",
-              icon: Marketing,
-              content: "Experience the real Growth with Gainwix.ai",
-            },
+            // {
+            //   id: 6,
+            //   title: "Digital Marketing Agency",
+            //   path: "/marketing",
+            //   icon: Marketing,
+            //   content: "Experience the real Growth with Gainwix.ai",
+            // },
           ],
         },
       ],
@@ -162,8 +162,26 @@ export default function NavBar() {
           </div>
 
           <div className="lg:block items-center lg:gap-10 xl:gap-5 xs:hidden ">
-            <button className="btn secondary">Login</button>
-            <button className="btn btn_primary">Request Demo</button>{" "}
+            <button className="btn secondary">
+              {" "}
+              <a
+                href="https://app.gainwix.ai/login"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Login{" "}
+              </a>
+            </button>
+            <button className="btn btn_primary">
+              {" "}
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Request Demo
+              </a>
+            </button>{" "}
           </div>
         </div>
       </div>

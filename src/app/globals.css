@@ -89,7 +89,7 @@
       #2d3154 44%,
       rgba(1, 4, 22, 0) 100%
     );
-    border-image-slice: 1; 
+    border-image-slice: 1;
     /* Needed to apply the gradient correctly */
   }
 
@@ -245,40 +245,101 @@
   /* iframe {
     z-index: 1; 
   } */
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.card {
+  flex: 0 0 auto; /* Prevent shrinking and allow it to stay in place */
+  scroll-snap-align: center; /* Snap to the center when scrolling */
+  transition: transform 0.3s ease-in-out; /* Smooth transition when scrolling */
+}
+.split-card{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 300px;
+  width: 250px;
+  transform: translate(-50%, -50%);
+}
+.split-card .cards{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 1px 2px 3px rgba(0,0,0,.1);
+  transition: all 0.4s cubic-bezier(.63,.15,.03,1.12);
+}
+.split-card .cards img {
+  height: auto;
+  width: 100%;
+  cursor: pointer;
+  transition: all .4s;
+}
+.split-card .card-1{
+  z-index: 3;
+  transform: rotateZ(-2deg);
+}
+.split-card .card-2{
+  z-index: 2;
+  transform: rotateZ(-7deg);
+  /* transition-delay: 0.6s; */
+  transition-delay: 0.06s;
+}
+.split-card .card-3{
+  z-index: 1;
+  transform: rotateZ(5deg);
+  /* transition-delay: 0s; */
+  transition-delay: 0.1s;
+}
 
   .carousel-container {
-  position: relative;
-  width: 100%;
-  padding: 15px 20px;
-}
+    position: relative;
+    width: 100%;
+    padding: 15px 20px;
+  }
 
-.carousel-image {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-.carousel-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
 
-.carousel-dots .dot {
-  cursor: pointer;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: #ccc;
-  transition: background-color 0.3s;
-}
+  .carousel-dots .dot {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+  }
 
-.carousel-dots .dot.active {
-  background-color: #000;
-}
+  .carousel-dots .dot.active {
+    background-color: #000;
+  }
 
+  .background_image {
+    background-image: url("/assets/Icons/ecommerce1.svg");
+    background-size: cover; /* Adjust to fit the container */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-position: center; /* Center the image */
+    width: 100%; /* Set width */
+  }
   .navbar {
     z-index: 100;
     position: relative; /* Ensure it is positioned for z-index to take effect */

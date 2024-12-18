@@ -45,20 +45,27 @@ export default function Education() {
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[90vh] lg:min-h-[90vh] md:min-h-[100vh] xs:min-h-[70vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[90vh] lg:min-h-[90vh] md:min-h-[100vh] xs:min-h-[55vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36">
           <div className=" flex flex-col xs:mt-[5vw] xl:mt-[13vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" leading-[4vw] md:hidden lg:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
+            <h1 className=" leading-[4vw] md:hidden lg:hidden  xs:hidden xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]">
               Grow Your Ed Tech <br /> Institution With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 AI Conversational <br />
                 Learning
               </span>
             </h1>
-            <h1 className=" xs:hidden sm:hidden md:block lg:block xl:hidden xl:text-[3vw] xs:text-[7vw]  sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center xs:-mt-10 ">
-              Grow Your Ed Tech Institution With <br />
+            <h1 className="  md:hidden lg:hidden xl:hidden xs:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[90vw] lg:mt-[10vw] xl:mt-[50vw]">
+              Grow Your Ed Tech <br /> Institution With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
                 AI Conversational <br />
+                Learning
+              </span>
+            </h1>
+            <h1 className=" xs:hidden sm:hidden md:block  lg:block xl:hidden  md:w-[90vw] xl:text-[3vw] xs:text-[7vw]  md:-mt-[90vw] sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center  ">
+              Grow Your Ed Tech Institution With <br />
+              <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
+                AI Conversational 
                 Learning
               </span>
             </h1>
@@ -68,8 +75,18 @@ export default function Education() {
               parents about their children, and foster a strong, enduring
               relationship between students and the school.
             </p>
-            <div className="items-center gap-5">
-              <button className="btn btn_primary">Request Demo</button>{" "}
+            <div className="items-center gap-5 z-50">
+              <a
+                href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+                target="_blank"
+                rel="noreferrer"
+                className="2xl:mt-[-0.7vw]"
+              >
+                {" "}
+                <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 pointer ">
+                  Request Demo
+                </button>
+              </a>
               <button>
                 <div className="w-[100%] items-center flex flex-row border border-[#111449] p-4 rounded-full align-center justify-center ">
                   <Image src={MetaIcon} alt="MetaIcon" className="w-10 h-4" />
@@ -104,7 +121,7 @@ export default function Education() {
               ))}
             </div>
           </div>
-          <div className="absolute   xs:top-[40vw] lg:right-[20vw] lg:top-[40vw] xl:left-[7vw] xl:top-[31vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
+          <div className="absolute   xs:top-[100vw] lg:right-[20vw] lg:top-[40vw] xl:left-[7vw] xl:top-[31vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
             <Image
               src={Educationhero}
               alt="Education Hero"

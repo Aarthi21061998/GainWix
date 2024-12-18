@@ -12,6 +12,9 @@ import tik from "../assets/Icons/6.svg";
 import linked from "../assets/Icons/5.svg";
 import mainImage from "../assets/Icons/mainImage2.svg";
 import Mobile from "../assets/Icons/mbl.svg";
+import image from "../assets/Icons/cardIcon.svg";
+import image1 from "../assets/Icons/card2.svg";
+import image2 from "../assets/Icons/card3.svg";
 
 import Marketing_first from "../assets/Icons/Strategy Animation.svg";
 import Strategy from "../assets/Icons/Strategy.svg";
@@ -60,8 +63,8 @@ export default function Home() {
         willChange: "transform",
       },
       {
-        y: is2xl ? "153vh" : "131vh",
-        x: "4vh", // Adjust 'y' based on screen size
+        y: is2xl ? "141.5vh" : "131vh",
+        x: is2xl ? "6.5vh" : "4vh",
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: goalsRef.current,
@@ -142,131 +145,6 @@ export default function Home() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   const travelDiv = travelDivRef.current;
-  //   const segmentDiv = segmentImageRef.current;
-  //   const scaleThrough = scaleThroughRef.current;
-
-  //   if (travelDiv && segmentDiv && scaleThrough) {
-  //     gsap.to(travelDiv, {
-  //       scrollTrigger: {
-  //         trigger: travelDiv,
-  //         start: "top center",
-  //         endTrigger: segmentDiv,
-  //         end: "center center",
-  //         scrub: true,
-  //         onUpdate: (self) => {
-  //           const progress = self.progress;
-
-  //           const xOffset =
-  //             window.innerWidth >= 1280 // xl breakpoint
-  //               ? 1500 // Adjust offset for xl
-  //               : window.innerWidth >= 1536 // 2xl breakpoint
-  //               ? 1700 // Adjust offset for 2xl
-  //               : 1300; // Default offset
-
-  //           const yOffset =
-  //             window.innerWidth >= 1280
-  //               ? 1000
-  //               : window.innerWidth >= 1536
-  //               ? 1500
-  //               : 900;
-
-  //           const xDistance =
-  //             segmentDiv.getBoundingClientRect().left -
-  //             travelDiv.getBoundingClientRect().left +
-  //             xOffset;
-  //           const yDistance =
-  //             segmentDiv.getBoundingClientRect().top -
-  //             travelDiv.getBoundingClientRect().top +
-  //             yOffset;
-
-  //           // Calculate new positions
-  //           const newX = xDistance * progress;
-  //           const newY = yDistance * progress;
-
-  //           // Update travelDiv position
-  //           gsap.to(travelDiv, {
-  //             x: newX,
-  //             y: newY,
-  //             duration: 0.1,
-  //             ease: "none",
-  //           });
-  //         },
-  //       },
-  //     });
-
-  //     gsap.to(travelDiv, {
-  //       scrollTrigger: {
-  //         trigger: segmentDiv,
-  //         start: "center center",
-  //         endTrigger: scaleThrough,
-  //         scrub: true,
-
-  //         onUpdate: (self) => {
-  //           const progress = self.progress;
-
-  //           // Get screen size dynamically
-  //           const getScreenSize = () => {
-  //             if (window.matchMedia("(min-width: 1536px)").matches) {
-  //               return "2xl";
-  //             } else if (window.matchMedia("(min-width: 1280px)").matches) {
-  //               return "xl";
-  //             } else {
-  //               return "default";
-  //             }
-  //           };
-
-  //           // Calculate position based on screen size
-  //           const calculatePosition = (progress: any) => {
-  //             const screenSize = getScreenSize();
-
-  //             let xOffset, yOffset;
-
-  //             // Define offsets for each screen size
-  //             switch (screenSize) {
-  //               case "2xl":
-  //                 xOffset = 20; // Adjust this value for 2xl
-  //                 yOffset = 1050; // Adjust this value for 2xl
-  //                 break;
-  //               // case "xl":
-  //               //   xOffset = -100; // Adjust this value for xl
-  //               //   yOffset = 800; // Adjust this value for xl
-  //               //   break;
-  //               default:
-  //                 xOffset = -10; // Default value
-  //                 yOffset = 900; // Default value
-  //             }
-
-  //             const xDistance =
-  //               scaleThrough.getBoundingClientRect().right -
-  //               segmentDiv.getBoundingClientRect().right;
-  //             const yDistance =
-  //               scaleThrough.getBoundingClientRect().top -
-  //               segmentDiv.getBoundingClientRect().top;
-
-  //             const newX = xDistance * progress + xOffset;
-  //             const newY = yDistance * progress + yOffset;
-
-  //             return { newX, newY };
-  //           };
-
-  //           const { newX, newY } = calculatePosition(progress);
-
-  //           gsap.to(travelDiv, {
-  //             x: newX,
-  //             y: newY,
-  //           });
-  //         },
-  //       },
-  //     });
-  //   }
-
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  //   };
-  // }, []);
-
   useEffect(() => {
     const travelDiv = travelDivRef.current;
     const segmentDiv = segmentImageRef.current;
@@ -285,17 +163,17 @@ export default function Home() {
 
             const xOffset =
               window.innerWidth >= 1280 // xl breakpoint
-                ? 1500 // Adjust offset for xl
-                : window.innerWidth >= 1536 // 2xl breakpoint
-                ? 1700 // Adjust offset for 2xl
-                : 1300; // Default offset
+                ? 1100 // Adjust offset for xl
+                : window.innerWidth >= 1600 // 2xl breakpoint
+                ? 10 // Adjust offset for 2xl
+                : 10; // Default offset
 
             const yOffset =
               window.innerWidth >= 1280
-                ? 1000
-                : window.innerWidth >= 1536
-                ? 1500
-                : 900;
+                ? 800
+                : window.innerWidth >= 1920
+                ? 10000
+                : 10000;
 
             const xDistance =
               segmentDiv.getBoundingClientRect().left -
@@ -339,19 +217,24 @@ export default function Home() {
               }
             };
 
-            const calculatePosition = (progress:any) => {
+            const calculatePosition = (progress: any) => {
               const screenSize = getScreenSize();
 
               let xOffset, yOffset;
 
               switch (screenSize) {
                 case "2xl":
-                  xOffset = 20;
-                  yOffset = 1050;
+                  xOffset = 0;
+                  yOffset = 0;
                   break;
+
+                // case "xl":
+                //   xOffset = 20;
+                //   yOffset = 1050;
+                //   break;
                 default:
-                  xOffset = -10;
-                  yOffset = 500;
+                  xOffset = 0;
+                  yOffset = 520;
               }
 
               const xDistance =
@@ -383,35 +266,12 @@ export default function Home() {
     };
   }, []);
 
-  const [scale, setScale] = useState(1);
-  const [isImageHidden, setIsImageHidden] = useState(false);
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-
-    const newScale = Math.max(1 - scrollY / 1000, 0.5); 
-    setScale(newScale);
-
-    // Hide or show the image based on scroll threshold
-    if (scrollY > 300) {
-      setIsImageHidden(true); // Hide the image when scrolling down
-    } else {
-      setIsImageHidden(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   useEffect(() => {
     const animateIcons = (direction: any) => {
       const refs = [
         {
           ref: whatsappRef,
-          start: { y: -100, x: 10 },
+          start: { y: -100, x: -10 },
           end: { y: -80, x: -10 },
         },
         { ref: slackRef, start: { y: -100, x: 10 }, end: { y: -80, x: -10 } },
@@ -468,6 +328,38 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    gsap.fromTo(
+      ".card",
+      { rotation: 0, x: 10 },
+      {
+        rotation: 0, // Final rotation (no rotation)
+        x: (index) => index * 350, // Separate cards horizontally (adjust as needed)
+        scrollTrigger: {
+          trigger: ".cards-container",
+          start: "top bottom", // Start the animation when the container is in view
+          end: "bottom top", // End the animation when the container is out of view
+          // onEnter: () => {
+          //   // Animation when scrolling down (top to bottom)
+          //   gsap.to(".card", { x: (index) => index * 350 });
+          // },
+          // onEnterBack: () => {
+          //   // Reset animation when scrolling up (bottom to top)
+          //   gsap.to(".card", { x: 10 });
+          // },
+          // onLeave: () => {
+          //   // Optional: Reset when leaving (if needed)
+          //   gsap.set(".card", { x: 10 });
+          // },
+          // onLeaveBack: () => {
+          //   // Optional: Reset when leaving back (if needed)
+          //   gsap.set(".card", { x: 10 });
+          // },
+          // scrub: true, // Smoothly animate based on scroll position (optional)
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="w-full bg-[#060A22] w-100  md:h-auto  lg:h-auto flex flex-col justify-center">
@@ -523,7 +415,14 @@ export default function Home() {
         </div>
         <div className="w-[100%]  flex justify-center md:text-[4vw] lg:text-[3vw] font-medium font-inter gap-5 my-5  xl:my-12 z-20 relative">
           <button className="btn btn_primary md:text-[2vw] lg:text-[0.95vw] font-bold 2xl:p-8 ">
-            <p className="2xl:mt-[-0.7vw]">Request Demo</p>
+            <a
+              href="https://calendly.com/sales-h-cn/30min?month=2024-12"
+              target="_blank"
+              rel="noreferrer"
+              className="2xl:mt-[-0.7vw]"
+            >
+              Request Demo
+            </a>
           </button>
           <button>
             <div className="w-[100%] flex flex-row border-4 border-[#111449] p-4 rounded-full align-center justify-center items-center">
@@ -607,14 +506,14 @@ export default function Home() {
         </div>
         <div
           ref={divRef}
-          className="overflow-hidden absolute xl:top-[44vw]  xl:left-[34vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:hidden md:hidden lg:hidden xl:block"
+          className="overflow-hidden absolute xl:top-[44vw]  xl:h-[43vh] 2xl:h-[39vh] xl:left-[34vw] 2xl:left-[34vw]  2xl:top-[46vw] w-[50vh]   z-10 xs:hidden md:hidden lg:hidden xl:block"
         >
           <iframe
             src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
             className="w-full h-full"
             style={{
               width: "100%",
-              height: "43vh",
+
               border: "none",
             }}
           />
@@ -694,13 +593,13 @@ export default function Home() {
 
               <div className="scroll-container">
                 <div
-                  className="lottie-container absolute  flex justify-center items-center xl:right-[13vw] xl:h-[378px] xl:top-[5.5vw] 2xl:top-[6.5vw] z-0 2xl:h-[420px] lg:hidden xl:block lg:border-l-background"
+                  className="lottie-container absolute  flex justify-center items-center xl:right-[13vw] xl:h-[378px] xl:top-[5.5vw] 2xl:top-[6.5vw] 2xl:left-[11vw] z-0 2xl:h-[450px] lg:hidden xl:block lg:border-l-background"
                   style={{}}
                 ></div>
               </div>
 
               <div
-                className="absolute xl:top-[10.5vw] xl:left-[-4.8vw] flex justify-center items-center 2xl:top-[18vw] 2xl:left-[2vw] xl:h-[33vh] 2xl:h-[34vh] xl:block lg:hidden md:hidden"
+                className="absolute xl:top-[10.5vw] xl:left-[-5.5vw] flex justify-center items-center 2xl:top-[11vw] 2xl:left-[-5.5vw] xl:h-[33.5vh] 2xl:h-[32vh] xl:block lg:hidden md:hidden"
                 ref={travelDivRef}
                 style={{
                   position: "absolute",
@@ -720,11 +619,11 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="w-1/2 flex flex-col justify-center text-white">
-              <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora pl-20">
+            <div className="w-1/2 mx-[10px] flex flex-col justify-center text-white ">
+              <h1 className="text-[2.7vw] font-semibold pb-5 font-Sora lg:pl-20 xl:pl-0">
                 Strategy AI
               </h1>
-              <p className="lg:w-[80%] pl-20 font-Inter font-medium text-[#908EB5] md:text-lg xl:text-[1vw] leading-8">
+              <p className="lg:w-[80%] lg:pl-20 xl:pl-0 font-Inter font-medium text-[#908EB5] md:text-lg xl:text-[1vw] leading-8">
                 Create intelligent, data-driven strategies that respond to
                 evolving market trends and customer behavior, ensuring alignment
                 with your strategic goals & objectives.
@@ -780,33 +679,48 @@ export default function Home() {
             </span>
           </h1>
         </div>
-        <div className="w-full flex flex-row gap-5 justify-center">
-          {MarketingGoalsList?.map((data: MarketingGoalsListType) => (
-            <div
-              className="w-[22%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r "
-              key={data?.id}
-            >
-              <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw]  align-center mt-16">
-                <Image
-                  src={data?.icon}
-                  alt=""
-                  className="w-[80vw] h-[15vh] flex justify-center items-center"
-                />
-
-                <p className="text-[#d7d2fc] mt-7 text-[1.2vw] font-Sora font-semibold">
-                  {data?.content}
-                </p>
-                <span className=" text-[#d7d2fc] text-[1.2vw] font-Sora font-semibold">
-                  {data?.content1}
-                </span>
-
-                <p className="w-auto min-w-10 text-[0.95vw] px-10 py-2 flex justify-center  font-Inter items-center text-center font-medium text-[#908eb5] ">
-                  {data?.details}
-                </p>
-              </div>
+        <div className="cards-container w-full  flex flex-row justify-center  mx-[-25vw] ">
+          <div className="card w-[23%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r relative -rotate-12 ">
+            <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] mt-16">
+              <Image src={image} alt="" className="w-[80vw] h-[15vh]" />
+              <p className="text-[#d7d2fc] mt-7 xl:text-[1.5vw] font-Sora font-semibold text-center">
+                Anticipates <br /> Market Trends{" "}
+              </p>
+              <span className="text-[#908EB5] text-[1vw] xl:mt-3 font-Sora font-medium text-center">
+                Leverage AI to stay ahead by predicting market shifts with
+                precision.{" "}
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div className="card w-[23%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r absolute rotate-12 scroll-snap-start">
+            <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] mt-16">
+              <Image src={image1} alt="" className="w-[80vw] h-[15vh]" />
+              <p className="text-[#d7d2fc] mt-7 text-[1.5vw] font-Sora font-semibold text-center">
+                Generate <br />
+                Target Audience{" "}
+              </p>
+              <span className="text-[#908EB5] text-[1vw] xl:mt-3 font-Sora font-medium text-center mx-2">
+                AI-driven insights to identify and attract your ideal customers
+                effortlessly.{" "}
+              </span>
+            </div>
+          </div>
+
+          <div className="card w-[23%] h-[45vh] rounded-[5%] from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] bg-gradient-to-r absolute rotate-[42vw] scroll-snap-start">
+            <div className="flex-col text-white w-full flex items-center justify-center text-[1.2vw] mt-16">
+              <Image src={image2} alt="" className="w-[80vw] h-[15vh]" />
+              <p className="text-[#d7d2fc] mt-7 text-[1.5vw] font-Sora font-semibold text-center">
+                Specific <br /> Channel Targeting{" "}
+              </p>
+              <span className="text-[#908EB5] text-[1vw] font-Sora font-medium text-center xl:mt-3 ">
+                Optimize outreach with AI-powered targeting for the most
+                effective channels.{" "}
+              </span>
+            </div>
+          </div>
         </div>
+
         {/* <div className="xs:hidden md:hidden:w-full h-[45vh] relative flex justify-center items-center">
           {MarketingGoalsList?.map(
             (data: MarketingGoalsListType, index: number) => (

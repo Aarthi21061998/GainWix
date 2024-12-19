@@ -71,7 +71,7 @@ const PricingCard = () => {
           </div>
         </div>
 
-        <div className="md:w-[60%] h-full border-b border-b-[#2D3154] xs:w-full">
+        <div className="md:w-[80%] h-full border-b border-b-[#2D3154] xs:w-full">
           <div className="w-full h-full flex flex-row items-center  justify-between cursor-pointer">
             {(selectedOption === "monthly" ? MonthList : AnnualList)?.map(
               (data) => (
@@ -90,6 +90,11 @@ const PricingCard = () => {
                         {data.text}
                       </span>
                     )}
+                    {data?.value === "Magnum" && (
+                      <div className="text-red">
+                        {data?.value}
+                  </div>
+                    )}
                   </p>
                 </div>
               )
@@ -98,7 +103,7 @@ const PricingCard = () => {
         </div>
       </div>
 
-      <div className="xs:hidden md:block layout h-full lg:mx-14 lg:-mt-[2vw] md:-mt-[10vw] py-10 xs:p-6">
+      <div className="xs:hidden md:block layout h-full lg:mx-14 lg:-mt-[2vw] md:-mt-[10vw] py-10 xs:p-6 ">
         {CampaignList.map((data) => (
           <React.Fragment key={data.title}>
             <div className="flex flex-col  mt-6 p-3.5">
@@ -141,11 +146,11 @@ const PricingCard = () => {
                     )}
                   </div>
 
-                  <div className=" md:!w-[60%] flex flex-row xs:w-[100%]">
+                  <div className="md:!w-[100%] flex flex-row xs:w-[100%]">
                     {data?.icon && (
                       <div
                         style={BrandStyle}
-                        className="md:border-l border-l-[#2D3154] flex flex-col items-center justify-center"
+                        className="md:border-l border-l-[#2D3154] flex flex-col items-center justify-center pr-[5vw]"
                       >
                         <Image
                           src={data?.icon}
@@ -175,7 +180,7 @@ const PricingCard = () => {
                         style={BrandStyle}
                         className="md:border-l border-l-[#2D3154] flex flex-row items-center justify-center"
                       >
-                        <p className="xs:text-[2.5vw] sm:text-[1vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[0.75vw] 2xl:text-[0.75vw] font-Inter font-semibold text-[white]">
+                        <p className="xs:text-[2.5vw] sm:text-[1vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[0.75vw] 2xl:text-[0.75vw] pr-[5vw] font-Inter font-semibold text-[white]">
                           {data?.speed}
                         </p>
                       </div>
@@ -222,7 +227,7 @@ const PricingCard = () => {
                     {data?.icon3 && (
                       <div
                         style={BrandStyle}
-                        className="md:border-l border-l-[#2D3154] flex flex-col items-center justify-center"
+                        className="md:border-l border-l-[#2D3154] flex flex-col items-center justify-center pl-[7vw]"
                       >
                         <Image
                           src={data?.icon3}
@@ -252,7 +257,7 @@ const PricingCard = () => {
                         style={BrandStyle}
                         className="md:border-l border-l-[#2D3154] flex flex-row items-center justify-center"
                       >
-                        <p className="xs:text-[2.5vw] sm:text-[1vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[0.75vw] 2xl:text-[0.75vw] font-Inter font-semibold text-[white]">
+                        <p className="xs:text-[2.5vw] sm:text-[1vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[0.75vw] 2xl:text-[0.75vw] font-Inter font-semibold text-[white] pl-[7vw]">
                           {data?.speed3}
                         </p>
                       </div>

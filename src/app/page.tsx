@@ -53,6 +53,31 @@ export default function Home() {
   const segmentImageRef = useRef<HTMLDivElement | null>(null);
   const scaleThroughRef = useRef<HTMLDivElement | null>(null);
 
+  const [scale, setScale] = useState(1);
+  const [isImageHidden, setIsImageHidden] = useState(false);
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    // Decrease the size of the image with scroll
+    const newScale = Math.max(1 - scrollY / 1000, 0.5); // Min scale is 0.5
+    setScale(newScale);
+
+    // Hide or show the image based on scroll threshold
+    if (scrollY > 300) {
+      setIsImageHidden(true); // Hide the image when scrolling down
+    } else {
+      setIsImageHidden(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   useEffect(() => {
     const is2xl = window.matchMedia("(min-width: 1536px)").matches;
 
@@ -234,7 +259,7 @@ export default function Home() {
                 //   break;
                 default:
                   xOffset = 5;
-                  yOffset = 550;
+                  yOffset = 560;
               }
 
               const xDistance =
@@ -434,67 +459,67 @@ export default function Home() {
           </button>
         </div>
 
-        {/* {!isImageHidden && ( */}
-        <div className="blend-screen">
-          <div className="xs:block md:block lg:block xl:hidden ">
-            <Image
-              src={Mobile}
-              alt=""
-              className="md:mx-[10vw] lg:ml-[-1vw]  lg:-mt-[7vw] lg:w-[95vw] xl:w-full "
-            />
-          </div>
+        {!isImageHidden && (
+          <div className="blend-screen">
+            <div className="xs:block md:block lg:block xl:hidden ">
+              <Image
+                src={Mobile}
+                alt=""
+                className="md:mx-[10vw] lg:ml-[-1vw]  lg:-mt-[7vw] lg:w-[95vw] xl:w-full "
+              />
+            </div>
 
-          <div className="xs:hidden md:hidden xl:block z-10">
-            <Image
-              src={mainLine}
-              alt=""
-              className="absolute md:top-[40vw]  lg:top-[16vw]   z-0 "
-            />
-            <div ref={whatsappRef} className="relative">
+            <div className="xs:hidden md:hidden xl:block z-10">
               <Image
-                src={what1}
-                alt="Animated Image"
-                className="absolute md:top-[30vw] lg:top-[7vw] lg:left-[6vw] lg:w-[20vw] lg:h-[23vh] md:w-[10vw] md:h-[13vh] 2xl:left-[8vw] 2xl:top-[10vw]"
-              />
-            </div>
-            <div ref={slackRef} className="relative">
-              <Image
-                src={slack}
-                alt="Animated Image"
-                className="scrolling-image absolute lg:top-[4vw] lg:left-[20vw] lg:w-[20vw] lg:h-[19vh]  md:w-[10vw] md:h-[13vh] 2xl:left-[25vw] 2xl:top-[6vw]"
-              />
-            </div>
-            <div ref={instagramRef} className="relative">
-              <Image
-                src={insts}
+                src={mainLine}
                 alt=""
-                className=" absolute xl:top-[1vw] xl:right-[16vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh]  2xl:right-[20vw] 2xl:top-[3vw] "
+                className="absolute md:top-[40vw]  lg:top-[16vw]   z-0 "
               />
-            </div>
-            <div ref={MessageRef} className="relative">
-              <Image
-                src={mess1}
-                alt=""
-                className=" absolute xl:top-[-2vw] xl:right-[4vw] lg:w-[20vw] lg:h-[23vh]   md:w-[10vw] md:h-[13vh] 2xl:right-[4vw] 2xl:top-[3vw] "
-              />
-            </div>
-            <div ref={TicktokRef} className="relative">
-              <Image
-                src={tik}
-                alt=""
-                className=" absolute xl:top-[13vw] xl:right-[15vw] lg:w-[20vw] lg:h-[15vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[17vw]"
-              />
-            </div>
-            <div ref={LinkedInRef} className="relative">
-              <Image
-                src={linked}
-                alt=""
-                className=" absolute lg:top-[20vw] lg:left-[15vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[25vw] 2xl:left-[16vw]"
-              />
+              <div ref={whatsappRef} className="relative">
+                <Image
+                  src={what1}
+                  alt="Animated Image"
+                  className="absolute md:top-[30vw] lg:top-[7vw] lg:left-[6vw] lg:w-[20vw] lg:h-[23vh] md:w-[10vw] md:h-[13vh] 2xl:left-[8vw] 2xl:top-[10vw]"
+                />
+              </div>
+              <div ref={slackRef} className="relative">
+                <Image
+                  src={slack}
+                  alt="Animated Image"
+                  className="scrolling-image absolute lg:top-[4vw] lg:left-[20vw] lg:w-[20vw] lg:h-[19vh]  md:w-[10vw] md:h-[13vh] 2xl:left-[25vw] 2xl:top-[6vw]"
+                />
+              </div>
+              <div ref={instagramRef} className="relative">
+                <Image
+                  src={insts}
+                  alt=""
+                  className=" absolute xl:top-[1vw] xl:right-[16vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh]  2xl:right-[20vw] 2xl:top-[3vw] "
+                />
+              </div>
+              <div ref={MessageRef} className="relative">
+                <Image
+                  src={mess1}
+                  alt=""
+                  className=" absolute xl:top-[-2vw] xl:right-[4vw] lg:w-[20vw] lg:h-[23vh]   md:w-[10vw] md:h-[13vh] 2xl:right-[4vw] 2xl:top-[3vw] "
+                />
+              </div>
+              <div ref={TicktokRef} className="relative">
+                <Image
+                  src={tik}
+                  alt=""
+                  className=" absolute xl:top-[13vw] xl:right-[15vw] lg:w-[20vw] lg:h-[15vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[17vw]"
+                />
+              </div>
+              <div ref={LinkedInRef} className="relative">
+                <Image
+                  src={linked}
+                  alt=""
+                  className=" absolute lg:top-[20vw] lg:left-[15vw] lg:w-[20vw] lg:h-[13vh]  md:w-[10vw] md:h-[13vh] 2xl:top-[25vw] 2xl:left-[16vw]"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        {/* )} */}
+        )}
       </div>
       <div className="">
         <div className="">

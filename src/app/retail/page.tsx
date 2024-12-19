@@ -131,7 +131,7 @@ export default function Retail() {
             </div>
           </div>
 
-          <div className="absolute 2xl:left-[-9.2vw] 2xl:top-[31.5vw]  xs:top-[55vw]  lg:top-[30vw] xl:left-[-8vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
+          <div className="absolute 2xl:left-[-9.2vw] 2xl:top-[31.5vw]  xs:top-[55vw]  lg:top-[30vw] xl:left-[-5vw] xl:top-[31vw]  md:right-[10vw] md:top-[50vw] w-full h-full flex justify-end">
             <Image
               src={RetailHero}
               alt="hero"

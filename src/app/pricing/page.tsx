@@ -3,7 +3,7 @@ import PricingCard from "@components/PricingCard";
 import Calculator from "@components/Calculator";
 
 import Growth from "@components/Growth";
-import { PricingCardList } from "@constants/home";
+import { cardList, CardListType, PricingCardList } from "@constants/home";
 import Image from "next/image";
 import PlanCard from "@components/PlanCard";
 import DigitalMarketing from "@components/DigitalMarketing";
@@ -66,6 +66,29 @@ export default function PricingPage() {
       <div className="xs:hidden lg:block">
         <PlanCard />
       </div>
+      {/* <div className=" bg-[#060A22] mx-6 my-8 md:hidden flex  flex-row  xl:gap-5  xs:gap-[5vw] justify-start xs:overflow-x-auto   xs:m-auto xs:justify-start">
+        {cardList?.map((data: CardListType) => (
+          <div
+            className="w-[180vw] h-[45vh]  xs:rounded-[30px] lg:rounded-[50px] border border-[#2D3154]   "
+            key={data?.id}
+          >
+            <div className="w-[60vw] mx-[10vw] flex-col text-white flex items-center justify-center text-[1.2vw] align-center 2xl:mt-16 xl:mt-6">
+              <Image
+                src={data?.icon}
+                alt=""
+                className="xl:w-[60vw] xl:h-[20vh]  md:w-[50vw] md:h-[20vh] xs:w-[50vw] flex justify-center items-center"
+              />
+
+              <p className="font-Sora font-semibold xs:text-[4vw] md:text-[2.65vw] lg:text-[3vw] xl:text-[2.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent 2xl:mb-5 xl:mb-12 justify-center items-center ">
+                {data?.content}
+              </p>
+              <span className="font-Inter font-medium xs:text-[3vw] md:text-[1.5vw] lg:text-[1.5vw] xl:text-[1vw] text-[#908EB5] text-center  lg:px-5 xs:px-1">
+                {data?.content1}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div> */}
 
       <div className="bg-[#060A22]">
         <div className="pt-10">

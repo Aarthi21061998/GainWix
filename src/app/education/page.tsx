@@ -29,6 +29,7 @@ import {
 
 import DigitalMarketing from "@components/DigitalMarketing";
 import Growth from "@components/Growth";
+import { userAgent } from "next/server";
 
 export default function Education() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -42,6 +43,18 @@ export default function Education() {
 
     return () => clearInterval(intervalId);
   }, [EducationScrolling.length]);
+
+  function setCustomVH() {
+    const vh = window.innerHeight * 0.01; // 1% of the viewport height
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+
+  // Run on initial load
+  setCustomVH();
+
+  // Update on resize
+  window.addEventListener("resize", setCustomVH);
+
   return (
     <div className=" relative bg-[#060A22] ">
       <Image src={ECommerceBg} alt="" />
@@ -65,8 +78,7 @@ export default function Education() {
             <h1 className=" xs:hidden sm:hidden md:block  lg:block xl:hidden  md:w-[90vw] xl:text-[3vw] xs:text-[7vw]  md:-mt-[90vw] sm:text-[1vw] font-bold   text-[white] font-sora  md:text-[5vw]  xs:text-center   lg:text-center  ">
               Grow Your Ed Tech Institution With <br />
               <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-sora ">
-                AI Conversational 
-                Learning
+                AI Conversational Learning
               </span>
             </h1>
             <p className=" xs:px-2 font-light font-Inter mt-5 mb-7 lg:text-[2vw] xl:text-[1vw] 2xl:text-[1vw] text-[#908eb5]  xl:w-[28.5vw]   md:text-[3vw] md:items-center lg:items-baseline  xs:text-center lg:text-center  xs:text-[4vw] xl:text-start ">
@@ -121,13 +133,31 @@ export default function Education() {
               ))}
             </div>
           </div>
-          <div className="absolute   xs:top-[100vw] lg:right-[20vw] lg:top-[40vw] xl:left-[7vw] xl:top-[31vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
+          {/* <div className="absolute xs:top-[100vw] lg:right-[20vw] lg:top-[40vw] xl:left-[6vw] xl:top-[30vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
             <Image
               src={Educationhero}
               alt="Education Hero"
               // className="xl:w-[80vw] xl:h-[50vh] lg:w-[60vw] lg:h-[50vh]"
             />
-          </div>
+          </div> */}
+          <div
+  style={{
+    top: `calc(var(--vh) * 54)`, // Replace hardcoded "xl:top" values
+  }}
+  className="absolute xs:top-[calc(var(--vh)*100)] 
+                     lg:right-[20vw] lg:top-[calc(var(--vh)*40)] 
+                     xl:left-[6vw] xl:top-[calc(var(--vh)*30)] 
+                     2xl:top-[calc(var(--vh)*31)] 2xl:left-[4.2vw] 
+                     md:right-[10vw] md:top-[calc(var(--vh)*70)] 
+                     w-full h-full flex justify-end"
+>
+  <Image
+    src={Educationhero}
+    alt="Education Hero"
+    className="object-contain"
+  />
+</div>
+
         </div>
       </div>
       <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">

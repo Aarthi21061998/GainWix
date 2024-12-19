@@ -44,14 +44,16 @@ export default function Education() {
     return () => clearInterval(intervalId);
   }, [EducationScrolling.length]);
 
-  function setCustomVH() {
-    const vh = window.innerHeight * 0.01; 
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-  }
+  // function setCustomVH() {
+  //   const vh = window.innerHeight * 0.01; // 1% of the viewport height
+  //   document.documentElement.style.setProperty("--vh", `${vh}px`);
+  // }
 
-  setCustomVH();
+  // // Run on initial load
+  // setCustomVH();
 
-  window.addEventListener("resize", setCustomVH);
+  // // Update on resize
+  // window.addEventListener("resize", setCustomVH);
 
   return (
     <div className=" relative bg-[#060A22] ">
@@ -122,30 +124,40 @@ export default function Education() {
                     <Image
                       src={data.icon}
                       alt={`Education Icon ${index + 1}`}
+                      // width={100}
+                      // height={150}
+                      // className="xl:h-[30vh] xs:h-[50vh]"
                     />
                   )}
                 </div>
               ))}
             </div>
           </div>
-
-          <div
-            style={{
-              top: `calc(var(--vh) * 54)`,
-            }}
-            className="absolute xs:top-[calc(var(--vh)*100)] 
+          <div className="absolute xs:top-[100vw] lg:right-[20vw] lg:top-[40vw] xl:left-[6vw] xl:top-[30vw] 2xl:top-[31vw] 2xl:left-[4.2vw]  md:right-[10vw] md:top-[70vw] w-full h-full flex justify-end">
+            <Image
+              src={Educationhero}
+              alt="Education Hero"
+              // className="xl:w-[80vw] xl:h-[50vh] lg:w-[60vw] lg:h-[50vh]"
+            />
+          </div>
+          {/* <div
+  style={{
+    top: `calc(var(--vh) * 54)`,
+  }}
+  className="absolute xs:top-[calc(var(--vh)*100)] 
                      lg:right-[20vw] lg:top-[calc(var(--vh)*40)] 
                      xl:left-[6vw] xl:top-[calc(var(--vh)*30)] 
                      2xl:top-[calc(var(--vh)*31)] 2xl:left-[4.2vw] 
                      md:right-[10vw] md:top-[calc(var(--vh)*70)] 
                      w-full h-full flex justify-end"
-          >
-            <Image
-              src={Educationhero}
-              alt="Education Hero"
-              className="object-contain"
-            />
-          </div>
+>
+  <Image
+    src={Educationhero}
+    alt="Education Hero"
+    className="object-contain"
+  />
+</div> */}
+
         </div>
       </div>
       <div className="lg:mt-[80vw] xl:mt-20 xs:mt-[210vw] md:mt-[120vw]">

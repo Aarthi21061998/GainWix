@@ -17,6 +17,23 @@ import images1 from "../assets/Icons/1st.svg";
 import images2 from "../assets/Icons/second.svg";
 import images3 from "../assets/Icons/3rd.svg";
 
+import a1 from "../assets/Icons/A2.svg"
+import a2 from "../assets/Icons/A1.svg"
+import a3 from "../assets/Icons/A3.svg"
+import a4 from "../assets/Icons/A4.svg"
+
+import s1 from "../assets/Icons/s1.svg"
+import s2 from "../assets/Icons/s2.svg"
+import s3 from "../assets/Icons/s3.svg"
+import s4 from "../assets/Icons/s4.svg"
+
+type SegmentItem = {
+  id: number;
+  icon: any;
+  data: string;
+  content1: string;
+};
+
 export const PricingCardList = [
   {
     id: 1,
@@ -165,6 +182,12 @@ type PriceDetails = {
   tick1: React.ReactNode;
   tick2: React.ReactNode;
   tick3: React.ReactNode;
+};
+type ItemType = {
+  id: number;
+  icon: any;
+  content1: string;
+  data?: string; // Mark `data` as optional
 };
 
 export interface PricingListTypes {
@@ -604,14 +627,14 @@ export const cardList = [
     {
       id: 1,
       icon: images1,
-      content: "Lorem Ipsum ",
+      // content: "Lorem Ipsum ",
       content1:
         "Leverage AI-powered bots to interact with customers in real-time on their favorite channels, providing seamless support and personalized guidance at every stage of their buying journey",
     },
     {
       id: 2,
       icon: images2,
-      content: "Lorem Ipsum ",
+      // content: "Lorem Ipsum ",
       content1:
         "Utilize AI to intelligently segment your audience and create hyper-personalized experiences tailored to their journey and purchase history, driving higher conversion rates.",
     },
@@ -619,10 +642,72 @@ export const cardList = [
       id: 3,
       icon: images3,
 
-      content: "Lorem Ipsum ",
+      // content: "Lorem Ipsum ",
       content1:
         "Streamline sales, support, and marketing efforts from one place and increase maximum efficiency. ",
     },
 ];
   
 export type CardListType = (typeof cardList)[0];
+
+export const StrargyList = [
+    {
+      id: 1,
+      icon: a1,
+      // content: "Lorem Ipsum ",
+      content1:"Data-Driven Precision"
+    },
+    {
+      id: 2,
+      icon: a2,
+      // content: "Lorem Ipsum ",
+      content1:"Real-Time Adjustments"
+    },
+    {
+      id: 3,
+      icon: a3,
+
+      // content: "Lorem Ipsum ",
+      content1: "Comprehensive and Easy-to-Use"
+  },
+      {
+      id: 4,
+      icon: a4,
+
+      // content: "Lorem Ipsum ",
+      content1: "Future-Proof Strategy"
+    },
+];
+
+export type StrargyType = (typeof cardList)[0];
+
+export const SegmentList: SegmentItem[] = [
+    {
+      id: 1,
+      icon: a1,
+      data: "Analyze Customer Data ",
+      content1:"Our AI processes all available customer data — from demographics to behavioral patterns — to identify unique, actionable segments."
+    },
+    {
+      id: 2,
+      icon: s2,
+      data: "Automate and Customize Segments ",
+      content1:"Let the AI generate key segments automatically, or use custom filters to build your own."
+    },
+    {
+      id: 3,
+      icon: s3,
+
+      data: "Engage Across Channels ",
+      content1: "Sync these segments across your marketing channels, ensuring unified, personalized messaging everywhere"
+  },
+      {
+      id: 4,
+      icon: s4,
+
+      data: "Monitor and Optimize ",
+      content1: "Track performance metrics for each segment in real-time and use our insights to continually refine and enhance targeting."
+    },
+];
+
+export type SegmentType = (typeof cardList)[0];

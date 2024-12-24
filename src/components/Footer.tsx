@@ -131,13 +131,12 @@ import { useState } from "react";
 import Arrow from "../assets/Icons/Dropdown.svg";
 
 type FooterLink = {
-  id: number; // Update this to number if id is a number
+  id: number;
   label: string;
-  lists: {
-    id: number;
-    label: string;
-    href: string;
-  }[];
+  lists: Array<
+    | { id: number; label: string; path: string }
+    | { id: number; label: string; href: string }
+  >;
 };
 
 type OpenSections = {
@@ -171,62 +170,81 @@ export default function Footer() {
 
           <div className="lg:flex flex-row items-center gap-5 mt-10 xs:hidden">
             <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram ">
-              <Instagram />
+              <a href="https://www.instagram.com/gainwix/" target="_blank">
+                {" "}
+                <Instagram />{" "}
+              </a>
             </div>
             <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
-              <Facebook />
+              <a
+                href="https://www.facebook.com/people/GainWix/61556584534406/"
+                target="_blank"
+              >
+                <Facebook />
+              </a>
             </div>
             <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
-              <Linkedin />
+              <a href="https://www.linkedin.com/company/gainwixai/">
+                <Linkedin />
+              </a>
             </div>
             <div className="w-10 h-10 rounded-2xl bg-[#2B2E4F] flex justify-center items-center hover:bg-[#908EB5]  hover-instagram">
-              <Twitter />
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2Fgainwixai%2F"
+                target="_blank"
+              >
+                <Twitter />
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="xs:w-[50vw] lg:flex justify-between xs:block">
-          {FOOTER_LINKS.map((l: FooterLink) => {
-            const isOpen = openSections[l.id.toString()]; // Ensure id is a string for openSections
+        <div className="xs:w-[50vw] lg:flex justify-between xs:block pointer ">
+          {FOOTER_LINKS.length > 0 &&
+            FOOTER_LINKS.map((data: FooterLink, index: number) => {
+              const isOpen = openSections[data.id.toString()]; // Ensure id is a string for openSections
 
-            return (
-              <div key={l.id} className="flex flex-col gap-5 xs:mt-3">
-                <h4
-                  className="lg:text-[0.97vw] xs:text-[3.5vw] text-[#908EB5] font-Inter font-bold flex xs:justify-between xs:w-[80vw] lg:w-[10vw] xs:py-2 items-center lg:justify-start cursor-pointer lg:cursor-default"
-                  onClick={() => toggleSection(l.id.toString())} // Convert id to string if needed
-                >
-                  {l.label}
-                  <div className="lg:hidden ml-2">
-                    <Image
-                      src={Arrow}
-                      alt="arrow"
-                      className={`transition-transform duration-300 xs:w-[6vw] h-[3vh] ${
-                        isOpen ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                  </div>
-                </h4>
-
-                <ul
-                  className={`flex flex-col ${
-                    isOpen ||
-                    (typeof window !== "undefined" && window.innerWidth >= 992)
-                      ? "block"
-                      : "hidden"
-                  } lg:block`}
-                >
-                  {l.lists.map((list) => (
-                    <div
-                      key={list.id}
-                      className="w-full xs:text-[4vw] md:text-[2vw] lg:text-[0.87vw] py-2 font-medium text-[#55567A] font-Inter hover:text-[#e2deff]"
-                    >
-                      {list.label}
+              return (
+                <div key={data.id} className="flex flex-col gap-5 xs:mt-3">
+                  <h4
+                    className="lg:text-[0.97vw] xs:text-[3.5vw] text-[#908EB5] font-Inter font-bold flex xs:justify-between xs:w-[80vw] lg:w-[10vw] xs:py-2 items-center lg:justify-start cursor-pointer lg:cursor-default"
+                    onClick={() => toggleSection(data.id.toString())} // Convert id to string if needed
+                  >
+                    {data.label}
+                    <div className="lg:hidden ml-2">
+                      <Image
+                        src={Arrow}
+                        alt="arrow"
+                        className={`transition-transform duration-300 xs:w-[6vw] h-[3vh] ${
+                          isOpen ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
                     </div>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+                  </h4>
+
+                  <ul
+                    className={`flex flex-col ${
+                      isOpen ||
+                      (typeof window !== "undefined" &&
+                        window.innerWidth >= 992)
+                        ? "block"
+                        : "hidden"
+                    } lg:block`}
+                  >
+                    {data.lists.map((list) => (
+                      <div
+                        key={list.id}
+                        className="w-full xs:text-[4vw] md:text-[2vw] lg:text-[0.87vw] py-2 font-medium text-[#55567A] font-Inter hover:text-[#e2deff] pointer "
+                      >
+                        <Link href={list.path ?? list.href ?? "#"}>
+                          {list.label}
+                        </Link>
+                      </div>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
         </div>
       </div>
 

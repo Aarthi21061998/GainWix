@@ -19,9 +19,9 @@ export default function Card() {
               className="xl:w-[60vw] xl:h-[20vh]  md:w-[50vw] md:h-[20vh] xs:w-[50vw] flex justify-center items-center"
             />
 
-            <p className="font-Sora font-semibold xs:text-[4vw] md:text-[2.65vw] lg:text-[3vw] xl:text-[2.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent 2xl:mb-5 xl:mb-12 justify-center items-center ">
+            {/* <p className="font-Sora font-semibold xs:text-[4vw] md:text-[2.65vw] lg:text-[3vw] xl:text-[2.65vw] from-[#FFFFFF] via-[#FFFFFF] to-[#999999] bg-gradient-to-r bg-clip-text text-transparent 2xl:mb-5 xl:mb-12 justify-center items-center ">
               {data?.content}
-            </p>
+            </p> */}
             <span className="font-Inter font-medium xs:text-[3vw] md:text-[1.5vw] lg:text-[1.5vw] xl:text-[1vw] text-[#908EB5] text-center  lg:px-5 xs:px-1">
               {data?.content1}
             </span>

@@ -28,6 +28,7 @@ export default function MenuListCard(props: any) {
             </span>
           )}
         </div>
+        
       </div>
     </Link>
   );

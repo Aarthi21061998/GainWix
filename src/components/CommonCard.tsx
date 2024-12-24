@@ -133,7 +133,7 @@ interface CardProps
   image?: string;
   customTitle?: React.ReactNode; // Renamed to avoid conflict
   content?: string;
-  list: ListItem[];
+  list?: ListItem[];
   className?: string;
   cardClassName?: string;
   revers?: boolean;

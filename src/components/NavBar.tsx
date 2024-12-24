@@ -6,8 +6,8 @@ import { cn } from "@helpers/cn";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import meta from "../assets/Icons/meta.svg";
 import logo from "../assets/Icons/meganum.svg";
+import cross from "../assets/Icons/cross.svg";
 import MenuItem from "./MenuItem";
 
 import ECommerce from "../assets/Icons/E-commerce.svg";
@@ -17,6 +17,9 @@ import RealEstate from "../assets/Icons/Real Estate 3.svg";
 import Travel from "../assets/Icons/Travel 2.svg";
 import Marketing from "../assets/Icons/Marketing.svg";
 
+import strategy from "../assets/Icons/strategy 2.svg";
+import segment from "../assets/Icons/Segment.svg";
+import scale from "../assets/Icons/Scales.svg";
 import navIcon from "../assets/Icons/navIcon.svg";
 
 export default function NavBar() {
@@ -26,35 +29,53 @@ export default function NavBar() {
   let [open, setOpen] = useState(false);
 
   const MenuLists = [
+    // {
+    //   id: 1,
+    //   title: "Product",
+    //   type: "single",
+    //   width: "lg",
+
     {
       id: 1,
       title: "Product",
-      // type: "single",
+      type: "single",
       subMenu: [
-        // {
-        //   id: 1,
-        //   title: "Platform",
-        //   width: "lg",
-        //   list: [
-        //     {
-        //       id: 1,
-        //       path: "/",
-        //       title: "Conversational Relationship Platform ",
-        //       // icon: ICONS?.Chat,
-        //       content:
-        //         "Accelerate Business Growth with our Conversational Relationship Platform.",
-        //     },
-        //   ],
-        // },
+        {
+          id: 1,
+          title: "Platform",
+          width: "lg",
+          list: [
+            {
+              id: 1,
+              title: "Strategy AI",
+              path: "/strategy",
+              icon: strategy,
+              content: "Experience the real Growth with Gainwix.ai",
+            },
+            {
+              id: 2,
+              title: "Segmentation AI ",
+              path: "/segment",
+              icon: segment,
+              content: "Experience the real Growth with Gainwix.ai",
+            },
+            // {
+            //   id: 3,
+            //   title: " Scale Through Automation  ",
+            //   path: "/scale",
+            //   icon: scale,
+            //   content: "Experience the real Growth with Gainwix.ai",
+            // },
+          ],
+        },
         // {
         //   id: 2,
-        //   title: "Channels",
+        //   title: "Chennals",
         //   width: "sm",
         //   list: [
         //     {
         //       id: 1,
         //       title: "WhatsApp ",
-        //       // icon: ICONS?.Whatsapp,
         //     },
         //   ],
         // },
@@ -136,7 +157,7 @@ export default function NavBar() {
           <div className="lg:hidden flex ">
             <div onClick={() => setOpen(!open)}>
               {open ? (
-                <Image src={meta} alt="Close menu" />
+                <Image src={cross} alt="Close menu" />
               ) : (
                 <Image src={navIcon} alt="Open menu" />
               )}

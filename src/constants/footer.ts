@@ -1,4 +1,18 @@
-export const FOOTER_LINKS = [
+type ListItem = {
+  id: number;
+  label: string;
+  path?: string; // Only path or href will be used
+  href?: string; // Only path or href will be used
+};
+
+type FooterLink = {
+  id: number;
+  label: string;
+  lists: ListItem[]; // Array of ListItem
+};
+
+
+export const FOOTER_LINKS: FooterLink[] = [
   {
     id: 1,
     label: 'Product',
@@ -6,12 +20,12 @@ export const FOOTER_LINKS = [
       {
         id: 1,
         label: 'Strategy AI',
-        href: '',
+        path: "/strategy",
       },
       {
         id: 2,
         label: 'Segmentation AI',
-        href: '',
+      path: "/segment",
       },
       {
         id: 3,
@@ -27,27 +41,31 @@ export const FOOTER_LINKS = [
       {
         id: 1,
         label: 'E-Commerce',
-        href: '',
+        path: "/ecommerce",
+
       },
       {
         id: 2,
         label: 'Retail',
-        href: '',
+              path: "/retail",
       },
       {
         id: 3,
         label: 'Education',
-        href: '',
+        path: "/education",
+
       },
       {
         id: 4,
         label: 'Real Estate',
-        href: '',
+        path: "/real_estate",
+
       },
       {
         id: 5,
         label: 'Travel',
-        href: '',
+        path: "/travel",
+
       },
     ],
   },
@@ -58,7 +76,7 @@ export const FOOTER_LINKS = [
       {
         id: 1,
         label: 'Pricing',
-        href: '',
+        path:"/pricing"
       },
       {
         id: 2,

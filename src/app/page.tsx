@@ -459,21 +459,20 @@ export default function Home() {
           </button>
         </div>
 
-        {!isImageHidden && (
-          <div className="blend-screen">
-            <div className="xs:block md:block lg:block xl:hidden ">
-              <Image
-                src={Mobile}
-                alt=""
-                className="md:mx-[10vw] lg:ml-[-1vw]  lg:-mt-[7vw] lg:w-[95vw] xl:w-full "
-              />
-            </div>
-
+        <div className="blend-screen">
+          <div className="xs:block md:block lg:block xl:hidden ">
+            <Image
+              src={Mobile}
+              alt=""
+              className="md:mx-[10vw] lg:ml-[-1vw]  lg:-mt-[7vw] lg:w-[95vw] xl:w-full "
+            />
+          </div>
+          {!isImageHidden && (
             <div className="xs:hidden md:hidden xl:block z-10">
               <Image
                 src={mainLine}
                 alt=""
-                className="absolute md:top-[40vw]  lg:top-[16vw]   z-0 "
+                className="absolute md:top-[40vw]  lg:top-[16vw]    z-0 "
               />
               <div ref={whatsappRef} className="relative">
                 <Image
@@ -518,15 +517,15 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="">
         <div className="">
           <Image
             src={mainImage}
             alt=""
-            className=" absolute xl:top-[12vw] xl:left-[-3vw] lg:top-[75vw] lg:left-[10vw] md:top-[75vw] md:left-[-5vw] xs:top-[135vw] blend-screen lg:w-[70vw] xl:w-full"
+            className=" absolute xl:top-[12vw] xl:left-[-3vw] lg:top-[75vw] lg:left-[10vw] md:top-[75vw] md:left-[-5vw] xs:top-[145vw] blend-screen lg:w-[70vw] xl:w-full"
           />
         </div>
         <div
@@ -543,7 +542,7 @@ export default function Home() {
             }}
           />
         </div>
-        <div className="overflow-hidden absolute xs:h-[13vh] md:h-[18vh] lg:h-[16vh] md:top-[108vw] md:left-[12vw] xs:top-[165vw] lg:top-[96vw]  xs:left-[-3vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:block md:block lg:block xl:hidden">
+        <div className="overflow-hidden absolute xs:h-[13vh] md:h-[18vh] lg:h-[16vh] md:top-[108vw] md:left-[12vw] xs:top-[178vw] lg:top-[96vw]  xs:left-[6vw] 2xl:left-[38vw]  w-[50vh]   z-10 xs:block md:block lg:block xl:hidden">
           <iframe
             src="https://lottie.host/embed/9560e7d1-c797-4b22-8614-9cd19a36f44f/B0IxtOljg5.json"
             className="w-full h-full"

@@ -2,13 +2,13 @@
 
 // assets
 import Image from "next/image";
-import ECommerceBg from "../../assets/Icons/E-commerce bg.svg";
+import Strargy from "../../assets/Icons/strategy AI (1).svg";
 
 import segment1 from "../../assets/Icons/segment1.svg";
 import segment2 from "../../assets/Icons/segment2.svg";
 import segment3 from "../../assets/Icons/segment3.svg";
 
-import segmentHero from "../../assets/Icons/segmentHero.svg";
+import segmentHero from "../../assets/Icons/Segmentation AI.svg";
 // components
 import React, { useEffect, useRef } from "react";
 import BrandScroll from "@components/BrandScroll";
@@ -37,11 +37,11 @@ interface Props {
 export default function segment() {
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" className="" />
+      <Image src={Strargy} alt="" className="" />
       <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[60vh] md:min-h-[65vh] xs:min-h-[45vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem]  ">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
           <div className=" flex flex-col xs:mt-[5vw] xl: mt-[13vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden  xs:hidden lg:hidden xl:block  2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw] leading-[4vw] ">
+            <h1 className=" md:hidden  xs:hidden lg:hidden xl:block  2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw] leading-[3.8vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]  ">
               Reach Right <br />
               <p className="xl:text-[3vw] xs:text-[7vw] lg:text-[2.5vw] md:text-[3vw] font-bold   text-[white] font-sora    xs:text-center   lg:text-start">
                 {" "}
@@ -97,7 +97,7 @@ export default function segment() {
             </div>
           </div>
 
-          <div className="absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[80vw] lg:right-[10vw] lg:top-[70vw] xl:right-[-1vw] xl:top-[30vw]  md:right-[1vw] w-full h-full flex justify-end">
+          <div className="absolute blend-screen 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[80vw] lg:right-[10vw] lg:top-[70vw] xl:right-[1vw] xl:top-[35vw]  md:right-[1vw] w-full h-full flex justify-end">
             <Image src={segmentHero} alt="hero" className="" />
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function segment() {
       <div className=" rounded-[120px]  lg:min-h-[120vh] xl:min-h-[150vh] xs:mt-[70vw] md:mt-[100vw] lg:mt-[80vw] xl:mt-0 ">
         <div className="md:py-0 xs:py-5  ">
           <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
-            <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
+            <div className="xs:hidden md:block w-[100%] h-[24vh] flex justify-center text-[3vw] font-medium font-Sora py-10">
               <h1 className="xl:text-[3vw] lg:text-[5vw] md:text-[5vw] font-semibold text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">Set new benchmarks and hit Goals</p>
                 <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -118,7 +118,7 @@ export default function segment() {
                 </p>
               </h1>
             </div>
-            <div className="xs:block md:hidden w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 mt-[100vw]">
+            <div className="xs:block md:hidden w-[100%] h-[10vh] flex justify-center text-[3vw] font-medium font-Sora pt-10 mt-[100vw]">
               <h1 className="text-[6vw] font-bold text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">
                   Set new benchmarks And <br /> Hit Goals{" "}
@@ -135,7 +135,7 @@ export default function segment() {
               // className=" xl:mx-[9v] lg:mx-[3rem]  w-full "
               text
               customTitle={
-                <div className="-mt-20 xs:mt-[10vw] xs:mx-[5vw] md:mx-[-1vw] lg:mx-0  ">
+                <div className=" xs:mt-[10vw] xs:mx-[5vw] md:mx-[-1vw] lg:mx-0  ">
                   <div className="md:hidden xs:text-[8vw] md:w-[50%] md:text-[2.5vw] xs:w-[90%]  lg:w-[40vw] font-bold text-[white] font-sora">
                     Automated Customer
                     <br />
@@ -193,7 +193,7 @@ export default function segment() {
                       Dynamic Segments{" "}
                     </span>
                   </div>
-                  <div className="xs:text-[3vw] xl:text-[0.95vw] lg:text-[2vw] font-Inter font-medium text-[#908EB5] pt-3">
+                  <div className="xs:text-[3vw] xl:w-[30vw] xl:text-[0.95vw] lg:text-[2vw] font-Inter font-medium text-[#908EB5] pt-3">
                     Stay relevant with real-time, dynamic segmentation. As new
                     data flows in, your segments automatically update, ensuring
                     your messaging is always in tune with your audience’s latest

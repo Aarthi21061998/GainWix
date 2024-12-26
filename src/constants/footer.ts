@@ -27,11 +27,11 @@ export const FOOTER_LINKS: FooterLink[] = [
         label: 'Segmentation AI',
       path: "/segment",
       },
-      {
-        id: 3,
-        label: 'Scalability AI',
-        href: '',
-      },
+      // {
+      //   id: 3,
+      //   label: 'Scalability AI',
+      //   href: '',
+      // },
     ],
   },
   {

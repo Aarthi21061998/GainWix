@@ -10,7 +10,12 @@ import strargyImage3 from "../../assets/Icons/strargy3.svg";
 import strargyImage4 from "../../assets/Icons/strargy4.svg";
 import strargyImage5 from "../../assets/Icons/strargy5.svg";
 
-import strargyHero from "../../assets/Icons/sth.svg";
+// import strargyHero from "../../assets/Icons/strategy AI2.svg";
+import Strargy from "../../assets/Icons/strategy AI (3.1).svg";
+import strargyHero1 from "../../assets/Icons/strategy AI (2).svg";
+import strargyHero from "../../assets/Icons/strategy AI (1.2).svg";
+import strargyHero2 from "../../assets/Icons/board.svg";
+import strargyHero3 from "../../assets/Icons/coin.svg";
 
 // components
 import React, { useEffect, useRef } from "react";
@@ -24,11 +29,12 @@ import { StrargyList, StrargyType } from "@constants/home";
 export default function Ecommerce() {
   return (
     <div className=" relative bg-[#060A22] ">
-      <Image src={ECommerceBg} alt="" className="" />
-      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[55vh] xs:min-h-[30vh]  flex flex-col justify-end   absolute  xl:top-[-50vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20 ">
+      <Image src={Strargy} alt="" className="" />
+
+      <div className=" 2xl:!min-h-[70vh] xl:min-h-[70vh] lg:min-h-[105vh] md:min-h-[55vh] xs:min-h-[35vh]  flex flex-col justify-end   absolute  xl:top-[-45vw]  lg:top-[-10vw] md:top-[-10vw] md:py-0 md:px-[5rem] xs:pt-20  ">
         <div className="grid xl:grid-cols-2 justify-between gap-14  sm:grid-cols-1 lg:grid-cols-1  xl:mx-24 2xl:mx-36 xl:mt-[10vw]  2xl:mt-[-5vw] ">
-          <div className=" flex flex-col xs:mt-[5vw] xl: mt-[13vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
-            <h1 className=" md:hidden lg:hidden xl:block  2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]  ">
+          <div className=" flex flex-col xs:mt-[5vw] xl:mt-[1vw] 2xl:mt-[18vw] md:flex  md:items-center lg:items-baseline  xs:items-center">
+            <h1 className=" md:hidden lg:hidden xl:block  leading-[3.8vw] 2xl:block xl:text-[3vw] xs:text-[7vw] sm-text-[1vw] md:text-[3vw] lg:text-[2.5vw]  font-bold   text-[white] font-sora   xs:text-center   lg:text-start xs:-mt-[60vw] lg:mt-[10vw] xl:mt-[50vw]  ">
               Build Game Changing <br />
               <p className="xl:text-[3vw] xs:text-[7vw] lg:text-[2.5vw] md:text-[3vw] font-bold   text-[white] font-sora    xs:text-center   lg:text-start">
                 {" "}
@@ -72,17 +78,25 @@ export default function Ecommerce() {
               </button>{" "} */}
             </div>
           </div>
-
-          <div className=" z-10 absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[-1vw] xl:top-[37vw]  md:right-[10vw] w-full h-full flex justify-end">
-            <Image src={strargyHero} alt="hero" className="xl:w-[70vw]" />
+          <div className="xs:hidden xl:block  opacity-45 blend-screen absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[-1vw] xl:top-[45vw]  md:right-[10vw] w-full h-full flex justify-end">
+            <Image src={strargyHero2} alt="hero" className="" />
+          </div>
+          <div className="xs:hidden z-20 xl:block absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[-1vw] xl:top-[45vw]  md:right-[10vw] w-full h-full flex justify-end">
+            <Image src={strargyHero3} alt="hero" className="" />
+          </div>
+          <div className="xs:block xl:block z-0 blend-screen absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[2vw] xl:top-[49vw]  md:right-[10vw] w-full h-full flex justify-end">
+            <Image src={strargyHero1} alt="hero" className="" />
+          </div>
+          <div className="xs:block xl:hidden  absolute 2xl:right-[11vw]  2xl:top-[30.5vw] xs:top-[40vw] lg:right-[20vw] lg:top-[20vw] xl:left-[-2vw] xl:top-[36vw]  md:right-[10vw] w-full h-full flex justify-end">
+            <Image src={strargyHero} alt="hero" className="" />
           </div>
         </div>
       </div>
 
       <div className=" rounded-[120px] lg:min-h-[120vh] xl:min-h-[150vh] md:min-h-[150vh] ">
-        <div className="md:py-[16vw] lg:py-0 xs:py-5  ">
+        <div className="md:pt-[16vw] lg:py-0 xs:py-5  ">
           <div className=" from-[#040742] from-50% via-[#101340] to-[#060A22] bg-gradient-to-l ">
-            <div className="xs:hidden md:block w-[100%] h-[30vh] flex justify-center text-[3vw] font-medium font-Sora py-10 xl:mt-0 lg:mt-[60vw] ">
+            <div className="xs:hidden md:block w-[100%] h-[24vh] flex justify-center text-[3vw] font-medium font-Sora py-10 xl:mt-0 lg:mt-[60vw] ">
               <h1 className="xl:text-[3vw] md:text-[4vw] lg:text-[5vw] font-medium text-[#FFFFFF] font-Sora text-center ">
                 <p className="md:pl-10">Set new benchmarks and hit Goals</p>
                 <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] bg-gradient-to-r bg-clip-text text-transparent font-Sora">
@@ -156,7 +170,7 @@ export default function Ecommerce() {
                       Market Analysis
                     </span>
                   </div>
-                  <div className=" xs:text-[3vw] xl:text-[0.95vw] lg:text-[2vw] font-Inter font-medium text-[#908EB5] pt-3">
+                  <div className=" xs:text-[3vw] xl:w-[30vw] xl:text-[0.95vw] lg:text-[2vw] font-Inter font-medium text-[#908EB5] pt-3">
                     Stay one step ahead. Our AI analyzes competitor strategies
                     and industry trends, providing you with key insights to
                     leverage opportunities and identify growth areas in your
@@ -252,7 +266,7 @@ export default function Ecommerce() {
               text
               customTitle={
                 <div className="-mt-20 xs:mt-[10vw]   ">
-                  <div className="md:hidden lg:block  xs:hidden xs:text-[8vw] lg:text-[3vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[47vw] font-bold text-[white] font-sora tracking-wide leading-[3.5vw]">
+                  <div className="md:hidden lg:block  xs:hidden xs:text-[8vw] lg:text-[3vw] xs:w-[88vw] md:w-[25%] md:text-[2.5vw] lg:w-[47vw] font-bold text-[white] font-sora tracking-wide leding-[3.5vw]">
                     Trend <br /> Forecasting And <br />
                     <span className="from-[#8C76F7] via-[#8C76F7] to-[#F9AD68] lg:text-[3vw] bg-gradient-to-r bg-clip-text text-transparent">
                       Future Planning{" "}
@@ -308,7 +322,7 @@ export default function Ecommerce() {
         <div className="2xl:w-[64vw] flex flex-row  xl:gap-5 md:gap-5 xs:gap-[5vw] justify-start overflow-x-auto   md:w-full  xs:w-[90vw] xl:w-[70vw] xl:min-h-[35vw] xs:m-auto xs:justify-start md:justify-center md:items-center xs:mt-10 ">
           {StrargyList?.map((data: StrargyType) => (
             <div
-              className="xs:w-[70vw]  md:w-[30vw] md:h-[15vh] xs:h-[20vh] lg:w-[30%] lg:h-[23vh] xl:w-[20%] xl:h-[25vh] xs:rounded-[30px]   bg-gradient-to-r from-[#0A0D2A] via-[#0A0D2A] to-[#2D3154] p-6 text-white shadow-lg "
+              className="xs:w-[70vw]  md:w-[30vw] md:h-[15vh] xs:h-[20vh] lg:w-[30%] lg:h-[23vh] xl:w-[20%] xl:h-[25vh] xs:rounded-[30px]   bg-gradient-to-b from-[#2d3154] via-[#2D3154] to-[#0c0b24] p-6 text-white shadow-lg "
               key={data?.id}
             >
               <div className="flex-col text-white w-full flex text-[1.2vw] align-center 2xl:mt-16 xl:mt-6 justify-center items-start ">
